@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - My Profile</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body">
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="my_profile.html">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li class="active"><a href="titles.html">Titles</a></li>
+			<li><a href="agreements.html">Agreements</a></li>
+			<li class="last"><a href="admin.html">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<div class="form_header modified_header">
+			<h3>My Profile</h3>
+			<a href="my_profile.html" class="button_gen_small corner_4">Edit</a>
+		</div>
+		
+		<!-- Main Content -->
+		<div id="form_container" class="create_account_container">
+			
+			
+			
+			<div class="form_block clear_frame">
+					<fieldset class="account_block">
+						<h3>Account Information</h3>
+						
+						<fieldset>
+							<label for="accountEmail">Email:</label>
+							<span>test@test.com</span>
+						</fieldset>
+						
+						<fieldset>
+							<label for="accountPassword">Password:</label>
+							<span>*************</span>
+						</fieldset>
+					</fieldset>
+					
+					<fieldset class="account_block">
+						<h3>Contact Information</h3>
+						
+						<fieldset>
+							<label for="accountFirstName">First Name:</label>
+							<span>Mike</span>
+						</fieldset>
+						
+						<fieldset>
+							<label for="accountLastName">Last Name:</label>
+							<span>Mike</span>
+						</fieldset>
+						
+						<fieldset>
+							<label for="accountNickname">Nickname:</label>					
+							<span>Mike</span>
+						</fieldset>
+						
+						<fieldset>
+							<label for="accountCompanyName">Company Name:</label>					
+							<span>Company Test Name</span>
+						</fieldset>
+						
+						<fieldset>
+							<label for="accountCompanyWebsite">Company Website:</label>					
+							<span>http://wwww.test.com</span>
+						</fieldset>
+						
+						<fieldset>												
+							<label for="accountCountry">Country:</label>
+							<span>USA</span>
+						</fieldset>
+						
+						<fieldset>
+							<label for="accountAddress">Address:</label>					
+							<span>1234 Shull St</span>
+						</fieldset>
+						
+						<fieldset>
+							<label for="accountCity">City:</label>
+							<span>Test</span>
+						</fieldset>
+						
+						<fieldset>					
+							<label for="accountState">State/Province:</label>
+							<span>CA</span>
+						</fieldset>
+						
+						<fieldset>
+							<label for="accountPostalCode">Postal Code:</label>
+							<span>90201</span>
+						</fieldset>
+						
+						<fieldset>
+							<label for="accountPhoneNumber">Phone Number:</label>					
+							<span>123-456-4875</span>
+						</fieldset>
+					</fieldset>																								
+			</div>
+		</div>
+		<!-- /Main Content -->						
+	</div>	
+	
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid2.js"></script> -->
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+</body>
+</html>

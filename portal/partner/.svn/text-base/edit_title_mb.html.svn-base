@@ -1,0 +1,541 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Create New Title</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	
+	<img id="top" src="../images/top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a>Edit Title Details</a></h1>
+		<form id="form_33863" class="appnitro"  method="post" action="">
+		<div class="form_description">
+			<h2>Edit title Details</h2>
+			<p>Enter the following information in English. You can localize your title after title creation.</p>
+		</div>						
+
+		<ul >
+			
+		<li id="li_1" >
+			<label class="description" for="element_1">Title Name * </label>
+			<div>
+				<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/> 
+			</div> 
+		</li>	
+		
+		<li id="li_2" >
+			<label class="description" for="element_2">Title Display Name * </label>
+			<div>
+				<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/> 
+			</div> 
+		</li>
+		
+		<li id="li_3" >
+			<label class="description" for="element_3">Description * </label>
+			<div>
+				<textarea id="element_3" name="element_3" class="element textarea medium"></textarea> 
+			</div> 
+		</li>
+		
+		<li id="li_4" >
+			<label class="description" for="element_4">Tags * </label>
+			<div>
+				<input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value=""/> 
+			</div> 
+		</li>	
+		
+		<li id="li_5" >
+		<label class="description" for="element_5">EULA * </label>
+		<div>
+			<label>If you want to provide your own End User License Agreement (EULA), <a id="customEULA" href="#">click here</a>. If you do not
+			provide a EULA, the <a id="defaultEULA" href="#">standard EULA</a> will apply to your title</label>
+		</div> 
+		</li>
+		
+		<li class="section_break">
+			<h3></h3>
+			<p></p>
+		</li>
+		
+		<li id="li_17" >
+		<label class="description" for="element_17">Category * </label>
+		<div>
+		<select class="element select medium" id="element_17" name="element_17"> 
+			<option value="" selected="selected"></option>
+
+		</select>
+		<input type="hidden" id="element_17h">
+		</div> 
+		</li>	
+		
+		<li class="section_break">
+			<h3></h3>
+			<p></p>
+		</li>
+		
+		<li id="li_6" >
+		<label class="description" for="element_6">Company Name </label>
+		<div>
+			<input id="element_6" name="element_6" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>
+		
+		<li id="li_7" >
+		<label class="description" for="element_7">Company Display Name </label>
+		<div>
+			<input id="element_7" name="element_7" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>	
+		
+		<li id="li_8" >
+		<label class="description" for="element_8">Company Website </label>
+		<div>
+			<input id="element_8" name="element_8" class="element text medium" type="text" maxlength="255" value="http://"/> 
+		</div> 
+		</li>		
+		
+		<li id="li_9" >
+		<label class="description" for="element_9">Support URL </label>
+		<div>
+			<input id="element_9" name="element_9" class="element text medium" type="text" maxlength="255" value="http://"/> 
+		</div> 
+		</li>		
+		
+		<li id="li_10" >
+		<label class="description" for="element_10">Contact Email * </label>
+		<div>
+			<input id="element_10" name="element_10" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		
+		
+		<li id="li_11" >
+		<label class="description" for="element_11">Copyright * </label>
+		<div>
+			<input id="element_11" name="element_11" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>	
+		
+		<li class="section_break">
+			<h3></h3>
+			<p></p>
+		</li>		
+		
+		<li id="li_13" >
+		<label class="description" for="element_13">Countries </label> <a id="countries" href="#">Change >></a>
+		<div>
+			<input id="element_13" name="element_13" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li class="section_break">
+			<h3></h3>
+			<p></p>
+		</li>
+		
+<br>
+Violence : <div id="slider1"></div>
+<input type="text" id="rating1" style="border:0; color:#f6931f; font-weight:bold;" />
+
+<br />
+
+Sexual content or nudity: <div id="slider2"></div>
+<input type="text" id="rating2" style="border:0; color:#f6931f; font-weight:bold;" />
+<br />
+
+Profanity: 
+<div id="slider3"></div>
+<input type="text" id="rating3" style="border:0; color:#f6931f; font-weight:bold;" />
+<br />
+
+Alcohol, tobacco, or drug references:
+<div id="slider4"></div>
+<input type="text" id="rating4" style="border:0; color:#f6931f; font-weight:bold;" />
+<br />
+
+Mature/adult themes :
+<div id="slider5"></div>
+<input type="text" id="rating5" style="border:0; color:#f6931f; font-weight:bold;" />
+<br />
+<!-- End demo -->
+			
+					<li class="buttons">
+			    <input type="hidden" name="form_id" value="33863" />
+				
+		<a href="index.html">Cancel</a> 				    
+				<input id="saveForm" class="button_text" type="button" name="submit" value="Update" />
+		</li>
+			<div id="retval" style="overflow:auto;"></div>
+			<div id="errormsg" style="overflow:auto;"></div>
+		
+			</ul>
+		</form>	
+	</div>
+
+	<img id="bottom" src="../images/bottom.png" alt="">
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid2.js"></script> -->
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+	
+
+<script type="text/javascript">
+
+      function compareOptionText(a,b) {
+      /*
+        * return >0 if a>b
+        * 0 if a=b
+        * <0 if a<b
+        */
+      // textual comparison
+      return a.text!=b.text ? a.text<b.text ? -1 : 1 : 0;
+      // numerical comparison
+      // return a.text - b.text;
+       
+      }
+       
+      function sortOptions(list) {
+      var items = list.options.length;
+      // create array and make copies of options in list
+      var tmpArray = new Array(items);
+      for ( i=0; i<items; i++ )
+      tmpArray[i] = new
+      Option(list.options[i].text,list.options[i].value);
+      // sort options using given function
+      tmpArray.sort(compareOptionText);
+      // make copies of sorted options back to list
+      for ( i=0; i<items; i++ )
+      list.options[i] = new Option(tmpArray[i].text,tmpArray[i].value);
+      }
+
+
+
+$.urlParam = function(name)
+	{
+
+
+
+
+
+	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	if (!results) { return 0; }
+
+	return results[1] || 0;
+	}
+
+
+$(document).ready(function () 
+	{
+
+	//CATEGORY
+	$.getJSON(getBaseURL() + getPartnerAppURL() + '/taxonomies', function(data)
+		{
+		var html = '';
+		var len = data.taxonomies[0].root.children.length;
+		for (var i = 0; i< len; i++) 
+			{
+			html += '<option value="' + data.taxonomies[0].root.children[i].data.id + '">' + data.taxonomies[0].root.children[i].data.name + '</option>';
+			}
+		$('select#element_17').append(html);
+		$("#element_17 option[value=" + $('#element_17h').val() +"]").attr("selected","selected");
+		
+	});
+	
+
+
+
+
+	$('#element_14').change(function()
+		{
+		var i = $('#element_14').val();
+		$('#ext_'+i).show();
+		$("#element_14 option[value='" + i + "']").remove();
+
+		}
+		);
+
+	$('#ext_1_remove').click(function()
+		{
+		$('#ext_1').hide();
+		$("#element_14").append('<option value="1">1</option>');
+		sortOptions($("#element_14"));
+		return false;
+		}
+		);
+
+
+
+
+
+
+	// substring is temporary to remove QC hostname and cross-site security issues.
+
+	// var u = $.urlParam('d').substring(41);
+
+	var u = getBaseURL() + getPartnerAppURL() + '/publishers/10000/titles/10005';
+
+	$.getJSON(u, function(data)
+{
+
+
+
+
+		$('#element_13').val(data.result.make);
+
+
+		$('#element_2').val(data.result.languages.en.displayName);
+
+		$('#element_1').val(data.result.name);
+		$('#element_3').val(data.result.languages.en.description);
+		$('#element_4').val(data.result.languages.en.keywords);
+
+		$("#element_17 option[value=" + data.result.category.id +"]").attr("selected","selected");
+		$("#element_17h").attr("value",data.result.category.id);
+
+		$('#element_6').val(data.result.company.name);
+		$('#element_7').val(data.result.company.name); // company display name???
+
+		$('#element_8').val(data.result.company.website);
+		$('#element_9').val(data.result.supportUrl);
+		$('#element_10').val(data.result.supportEmail);
+		$('#element_11').val(data.result.copyright);
+
+		$('#element_13').val(data.result.countries);
+
+		$("#slider1").slider("value",data.result.rating.violence);
+		$("#slider2").slider("value",data.result.rating.sex);
+		$("#slider3").slider("value",data.result.rating.profanity);
+		$("#slider4").slider("value",data.result.rating.drugs);
+		$("#slider5").slider("value",data.result.rating.adultThemes);
+
+
+		// });
+
+	}
+	);
+	
+	});
+</script>
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+
+	var rating_violence = 0;
+	var rating_sexualcontent = 0;
+	var rating_profanity = 0;
+	var rating_alcohol = 0;
+	var rating_mature = 0;
+	
+	var eula = "";
+	var selectedCountries = "";
+	
+	
+	//SAVE TITLE
+	$('#saveForm').click(function() 
+	{
+
+		// var u = $.urlParam('d').substring(41);
+
+		var u = getBaseURL() + getPartnerAppURL() + '/publishers/10000/titles/10005';
+
+		// create title
+		var rating = '{"violence":' + rating_violence + ',"sex":' + rating_sexualcontent + ',"drugs":' + rating_alcohol + ',"profanity":' + rating_profanity +',"adultThemes":'+ rating_mature + ',"level":1}';
+		var jsondata = '{"languages": {"en": {"languageCode": "en","displayName":"' + $("#element_2").val() + '","description":"' + $("#element_3").val() + '","keywords": "keyword1,keyword2,keyword3","eula":"' + eula + '"}}, "name":"' + $("#element_1").val()  
+		+ '","category":' + $("#element_17").val() + ',"subCategory":' + 501 + ',"supportUrl":"' + $("#element_9").val() + '","supportEmail":"' + $("#element_10").val()
+		+ '","copyright":"' + $("#element_11").val() + '","countries":"' + $("#element_13").val() + '","rating":' + rating + '}'; 
+
+		
+			$.ajax(
+				{
+				url: u,
+				type:'PUT',
+				contentType:'application/json',
+				processData: false,
+				data: jsondata,
+				success: function(data) 
+					{
+					// $('#retval').html(JSON.stringify(data,'&nbsp;'));
+					window.location = "titles.html";
+					}
+				}
+			);
+
+
+	return false;
+	});	
+
+		//EULA		
+		var $dialog = $('<div></div>')
+			.html('This is the EULA agreement')
+			.dialog({
+				autoOpen: false,
+				title: 'EULA'
+			});
+
+		$('#customEULA').click(function() {
+			$defaultEULAdialog.dialog("close");
+			$dialog.dialog('open');
+			// prevent the default action, e.g., following a link
+			return false;
+		});
+		
+		//http://p2-cint.qualcomm.com/plaza/partner/rs/v1/agreements/eula
+		var $defaultEULAdialog = $('<div></div>')
+			.html('This is the DEFAULT EULA agreement')
+			.dialog({
+				autoOpen: false,
+				title: 'EULA'
+			});
+
+		$('#defaultEULA').click(function() {
+			$dialog.dialog("close");
+			
+				$.ajax({
+				url: getBaseURL() + getPartnerAppURL() + '/agreements/eula',
+				type:'GET',
+				success: function(data) 
+					{
+						eula = data.result.legalText;
+						$defaultEULAdialog.html(eula);
+					}
+				});
+			
+			$defaultEULAdialog.dialog('open');
+			return false;
+		});
+
+	
+
+		//COUNTRIES
+		var $countryDialog = $('<div></div>')
+			.html('List of Countries')
+			.dialog({
+				autoOpen: false,
+				title: 'Countries',
+				close: function(){
+	
+			        $('input[name=country_list]:checked').each(function() {
+			            selectedCountries += (this.value) + ',';
+			        });				
+					$("#element_13").val(selectedCountries);
+				}
+			});
+		
+		$('#countries').click(function() {
+			
+				$.ajax({
+				url: getBaseURL() + getPartnerAppURL() + '/codes/country',
+				type:'GET',
+				success: function(data) 
+					{
+						var countriesHTML = '<input type="checkbox" id="countries_all">Select All<br><input type="checkbox" id="countries_unselect_all">Deselect All<br>';
+					    var len = data.result.length;
+	    				for (var i = 0; i< len; i++) {
+							countriesHTML += '<input type="checkbox" name="country_list" value="' + data.result[i].code + '" />' + data.result[i].meaning + '<br />';
+						}
+						
+						$countryDialog.html(countriesHTML);
+					}
+				});
+			
+			$countryDialog.dialog('open');
+			return false;
+		});
+		
+		
+		$("#countries_all").live('click', function()
+		{
+			var checked_status = this.checked;
+			$('input[name=country_list]').attr('checked', true);
+			$('input[name=countries_unselect_all]').attr('checked', false);
+
+		});	
+
+		$("#countries_unselect_all").live('click', function()
+		{
+			var checked_status = this.checked;
+			$('input[name=country_list]').attr('checked', false);
+			$('input[name=countries_all]').attr('checked', false);
+
+		});	
+
+		//SLIDER
+	$(function() {
+		$("#slider1").slider({
+			value:0,
+			min: 0,
+			max: 2,
+			step: 1,
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating1").val('Age ' + val + '+');
+				rating_violence = val;
+			}
+		});
+
+		$("#slider2").slider({
+			value:0,
+			min: 0,
+			max: 2,
+			step: 1,
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating2").val('Age ' + val + '+');
+				rating_sexualcontent = val;
+			}
+		});
+		$("#slider3").slider({
+			value:0,
+			min: 0,
+			max: 2,
+			step: 1,
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating3").val('Age ' + val + '+');
+				rating_profanity = val;
+			}
+		});
+
+		$("#slider4").slider({
+			value:0,
+			min: 0,
+			max: 2,
+			step: 1,
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating4").val('Age ' + val + '+');
+				rating_alcohol = val;
+			}
+		});
+		$("#slider5").slider({
+			value:0,
+			min: 0,
+			max: 2,
+			step: 1,
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating5").val('Age ' + val + '+');
+				rating_mature = val;
+			}
+		});
+
+	});
+		
+
+	});
+
+
+</script>	
+	
+	</body>
+</html>
+

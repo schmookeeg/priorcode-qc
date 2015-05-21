@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Add Binary</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="my_profile.html">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li class="active"><a href="titles.html">Titles</a></li>
+			<li><a href="agreements.html">Agreements</a></li>
+			<li class="last"><a href="admin.html">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->
+		<div id="form_container" class="create_account_container">
+			<div class="form_block expose_target corner_8">								
+				
+				<div class="form_header">
+					<h3>Add New Binary - <strong>Crystal Quest<strong></h3>
+					<span>*required field</span>
+				</div>
+				
+				<ul class="steps_container">
+					<li class="current first"><span class="txt">Step 1: Enter Binary Details</span><span class="divider">&nbsp;</span></li>
+					<li class="next"><span class="txt">Step 2: Export Compliance</span><span class="divider">&nbsp;</span></li>
+					<li class="last">&nbsp;</li>
+				</ul>
+				
+				<div class="error_messages" style="display: none;"></div>
+				
+				<form id="form_33540" class="appnitro" enctype="multipart/form-data" method="post" action="/formbuilder/view.php">
+					<fieldset>					
+						<label class="description" for="element_1">Content Type<span>*</span>:</label>
+						<select skip="yes" class="element select medium" id="element_1s" ><option value="">Select</option></select><a href="javascript: void(0);" title="Extra information" class="icon_question">?</a>
+						<input type="hidden" id="element_1" name="contentType" class="element text medium" type="text" maxlength="255" value="1"/ > 
+					</fieldset>
+		
+					<fieldset>		
+						<label class="description" for="file">Binary File<span>*</span>:</label>
+						<input id="file" name="file" size="60" class="element file" type="file"/> 
+					</fieldset>
+
+					<fieldset>		
+						<label class="description up" for="element_7">Minimum OS Version Supported<span>*</span>:</label>
+						<div>
+							<div id="runtimes">
+							  <select id="rt" class="rt" name="element_7" skip="yes">
+							    <option value="">Please select a content type</option>
+							  </select><a href="javascript: void(0);" title="Extra information" class="icon_question">?</a>
+							</div>
+							<input type="hidden" value="1" class="element select medium" id="element_7" name="minRuntimeSupported">
+						</div>
+					</fieldset>
+		
+					<fieldset>		
+						<label class="description" for="element_3">SKU Number:</label>
+						<input id="element_3" name="skuNumber" class="element text medium" type="text" maxlength="255" value=""/><a href="javascript: void(0);" title="Extra information" class="icon_question">?</a> 
+					</fieldset>
+		
+					<fieldset>
+						<label class="description" for="element_4">Version Number<span>*</span>:</label>
+						<input id="element_4" name="displayVersion" class="element text medium" type="text" maxlength="255" value=""/><a href="javascript: void(0);" title="Extra information" class="icon_question">?</a> 
+					</fieldset>
+		
+					<fieldset>
+						<label class="description" for="element_5">Attach Test<span>*</span><br/>Instruction:</label>		
+						<input id="testInstructionsFile" name="testInstructionsFile" size="60" class="element file" type="file"/><a href="javascript: void(0);" title="Extra information" class="icon_question">?</a> 
+						<span class="field_instructions">PDF or ZIP</span>
+					</fieldset>
+
+
+					<fieldset>
+						<label class="description" for="element_6">Update Note:</label>				
+						<div class="multi-container">
+							<ul class="language_container buttons" id="languagelink"></ul>
+							<textarea id="element_6" name="element_6" class="textarea_note" skip="yes"></textarea><a href="javascript: void(0);" title="Extra information" class="icon_question">?</a>
+							<span class="field_instructions">If you enter a note, this will be shown to end users. <span class="right">(Max. 500 characters)</span></span>
+						</div>
+					</fieldset>
+		
+					<fieldset>
+						<div id="devicemap">
+							<p class="block_header"><label class="description" for="">Select Devices<span>*</span></label></p><a href="javascript: void(0);" title="extra information" class="icon_question inline">?</a>
+							<div id="devicemapanchor" class="selected_devices_container"></div>
+							<!--
+<div class="content">
+								<table id="flexmasterdevices" style="display:none"></table>
+							</div>
+-->
+						</div>
+					</fieldset>
+		
+					<input type="hidden" id="devices" name="devices" value="[]" />
+				    <input type="hidden" id="contentLanguages" name="contentLanguages" value='{"en":"content release notes"}' />
+					  
+					<div class="buttons_container stroke_top create_title_save">
+						<a href="titles.html">Cancel</a>	
+						<input type="submit" id="saveForm" value="Next" class="button_gen corner_4" />
+					</div>
+				</form>	
+			</div>
+		</div>
+
+
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid2.js"></script> -->
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+
+	<script type="text/javascript">
+		function ajaxFileUpload(iconurl)
+		{
+			//starting setting some animation when the ajax starts and completes
+			$("#loading")
+			.ajaxStart(function(){
+				$(this).show();
+			})
+			.ajaxComplete(function(){
+				$(this).hide();
+			});
+		   
+			/*
+				prepareing ajax file upload
+				url: the url of script file handling the uploaded files
+							fileElementId: the file type of input element id and it will be the index of  $_FILES Array()
+				dataType: it support json, xml
+				secureuri:use secure protocol
+				success: call back function when the ajax complete
+				error: callback function when the ajax failed
+			*/
+
+			$.ajaxFileUploadWholeForm
+			(
+				{
+					url:iconurl,
+					secureuri:false,
+					fileElementId:'file',
+					dataType: 'json',
+					success: function (data, status)
+					{
+				//alert("Upload Successful.");
+				//window.location = "title_details.html?d=" + $.urlParam('d');
+				confirmRedirect("Upload Successful." , "title_details.html?d=" + $.urlParam('d'));
+					},
+					error: function (data, status, e)
+					{
+						//alert(e);
+						confirmRedirect(e , "noRedirect");
+					}
+				},'form_33540'
+			)
+			
+			return false;
+		
+		}  
+
+
+			$.urlParam = function(name){
+				var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+				if (!results) { return 0; }
+			
+				return results[1] || 0;
+			}
+		
+		var languageList = [];	
+		var languages = [];
+		var currId = 0;
+		var languageNotes = [];	
+		
+		$.langName = function(code){
+			var langName = "";
+			$.each(languageList, function(key, value) { 
+				wtf=key + ': ' + value; 
+				if(value.code == code){
+					langName = value.meaning;
+				}
+			});
+			
+			return langName;
+		}
+
+		$(document).ready(function() {
+
+			var titleid = "";
+
+			$.getJSON(getBaseURL() + getPartnerAppURL() + $.urlParam('d'), function(data){
+				//$('#titleid').text('Add Previews - ' + data.result.name);
+				titleid = data.result.id;
+				languages = data.result.languages;
+
+			var langdiv = "";
+			var i = 0;
+
+			$.each(languages, function(key, value) { 
+				langdiv +=	"<li>";
+				langdiv +=	"<a href='javascript: void(0);' id='lang_" + i + "' value='" + value.languageCode+ "'>" + $.langName(value.languageCode) + "</a>";
+				langdiv +=	"</li>";
+				i++;
+			});
+
+			$('#languagelink').html(langdiv);
+				
+			});
+		  
+		//LANGUAGE
+		$.getJSON(getBaseURL() + getPartnerAppURL() + '/codes/language', function(data){
+			languageList = data.result;		
+		});	
+
+
+		$("#element_6").change(function() {
+			
+			languageNotes[currId] = $('#element_6').val();
+		});
+
+			
+		$('[id^="lang_"]').live('click', function(){
+			
+			var temp  = this.id.split("_"); 
+			currId = temp[1];
+			currLang = this.text;
+
+			$.each(languageList, function(key, value) { 
+
+				wtf=key + ': ' + value;		
+				if(value.meaning == currLang){
+
+					if (typeof(languageNotes[currId]) == "undefined") {
+						$('#element_6').val("");
+					}
+					else {
+						$('#element_6').val(languageNotes[currId]);
+					}
+						
+					return false;
+				}
+			});
+		})	
+
+					var h;
+					h=0;
+			$.getJSON(getBaseURL() + getPartnerAppURL() + '/content_types', function(data){
+				for(i in data.result)
+					{
+
+					$("#element_1s").append("<option value='" + data.result[i].id + "'>" + data.result[i].name + "</option>");
+					if(h==0)
+						{
+						//$("#runtimes").append("<select style='display:inherit;' class='rt' skip='yes' name='element_7' id='rt" + data.result[i].id + "'><option value=''>Select</option>");
+						$("#runtimes").append("<select style='display:none;' class='rt' skip='yes' name='element_7' id='rt" + data.result[i].id + "'><option value=''>Select</option>");
+						h=1;
+						}
+					else
+						{
+						$("#runtimes").append("<select style='display:none;' class='rt' skip='yes' name='element_7' id='rt" + data.result[i].id + "'><option value=''>Select</option>");
+						}
+
+
+					for(j in data.result[i].runtimes)
+						{
+						$("#rt"+data.result[i].id).append("<option value='" + data.result[i].runtimes[j].id + "'>" + data.result[i].runtimes[j].name + "</option>");
+						}
+					}
+			});
+
+			$("#element_1s").change(function() 
+				{ 
+
+				$('#element_1').val($(this).val());
+
+				//$('.rt').attr("skip","yes");
+				//$('#rt' + $(this).val()).attr("skip","no");
+				$('.rt').hide();
+				$('#rt' + $(this).val()).show();
+				$('#rt' + $(this).val() + ' option:nth-child(1)').attr('selected', 'selected');
+				$('#element_7').val($('#rt' + $(this).val() + ' option:nth-child(1)').val());
+				});
+
+
+			$(".rt").live('change',function() 
+				{ 
+
+				$('#element_7').val($(this).val());
+				
+
+				});
+
+
+			var foo2 = jQuery.getJSON(getBaseURL() + getPartnerAppURL() + '/devices/',function(data)  
+				{ 
+				var i;
+				var html = "";
+				for(i in data.result)
+					{
+					html += '<input skip="yes" type="checkbox" class="device" devid="' + data.result[i].id + '"> ' ;
+					html += data.result[i].name + ' ' + data.result[i].display.name + ' (' + data.result[i].display.pixelHeight + ' x ' + data.result[i].display.pixelWidth + ')<br/><br/>'
+					}
+				$('#devicemapanchor').append(html);
+				}
+				);
+			
+			
+
+		  /* Clear Form Data */
+		  $("#saveForm").attr('disabled', 'disabled');
+		  $("#saveForm").addClass("button_disabled");
+		  $("#element_1").val("");
+		  $("#file").val("");
+		  $("#element_7").val("");
+		  $("#element_3").val("");
+		  $("#element_4").val("");
+		  $("#testInstructionsFile").val("");
+		  $("#element_6").val("");
+
+		  /* Button disabling/enabling */
+		  var flag_content = false;
+		  var flag_binary = false;
+		  var flag_os = false;
+		  var flag_version = false;
+		  var flag_instruction = false;
+		  var flag_devices = false;
+
+		  function changeButtonStatus() {
+			if (flag_content && flag_binary /*&& flag_os*/ && flag_version && flag_instruction && flag_devices) {
+			  $("#saveForm").removeAttr("disabled");
+			  $("#saveForm").removeClass("button_disabled");
+			}
+			else {
+			  $("#saveForm").attr("disabled", "disabled");
+				$("#saveForm").addClass("button_disabled");
+			}
+		  }
+
+		  function changeFlag(object, flag) { //Flag is a string of the variable name
+			if(eval(flag) && (object.val() != "" || object.is(":checked"))) //Flag already set to true and has data
+			  return true;
+
+			if(object.val() != "" || object.is(":checked")) //Data in field
+			  eval(flag+" = true;");
+			else //Field empty
+			  eval(flag+" = false;");
+
+			changeButtonStatus();
+			return flag;   
+		  }
+
+		  $("#element_1s").change(function() {
+			changeFlag($(this), "flag_content");
+			flag_os = false; //Since changing the value resets the OS option to "Selec"
+		  });
+		  $("#file").change(function() {
+			changeFlag($(this), "flag_binary");
+		  });
+		  $("select[name='element_7']").live('change', function() {
+			changeFlag($(this), "flag_os");
+		  });
+		  $("#element_4").keyup(function() {
+			changeFlag($(this), "flag_version");
+		  });
+		  $("#testInstructionsFile").change(function() {
+			changeFlag($(this), "flag_instruction");
+		  });
+		  $("#devicemapanchor input[type='checkbox']").live('click', function() { 
+			changeFlag($(this), "flag_devices");
+		  });
+
+
+		  /* Validation */
+		  $("#form_33540").validate({
+			onfocusout: false,
+			onkeyup: false,
+			onclick: false,
+			focusInvalid: false,
+			errorLabelContainer: ".error_messages",
+			errorElement: "span",
+			submitHandler: function() {
+				$("#saveForm").attr('disabled', 'disabled');
+				$("#saveForm").addClass("button_disabled");
+			  // lets build a devicemap
+					var c=0;
+					var devs = "[";
+
+					$(".device").each(function()
+						{
+						if($(this).attr("checked"))
+							{
+							if(c>0)
+								{
+								devs += ',';
+								}
+							devs += $(this).attr("devid");
+							c++;
+							}	
+						}
+						);	
+
+					devs += "]";
+
+					// alert(devs);
+					$("#devices").val(devs);
+
+				//contentLanguages
+				var i = 0;
+				var contentLang = "{";
+				$.each(languageList, function(key, value) { 
+
+					wtf=key + ': ' + value;		
+					if (typeof(languageNotes[i]) != "undefined") {
+						contentLang += '"' + value.code + '": "' + languageNotes[i] + '",';
+					}
+					i++;						
+				});
+				contentLang = contentLang.slice(0, -1);
+				contentLang += "}";
+				$("#contentLanguages").val(contentLang);
+
+
+					ajaxFileUpload(getBaseURL() + getPartnerAppURL() + '/publishers/10000/titles/'+ titleid +'/content');
+			},
+			invalidHandler: function(form, validator) {
+			  validator.showErrors(); // Add error class to invalid fields
+			  $('label').removeClass("error-label"); // Remove all previous error labels
+
+			  $('.error').each(function() { // Add 'error-label' class to labels of invalid fields
+				  if ($(this).attr("type") === "radio") // Highlight group label of radio buttons
+					$('label[for='+$(this).attr('name')+']').addClass("error-label");
+				  else
+					$('label[for='+$(this).attr('id')+']').addClass("error-label");
+				});
+
+			  $('label').each(function() { // Cleanup and remove 'error-label' from labels that are not associated with a field
+				if ($(this).attr('for') == "")
+				  $(this).removeClass("error-label");
+			  });
+			  window.scrollTo(0,0);
+			},
+			rules: {
+			  element_1s: { // Content Type
+				required: true
+			  },
+			  file: { // Binary File
+				required: true
+			  },
+			  element_4: { // Version Number
+				required: true
+			  },
+			  testInstructionsFile: { // Test Instruction
+				required: true,
+				accept: "pdf|zip|docx"
+			  }
+			},
+			messages: {
+			  element_1s: {
+				required: "Please select a valid content type. "
+			  },
+			  file: {
+				required: "Please upload a valid binary. "
+			  },
+			  element_4: {
+				required: "Please enter a valid version number. "
+			  },
+			  testInstructionsFile: {
+				required: "Please upload a valid instruction document. ",
+				accept: "Instruction document must be a PDF or ZIP file. "
+			  }
+			}
+		  });
+			
+			
+			/* Tooltips */
+			$("a[title]").tooltip({
+				delay: 10,
+				offset: [20, 71],
+				onBeforeShow: function(toolTipEvent, toolTipPosition) {
+				  this.getTip().css({'z-index':'9000'});
+				}
+			});
+			
+		
+			
+			/* jQuery overlay append */
+			var overlayHeight = $(document).height();
+			var overlayHTML = "<div class='container_fullscreen' style='height:" + overlayHeight + "px;'>&nbsp;</div>";
+			$('body').append(overlayHTML);
+			
+			
+		});
+
+
+	</script>	
+</body>
+</html>

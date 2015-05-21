@@ -1,0 +1,95 @@
+/* CATALOG - PAGE SPECIFIC */
+
+/* Catalog View */
+.cat_view .sidebar {width:266px; float:left; padding-bottom: 50px;}
+.cat_view .sidebar .actions {height:26px; margin:0 0 21px 0;}
+.cat_view .sidebar .tree {clear:both; line-height:25px; border-top:4px solid #ddd; /*border-bottom:1px solid #ddd;*/}
+.cat_view .sidebar.overlay .tree {margin-top:12px;}
+
+.cat_view .results {margin-left:316px; position:relative;}
+.cat_view .results .icon {display:block; width:50px; height:50px; background:#d5d5d5; float:left; margin:0 20px 0 0;}
+.cat_view .results h3 {line-height:50px; margin-bottom:23px;}
+.cat_view .results .search {width:250px; position:absolute; right:0; top:28px;}
+
+.cat_view #close {position:absolute;top:3px;right:13px;padding-right:15px;background: url("../../images/close_x.png") no-repeat right center;}
+
+.cat_view .overlay {top:-51px;}
+
+.cat_view .publisher {display:block; clear:both;}
+
+/* Catalog Filters */
+.filter {position:absolute;}
+.cat_filters {width:706px;}
+
+.cat_filters .languages {width:306px; float:left; margin:0 44px 31px 0;}
+.cat_filters .languages ul {border:1px solid #ddd; border-top:4px solid #ddd; height:230px; overflow-y:auto;}
+.cat_filters .languages li {line-height:32px; border-bottom:1px solid #ddd; padding:0 0 0 10px;}
+.cat_filters .languages li:hover {background:#e8f3f5;}
+.cat_filters .languages li input {margin:0 10px 0 0; position:relative; top:8px; float:left; }
+.cat_filters .languages li label {float:none; display:block; width:auto; text-align:left; line-height:32px;}
+
+.cat_filters .devices {clear:both; margin:0 0 31px 0;}
+
+/* Catalog Promotions */
+.cat_view .promos {margin-left:316px; position:absolute; width: 590px;}
+.cat_view .promos .icon {display:block; width:50px; height:50px; background:#d5d5d5; float:left; margin:0 20px 0 0;}
+.cat_view .promos h3 {padding-top:10px;}
+.cat_view .promos .promo {clear:both; margin-top: 35px;}
+.cat_view .promos .promo .img {font:normal 11px/48px verdana,sans-serif; text-align:center; display:block; width:98px; margin:0 20px 30px 0; background:#f3f3f3; border:1px solid #e3e3e3; float:left;}
+.cat_view .promos .promo.m .img {line-height:73px; width:148px;}
+.cat_view .promos .promo.l .img {line-height:98px; width:198px;}
+.cat_view .promos .promo.xl .img {line-height:148px; width:298px;}
+.cat_view .promos .promo h5 {margin-bottom:4px; padding-top:10px;}
+.cat_view .promos .promo.m h5 {padding-top:22px;}
+.cat_view .promos .promo.l h5 {padding-top:35px;}
+.cat_view .promos .promo.xl h5 {padding-top:60px;}
+.cat_view .promos > h5 {clear:both;}
+
+.cat_view #promotions .reorder-selected .remove {text-indent:-9999px; background:url("../../images/remove.png") no-repeat right center; height:19px; width:19px; margin-top:6px;}
+.cat_view #promotions .reorder-selected a.remove-confirm {text-indent:0; background: none; height:auto; width:auto;}
+
+/* Add Category */
+
+.add_cat #subs {margin-left:167px;}
+.add_cat #subs select {width:300px; margin:0;}
+
+.add_cat .cat_name input {float:right !important; width:400px !important;}
+.add_cat .cat_name .lang {float:right; width:auto; font-weight:bold;}
+.add_cat .cat_name .button_gen {line-height:20px;}
+.add_cat .cat_name .field_instructions {clear:right; float:right; margin:0 62px 0 0;}
+.add_cat .cat_name .remove {float:right;}
+.add_cat .cat_name select.lang {width:124px; margin:0; font-weight:normal; margin-right:12px;}
+
+.add_cat .icon_question {position:relative; top:2px;}
+.add_cat #file_img {height:126px; position:relative; font:normal 11px/126px verdana,sans-serif; display:block; width:126px; background:#f3f3f3; border:1px solid #777; text-align:center; margin:24px 0 0 167px; box-shadow:0 0 4px #cfcfcf; -moz-box-shadow:0 0 4px #cfcfcf;}
+
+.add_cat #test_1 {cursor:pointer;
+    left: 3px;
+    margin: 0;
+    position: absolute;
+    top: 54px;
+    width: 126px;
+    z-index: 2;
+    opacity: 0;
+    -moz-opacity:0 ;
+    filter:alpha(opacity: 0);}
+.add_cat .file_link {left:11px; position:absolute; top:51px; color:#1F94AF;}
+
+/* Edit Category */
+.cat_view .edit_cat {width:810px; position:absolute; left:75px; top:250px;}
+.cat_view .edit_cat .form_header {padding-top:0;}
+.cat_view .edit_cat .clear {line-height:24px;}
+.cat_view .edit_cat .clear + .clear {margin-top:20px;}
+.cat_view .edit_cat label {clear:left; float:left; display:block; text-align:right; width:120px; margin-right:12px;}
+.cat_view .edit_cat .info {color:#252525; margin-right:7px;}
+.cat_view .edit_cat .lang {font-size:11px; color:#252525; font-weight:bold; display:inline-block; margin-right:12px; width:120px; text-align:right;}
+.cat_view .edit_cat .text {width:437px; margin-right:8px;}
+.cat_view .edit_cat .button_gen_small {position:relative; top:-1px;}
+.cat_view .edit_cat select.lang {margin-left:132px; text-align:left;}
+.cat_view .edit_cat .icon_question {float:none; position:relative; top:3px;}
+.cat_view .edit_cat .icon {width:128px; line-height:128px; border:1px solid #ddd; text-align:center; margin:20px 0 0 132px; position:relative; }
+.cat_view .edit_cat .icon img {width:128px; height:128px; display: block;}
+.cat_view .edit_cat .icon .delete {display:block; text-indent:-9999em; position:absolute; top:-12px; right:-12px; width:23px; height:23px; background:transparent url('../../images/icon_delete.png') no-repeat;}
+
+.cat_view .edit_cat .buttons {background:#f1f1f1; margin:3px -17px 0 -17px; height:34px; padding:7px; position:relative; top:17px;}
+.cat_view .edit_cat .buttons .delete {float:left; color:red; display:inline-block; line-height:32px; border:1px solid #ddd; background:#fff; padding:0 25px;}

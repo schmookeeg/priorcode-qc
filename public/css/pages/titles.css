@@ -1,0 +1,12 @@
+/* TITLES - PAGE SPECIFIC */
+
+/* Reject / Hold Overlay */
+.reject.overlay {width:400px;top:200px;position:absolute;}
+.reject .choices {margin-bottom:1em;}
+.reject .choices input {margin:0; position:relative; top:3px;}
+.reject .choices label + input {margin-left:50px;}
+.reject textarea {width:388px; margin:0 0 1em 0; padding:5px;}
+.reject .attachment {margin-bottom:1em;}
+.reject .attachment input.text {width:231px;}
+.reject .buttons {text-align:right;}
+.reject .buttons a.button_gen {margin-left:30px;}

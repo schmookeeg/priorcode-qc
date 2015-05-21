@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Portal - Edit Promotion</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body">
+	<div id="wrapper">		
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="#">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li><a href="titles.html">Titles</a></li>
+			<li class="active"><a href="#">Catalog</a></li>
+			<li><a href="#">Settings</a></li>
+			<li class="last"><a href="#">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->
+		<div id="form_container" class="create_account_container content add_promo edit">
+			<div class="form_block expose_target corner_8">
+				<form id="form_add_promo" method="post" action="">
+					<div class="form_header">
+						<h2>Edit Promotion</h2>
+					</div>
+
+					<fieldset class="account_block">
+						<h5>1. Add promotion banner</h5>
+						<a class="icon_question" href="javascript: void(0);">?</a>
+						<ul class="banners">
+							<li class="s">
+								<span class="label">Small (100x50)</span>
+								<span class="banner">Promo Banner<a href="#" class="delete">X</a></span>
+							</li>
+							<li class="m">
+								<span class="label">Medium (150x75)</span>
+								<span class="banner">Promo Banner<a href="#" class="delete">X</a></span>
+							</li>
+							<li class="l">
+								<span class="label">Large (200x100)</span>
+								<span class="banner">Promo Banner<a href="#" class="delete">X</a></span>
+							</li>
+							<li class="xl">
+								<span class="label">X-Large (300x150)</span>
+								<span class="banner">Promo Banner<a href="#" class="delete">X</a></span>
+							</li>
+						</ul>
+					</fieldset>
+
+					<fieldset class="account_block_last">
+						<h5>2. Link to:</h5>
+
+						<div class="link">
+							<span class="icon">Icon</span>
+							<h6>Football</h6>
+							<p>By PublisherName<br />
+							Category &gt; Subcategory</p>
+						</div>
+
+						<a href="#">Remove Link</a>
+					</fieldset>
+
+					<div class="buttons_container">					
+						<a href="#">Cancel</a>
+						<a href="javascript: void(0);" onClick="$('#form_26631').submit(); return false;" class="button_gen corner_4">Save &amp; Publish</a>																	
+					</div>
+				</form>	
+			</div>
+		</div>
+		<!-- /Main Content -->
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid2.js"></script>
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){ 	
+			/* jQuery overlay append */
+			var overlayHeight = $(document).height();
+			var overlayWidth = $(document).width();		
+			var overlayHTML = "<div class='container_fullscreen' style='height:" + overlayHeight + "px;'>&nbsp;</div>";
+			$('body').append(overlayHTML);		
+		});
+	</script>	
+</body>
+</html>

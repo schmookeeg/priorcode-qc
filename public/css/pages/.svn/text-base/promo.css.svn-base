@@ -1,0 +1,42 @@
+/* PROMO VIEW - PAGE SPECIFIC */
+
+/* Add Promo */
+.add_promo #form_add_promo > fieldset {margin-right:50px; margin-left:50px; }
+.add_promo h5 {float:left;}
+.add_promo .icon_question {position:relative; top:-3px;}
+
+.add_promo .banners {clear:both;}
+.add_promo .banners li {padding-top:20px; clear:both;}
+.add_promo .banners li + li {margin-top:29px; padding-top:0;}
+.add_promo .banners span.label {display:block; float:left; width:186px; text-align:right;}
+.add_promo .banners .s span {line-height:50px;}
+.add_promo .banners .m span {line-height:75px;}
+.add_promo .banners .l span {line-height:100px;}
+.add_promo .banners .xl span {line-height:150px;}
+.add_promo .banners a.banner {font-size:11px; display:block; text-align:center; background:#f3f3f3; border:1px solid #777; margin-left:206px; -moz-box-shadow:0 0 4px #cfcfcf;}
+.add_promo .banners .s a.banner {width:98px; line-height:13px; height:38px; padding-top:10px;}
+.add_promo .banners .m a.banner {width:148px; line-height:73px;}
+.add_promo .banners .l a.banner {width:198px; line-height:98px;}
+.add_promo .banners .xl a.banner {width:298px; line-height:148px;}
+
+.add_promo .account_block_last h5 {line-height:24px;}
+.add_promo .account_block_last label {width:auto;}
+.add_promo .account_block_last .search {width:526px; margin:20px 12px;}
+.add_promo .account_block_last h6 {clear:both; margin:0 75px 10px 75px;}
+.add_promo .account_block_last ul {margin:0 75px; clear:both; border:1px solid #ddd; border-top:4px solid #ddd; height:221px; overflow-y:auto;}
+.add_promo .account_block_last li {color:#252525; line-height:16px; font-size:11px; height:50px; border-bottom:1px solid #ddd; padding:10px 19px 13px 19px;}
+.add_promo .account_block_last li h6 {line-height:16px; clear:none; margin:0;}
+.add_promo .account_block_last li .icon {display:block; width:50px; height:50px; line-height:50px; text-align:center; float:left; margin:0 19px 0 0; background:#d5d5d5;}
+
+/* Edit Promo */
+.add_promo .banners span.banner {margin-left:206px; position:relative; font-size:11px; display:block; text-align:center; background:#f3f3f3; border:1px solid #777; -moz-box-shadow:0 0 4px #cfcfcf;}
+.add_promo.edit .banners .s span.banner {width:98px; line-height:48px;}
+.add_promo.edit .banners .m span.banner {width:148px; line-height:73px;}
+.add_promo.edit .banners .l span.banner {width:198px; line-height:98px;}
+.add_promo.edit .banners .xl span.banner {width:298px; line-height:148px;}
+.add_promo.edit .banners span.banner a.delete {position:absolute; top:-12px; right:-12px; display:block; width:23px; height:23px; text-indent:-9999em; background: url(../../images/icon_delete.png) no-repeat 0 0;}
+
+.add_promo .account_block_last .link {margin:4px 19px 0 19px; width:220px; float:left; color:#252525; line-height:16px; font-size:11px;}
+.add_promo .account_block_last .link h6 {line-height:16px; clear:none; margin:0;}
+.add_promo .account_block_last .link .icon {display:block; width:50px; height:50px; line-height:50px; text-align:center; float:left; margin:0 19px 0 0; background:#d5d5d5;}
+.add_promo .account_block_last a {font-size:11px;}

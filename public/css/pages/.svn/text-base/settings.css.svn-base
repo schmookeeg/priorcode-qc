@@ -1,0 +1,12 @@
+/* SETTINGS - PAGE SPECIFIC */
+
+/* My Account */
+.settings_account label {display:block; float:left; clear:left; width:167px; text-align:right; margin:0 10px 20px 0;}
+.settings_account .info {display:block; margin:0 0 20px 0; color:#252525;}
+
+/* Devices */
+.devices h2 {line-height:32px; margin-bottom:16px;}
+
+.overlay.delete {width:315px; position:absolute; left:297px; top:250px;}
+.overlay.delete ul {margin-bottom:1em;}
+.overlay.delete .buttons_container {text-align:center;}

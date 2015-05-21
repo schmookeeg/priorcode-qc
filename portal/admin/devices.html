@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Portal - Devices</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="#">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li><a href="titles.html">Titles</a></li>
+			<li><a href="catalog.html">Catalog</a></li>
+			<li class="active"><a href="settings.html">Settings</a></li>
+			<li class="last"><a href="#">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->			
+		<div class="content devices">
+			<a href="device_add.html" class="button_gen corner_4 right">+ Add New Device</a>
+			<h2>Devices &nbsp;&nbsp;&nbsp;</h2>
+
+			<table id="flex1" class="full" style="display:none"></table>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid2.js"></script>
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+<script type="text/javascript">
+
+	$("#flex1").flexigrid
+	(
+	{
+	// url: 'post2.php',
+	dataType: 'json',
+	colModel : [
+		{display: 'Device', name : 'id', width : 120, sortable : true, align: 'left'},
+		{display: 'Make', name : 'make', width : 120, sortable : true, align: 'left'},
+		{display: 'Model Version', name : 'model', width : 120, sortable : true, align: 'left'},
+		{display: 'Resolution', name : 'name', width : 120, sortable : true, align: 'left'},
+		{display: 'Input', name : 'touch', width : 110, sortable : true, align: 'left'},
+		{display: 'Device Status', name : 'active', width : 100, sortable : true, align: 'left'},
+		{display: '', name : 'editdelete', width : 140, sortable : true, align: 'left'}
+
+		],
+	//buttons : [
+	//	{name: 'Add', bclass: 'add', onpress : test},
+	//	{name: 'Delete', bclass: 'delete', onpress : test},
+	//	{separator: true}
+	//	],
+	//searchitems : [
+	//	{display: 'ISO', name : 'iso'},
+	//	{display: 'Name', name : 'name', isdefault: true}
+	//	],
+	sortname: "iso",
+	sortorder: "asc",
+	//usepager: true,
+	title: 'Devices',
+	//useRp: true,
+	//rp: 15,
+	//showTableToggleBtn: true,
+	width: 900,
+	height: 200
+	}
+	);
+
+
+$(document).ready(function () 
+	{
+
+	
+
+	var foo2 = jQuery.getJSON(getBaseURL() + getAdminAppURL() + '/devices/',function(data)  // this link must be hardcoded; resultant links will be passed in the url return json.
+		{ 
+		$("#flex1").flexAddData(formatDeviceResults(data.result));
+		}
+	);
+	
+	$('.delbutton').live('click',function() 
+		{
+
+		if(confirm("Delete this Device?"))
+			{
+			$.ajax({
+				url: getBaseURL() + getAdminAppURL() + $(this).attr("apiid") + '/',
+				type:'DELETE',
+				success: function(data) 
+					{
+					$('.result').html(data);
+					//alert('Item deleted.');
+					//location.reload();
+					confirmRedirect('Item deleted' , "devices.html");
+					}
+				});
+			}
+
+		return false;
+		}
+	);
+
+
+	
+	}
+);
+
+	
+
+
+
+function formatDeviceResults(o)
+
+	{
+	
+	var rows = Array();
+	var jsonretval;
+	
+	for (i = 0; i < o.length; i++) 
+		{
+		var item = o[i];
+	
+		rows.push
+			(
+
+	
+
+
+				{ cell: 
+					[
+					item.name,
+					item.make,
+					item.model,
+					((typeof(item.display) == "undefined") ? "0x0" : (item.display.name + " (" + ((typeof(item.display.pixelHeight) == "undefined") ? "0" : item.display.pixelHeight) + "x" + ((typeof(item.display.pixelWidth) == "undefined") ? "0" : item.display.pixelWidth) + ")")),
+					(typeof(item.touch) == "undefined") ? "false":item.touch,
+					item.active,
+					'<ul class="edit_delete"><li><a href="device_edit.html?d=/devices/' +  item.id + '" class="button_gen_small corner_4">Edit</a></li><li><a class="delbutton button_gen_small corner_4" apiid="/devices/' + item.id + '">Delete</a></li></ul>' // replace is temporary to workaround bug in uri.href return
+					]
+				}
+			);
+		}
+
+        return {
+            total: o.length,
+            page: 1,
+            rows: rows
+        };
+
+
+	}
+	</script>
+</body>
+</html>

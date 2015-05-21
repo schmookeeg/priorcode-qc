@@ -1,0 +1,592 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Titles (Reject)</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="my_profile.html">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li class="active"><a href="titles.html">Titles</a></li>
+			<li><a href="catalog.html">Catalog</a></li>
+			<li class="last"><a href="settings.html">Settings</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->			
+		<div id="form_container" class="create_account_container create_titles_container content">
+<!--			<div class="single_button_container">
+				<a href="createtitle.html" class="button_gen corner_4">+ Create New Title</a>
+			</div> -->
+
+			<div class="titles_list_container pportal">
+				<table id="flex1" style="display:none"></table>
+			</div>
+		</div>
+
+		<form class="reject overlay">
+			<h4>Reason for rejecting &lt;Title Name&gt;:</h4>
+
+			<div class="choices">
+				<input type="radio" />
+				<label>Objectionable Content</label>
+				<input type="radio" />
+				<label>Legal</label>
+				<input type="radio" />
+				<label>Other</label>
+			</div>
+
+			<h4>Notes to publisher:</h4>
+
+			<textarea></textarea>
+
+			<div class="attachment">
+				<label>Attachment:</label>
+				<input type="text" class="text" />
+				<input type="button" value="Browse..." />
+			</div>
+
+			<div class="buttons">
+				<a href="#">Cancel</a>
+				<a href="#" class="button_gen corner_4">Reject</a>
+			</div>
+		</form>
+	</div>
+	
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid2.js"></script>
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+<script type="text/javascript">
+
+
+	$("#flex1").flexigrid2
+	(
+	{
+	// url: 'post2.php',
+	dataType: 'json',
+	colModel : [
+		{display: 'Title', name : 'id', width : 180, sortable : true, align: 'left'},
+		{display: 'Device', name : 'make', width : 60, sortable : true, align: 'left'},
+		{display: 'Review', name : 'model', width : 90, sortable : true, align: 'left'},
+		{display: 'Test', name : 'name', width : 150, sortable : true, align: 'left'},
+		{display: 'Signature Required', name : 'touch', width : 120, sortable : true, align: 'left'},
+		{display: 'Received', name : 'active', width : 120, sortable : true, align: 'left'},
+		{display: 'Updated', name : 'editdelete', width : 120, sortable : true, align: 'left'},
+		{display: '(flag)', name : 'editdelete', width : 60, sortable : true, align: 'left'}
+
+		],
+	//buttons : [
+	//	{name: 'Add', bclass: 'add', onpress : test},
+	//	{name: 'Delete', bclass: 'delete', onpress : test},
+	//	{separator: true}
+	//	],
+	//searchitems : [
+	//	{display: 'ISO', name : 'iso'},
+	//	{display: 'Name', name : 'name', isdefault: true}
+	//	],
+	sortname: "iso",
+	sortorder: "asc",
+	//usepager: true,
+	title: 'Titles',
+	//useRp: true,
+	//rp: 15,
+	//showTableToggleBtn: true,
+	width: 1000,
+	height: 800
+	}
+	);
+
+
+$(document).ready(function () 
+	{
+
+
+	$("#flex1").flexAddData(formatWorkflow());
+
+
+
+
+
+
+	$('.review').live('change',function()
+		{
+		if($(this).val() == 'pass')
+			{
+			jQuery.ajaxSetup({'beforeSend': function(xhr) {xhr.setRequestHeader("Content-Type", "appplication/json")}    });
+			$.ajax({type: 'POST',url: getBaseURL() + getAdminAppURL() + '/workflow/tasks/' + $(this).attr("taskid") + '/outcomes/pass' });
+			}
+		if($(this).val() == 'reject')
+			{
+			jQuery.ajaxSetup({'beforeSend': function(xhr) {xhr.setRequestHeader("Content-Type", "multipart/form-data")}    });
+			$.ajax({type: 'POST',url: getBaseURL() + getAdminAppURL() + '/workflow/tasks/' + $(this).attr("taskid") + '/outcomes/fail' });
+
+			}
+		if($(this).val() == 'move')
+			{
+			$.ajax({type: 'PUT',url: getBaseURL() + getAdminAppURL() + '/workflow/tasks/' + $(this).attr("taskid") + '/unclaim' });
+			}
+		}
+		);
+
+
+
+	$('.reviewassign').live('change',function()
+		{
+		if($(this).val() == 'assign')
+			{
+			$.ajax({type: 'PUT',url: getBaseURL() + getAdminAppURL() + '/workflow/tasks/' + $(this).attr("taskid") + '/assignee/' + $.cookie("userid") });
+			}
+		if($(this).val() == 'hold')
+			{
+			jQuery.ajaxSetup({'beforeSend': function(xhr) {xhr.setRequestHeader("Content-Type", "multipart/form-data")}    });
+			$.ajax({type: 'POST',url: getBaseURL() + getAdminAppURL() + '/workflow/tasks/' + $(this).attr("taskid") + '/outcomes/hold' });
+
+			}
+
+		}
+		);
+	}
+	);
+
+
+
+function formatWorkflow() // format for this local grid -- field mapping happens here
+
+	{
+	var revqueue=1;
+	var review=1;	
+	var testqueue=1;
+	var test=1;
+	var hold=1;
+
+
+	var rows = Array();
+	var jsonretval;
+	var i;
+	var k;
+	var l;
+	var devs;
+	var bin;
+	
+
+	// get test tasks
+	// get review tasks
+	// get apps requiring signing
+
+
+
+////////	// review apps NOT assigned
+
+		$.ajax({
+		    type: 'GET',
+		    url: getBaseURL() + getAdminAppURL() + '/workflow/tasks/types/reviewTask/state/open',
+		    dataType: 'json',
+		    success: function(data) 
+			{
+
+
+			for (i = 0; i < data.result.length; i++) 
+				{
+				var item = data.result[i];
+			
+				rows.push
+					(
+						{ cell: 
+							[
+							"<a href='title_details.html?d=/publishers/" + item.pubId + "/titles/" + item.titleId + "'>" + item.titleName + "</a><br><span style='font-size:9px;'>by " + item.pubName + "<br>" + item.titleCategories,
+							"",
+							"In review" + "<br><select class='reviewassign' id='select" + item.taskId + "' name='select" + item.taskId + "' taskid='" + item.taskId + "'><option selected='selected'>Select</option><option value='assign'>Assign to me</option><option value='hold'>Hold</option></select>",
+							"",
+							"",
+							item.taskCreatedDate,
+							"", // updated on
+							"",
+							"",
+							item.titleId,
+							0 // parent
+							]
+						}
+					);
+
+				// binaries??
+
+				$.ajax({
+				    type: 'GET',
+				    url: getBaseURL() + getAdminAppURL() + '/publishers/' + item.pubId + '/titles/' + item.titleId + '/content/',
+				    dataType: 'json',
+				    success: function(data2) 
+					{
+					for (k in data2.result)
+					bin = data2.result[k];
+					devs = "";
+					for(l in bin.devices)
+						{
+						devs += bin.devices[l].name + " ";
+						}
+
+					rows.push
+						(
+							{ cell: 
+								[
+								"<a href='" + bin.url.href + "/download'>" + bin.contentType + " - Binary " + bin.id + "</a>",
+								devs,
+								"",
+								"",
+								"",
+								bin.createdDate,
+								bin.lastModifiedDateAsDate, // updated on
+								"",
+								"",
+								item.titleId,
+								1 // child
+								]
+							}
+						);
+					
+
+					}, async:false
+					}
+					);
+
+
+
+				}
+		 },
+		    async: false
+		});
+
+////////// END review apps not assigned
+
+
+////////	// review apps ASSIGNED
+
+		$.ajax({
+		    type: 'GET',
+		    url: getBaseURL() + getAdminAppURL() + '/workflow/tasks/assignee/' + $.cookie("userid"),
+		    dataType: 'json',
+		    success: function(data) 
+			{
+
+
+			for (i = 0; i < data.result.length; i++) 
+				{
+				var item = data.result[i];
+			
+				rows.push
+					(
+						{ cell: 
+							[
+							"<a href='title_details.html?d=/publishers/" + item.pubId + "/titles/" + item.titleId + "'>" + item.titleName + "</a><br><span style='font-size:9px;'>by " + item.pubName + "<br>" + item.titleCategories,
+							"",
+							"In review - Assigned" + "<br><select class='review' id='select" + item.taskId + "' name='select" + item.taskId + "' taskid='" + item.taskId + "'><option selected='selected'>Select</option><option value='pass'>Pass</option><option value='reject'>Reject</option><option value='move'>Move to review queue</option></select>",
+							"",
+							"",
+							item.taskCreatedDate,
+							"", // updated on
+							"",
+							"",
+							item.titleId,
+							0 // parent
+							]
+						}
+					);
+
+				// binaries??
+
+				$.ajax({
+				    type: 'GET',
+				    url: getBaseURL() + getAdminAppURL() + '/publishers/' + item.pubId + '/titles/' + item.titleId + '/content/',
+				    dataType: 'json',
+				    success: function(data2) 
+					{
+					for (k in data2.result)
+					bin = data2.result[k];
+					devs = "";
+					for(l in bin.devices)
+						{
+						devs += bin.devices[l].name + " ";
+						}
+
+					rows.push
+						(
+							{ cell: 
+								[
+								"<a href='" + bin.url.href + "/download'>" + bin.contentType + " - Binary " + bin.id + "</a>",
+								devs,
+								"",
+								"",
+								"",
+								bin.createdDate,
+								bin.lastModifiedDateAsDate, // updated on
+								"",
+								"",
+								item.titleId,
+								1 // child
+								]
+							}
+						);
+					
+
+					}, async:false
+					}
+					);
+
+
+
+				}
+		 },
+		    async: false
+		});
+
+////////// END review apps ASSIGNED
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////	// test apps NOT assigned
+
+		$.ajax({
+		    type: 'GET',
+		    url: getBaseURL() + getAdminAppURL() + '/workflow/tasks/types/testContentTask/state/open',
+		    dataType: 'json',
+		    success: function(data) 
+			{
+
+
+			for (i = 0; i < data.result.length; i++) 
+				{
+				var item = data.result[i];
+			
+				rows.push
+					(
+						{ cell: 
+							[
+							"<a href='title_details.html?d=/publishers/" + item.pubId + "/titles/" + item.titleId + "'>" + item.titleName + "</a><br><span style='font-size:9px;'>by " + item.pubName + "<br>" + item.titleCategories,
+							"",
+							"In review" + "<br><select class='reviewassign' id='select" + item.taskId + "' name='select" + item.taskId + "' taskid='" + item.taskId + "'><option selected='selected'>Select</option><option value='assign'>Assign to me</option><option value='hold'>Hold</option></select>",
+							"",
+							"",
+							item.taskCreatedDate,
+							"", // updated on
+							"",
+							"",
+							item.titleId,
+							0 // parent
+							]
+						}
+					);
+
+				// binaries??
+
+				$.ajax({
+				    type: 'GET',
+				    url: getBaseURL() + getAdminAppURL() + '/publishers/' + item.pubId + '/titles/' + item.titleId + '/content/',
+				    dataType: 'json',
+				    success: function(data2) 
+					{
+					for (k in data2.result)
+					bin = data2.result[k];
+					devs = "";
+					for(l in bin.devices)
+						{
+						devs += bin.devices[l].name + " ";
+						}
+
+					rows.push
+						(
+							{ cell: 
+								[
+								"<a href='" + bin.url.href + "/download'>" + bin.contentType + " - Binary " + bin.id + "</a>",
+								devs,
+								"",
+								"",
+								"",
+								bin.createdDate,
+								bin.lastModifiedDateAsDate, // updated on
+								"",
+								"",
+								item.titleId,
+								1 // child
+								]
+							}
+						);
+					
+
+					}, async:false
+					}
+					);
+
+
+
+				}
+		 },
+		    async: false
+		});
+
+////////// END test apps not assigned
+
+
+
+
+
+
+////////	// sign apps NOT assigned
+
+		$.ajax({
+		    type: 'GET',
+		    url: getBaseURL() + getAdminAppURL() + '/workflow/tasks/types/signContentQueue/state/open',
+		    dataType: 'json',
+		    success: function(data) 
+			{
+
+
+			for (i = 0; i < data.result.length; i++) 
+				{
+				var item = data.result[i];
+			
+				rows.push
+					(
+						{ cell: 
+							[
+							"<a href='title_details.html?d=/publishers/" + item.pubId + "/titles/" + item.titleId + "'>" + item.titleName + "</a><br><span style='font-size:9px;'>by " + item.pubName + "<br>" + item.titleCategories,
+							"",
+							"In review" + "<br><select class='reviewassign' id='select" + item.taskId + "' name='select" + item.taskId + "' taskid='" + item.taskId + "'><option selected='selected'>Select</option><option value='assign'>Assign to me</option><option value='hold'>Hold</option></select>",
+							"",
+							"",
+							item.taskCreatedDate,
+							"", // updated on
+							"",
+							"",
+							item.titleId,
+							0 // parent
+							]
+						}
+					);
+
+				// binaries??
+
+				$.ajax({
+				    type: 'GET',
+				    url: getBaseURL() + getAdminAppURL() + '/publishers/' + item.pubId + '/titles/' + item.titleId + '/content/',
+				    dataType: 'json',
+				    success: function(data2) 
+					{
+					for (k in data2.result)
+					bin = data2.result[k];
+					devs = "";
+					for(l in bin.devices)
+						{
+						devs += bin.devices[l].name + " ";
+						}
+
+					rows.push
+						(
+							{ cell: 
+								[
+								"<a href='" + bin.url.href + "/download'>" + bin.contentType + " - Binary " + bin.id + "</a>",
+								devs,
+								"",
+								"",
+								"",
+								bin.createdDate,
+								bin.lastModifiedDateAsDate, // updated on
+								"",
+								"",
+								item.titleId,
+								1 // child
+								]
+							}
+						);
+					
+
+					}, async:false
+					}
+					);
+
+
+
+				}
+		 },
+		    async: false
+		});
+
+////////// END sign apps not assigned
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// after all the data is collected:
+
+        return {
+            total: rows.length,
+            page: 1,
+            rows: rows
+        };
+
+	}
+
+
+
+
+</script>	
+</body>
+</html>

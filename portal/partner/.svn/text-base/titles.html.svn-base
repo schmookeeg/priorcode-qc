@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Titles</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="my_profile.html">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li class="active"><a href="titles.html">Titles</a></li>
+			<li><a href="agreements.html">Agreements</a></li>
+			<li class="last"><a href="admin.html">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->			
+		<div id="form_container" class="create_account_container create_titles_container content">
+			<div class="single_button_container">
+				<a href="title_create.html" class="button_gen corner_4">+ Create New Title</a>
+			</div>
+			<div class="titles_list_container pportal">
+				<table id="flex1" style="display:none"></table>
+			</div>
+			
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid2.js"></script> -->
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+	<script type="text/javascript">					
+$(document).ready(function () 
+	{
+	
+
+	var foo2 = jQuery.getJSON(getBaseURL() + getPartnerAppURL() + '/publishers/' + getPublisherId() + '/titles/list',function(data) 
+		{ 
+		if(data)
+		 	$("#flex1").flexAddData(formatDeviceResults(data.result));
+		}
+		);
+
+	
+		$("#flex1").flexigrid
+		(
+		{
+		// url: 'post2.php',
+		dataType: 'json',
+		colModel : [
+			{display: 'Title', name : 'id', width : 170, sortable : true, align: 'left'},
+			{display: 'Content Type', name : 'make', width : 100, sortable : true, align: 'left'},
+			{display: 'Binaries', name : 'model', width : 90, sortable : true, align: 'left'},
+			{display: 'Devices', name : 'name', width : 90, sortable : true, align: 'left'},
+			{display: 'Downloads', name : 'touch', width : 90, sortable : true, align: 'left'},
+			{display: 'Released', name : 'active', width : 90, sortable : true, align: 'left'},
+			{display: 'Updated', name : 'editdelete', width : 90, sortable : true, align: 'left'}
+	
+	
+			],
+		//buttons : [
+		//	{name: 'Add', bclass: 'add', onpress : test},
+		//	{name: 'Delete', bclass: 'delete', onpress : test},
+		//	{separator: true}
+		//	],
+		//searchitems : [
+		//	{display: 'ISO', name : 'iso'},
+		//	{display: 'Name', name : 'name', isdefault: true}
+		//	],
+		sortname: "iso",
+		sortorder: "asc",
+		//usepager: true,
+		title: 'Titles',
+		//useRp: true,
+		//rp: 15,
+		//showTableToggleBtn: true,
+		width: 980,
+		height: 800
+		}
+		);
+		
+		
+		}
+	);
+	
+	function formatDeviceResults(o) // format for this local grid -- field mapping happens here
+	
+		{
+		
+		var rows = Array();
+		var jsonretval;
+		
+		for (i = 0; i < o.length; i++) 
+			{
+			var item = o[i];
+		
+			rows.push
+				(
+					{ cell: 
+					[
+						"<a href='title_details.html?d=" + urlAfter(String(item.url.href),'v1') + "'>" + item.name + "</a>",
+						item.contentTypes,
+						item.binaries,
+						item.devices,
+						item.downloads,
+						item.releasedOn,
+						item.updatedOn,
+						"",
+						"",
+						item.id,
+						0 // parent
+					]
+					}
+				);
+	
+			}
+	
+	        return {
+	            total: o.length,
+	            page: 1,
+	            rows: rows
+	        };
+	
+	
+		}
+	
+	
+	
+	
+	</script>	
+</body>
+</html>

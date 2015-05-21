@@ -1,0 +1,226 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Untitled Form</title>
+<link rel="stylesheet" type="text/css" href="../../public/css/view2.css" media="all">
+<script type="text/javascript" src="../javascript/jquery.min.js"></script>
+
+<script type="text/javascript" src="../javascript/jquery.validate.min.js"></script>	
+<script type="text/javascript" src="../javascript/global.js"></script>
+<script type="text/javascript" src="../javascript/view.js"></script>
+<script type="text/javascript" src="../javascript/calendar.js"></script>
+
+
+
+<script type="text/javascript" src="../javascript/json2.js"></script>
+
+</head>
+<body id="main_body" >
+	
+	<img id="top" src="../images/top.png" alt="">
+	<div id="form_container">
+
+	
+		<h1><a>Untitled Form</a></h1>
+		<form id="form_33540" class="appnitro"  method="post" action="/formbuilder/view.php">
+					<div class="form_description">
+			<h2>Qualcomm API Test</h2>
+			<p></p>
+		</div>						
+			<ul >
+			
+					<li id="li_1" >
+
+		<label class="description" for="element_1">API URL (ex "/rs/v1/devices") </label>
+		<div>
+			<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_3" >
+		<label class="description" for="element_3">HTTP Verb to use </label>
+		<div>
+		<select class="element select medium" id="element_3" name="element_3"> 
+			<option value="" selected="selected"></option>
+
+<option value="1" >GET</option>
+<option value="2" >POST</option>
+<option value="3" >DELETE</option>
+<option value="4" >PUT</option>
+
+		</select>
+		</div> 
+		</li>		<li id="li_2" >
+		<label class="description" for="element_2">JSON Data to send </label>
+
+		<div>
+			<textarea id="element_2" name="element_2" class="element textarea medium"></textarea> 
+		</div> 
+		<div>
+			<span id="errormsg"></span>
+		</div> 
+		</li>
+			
+					<li class="buttons">
+			    <input type="hidden" name="form_id" value="33540" />
+			    
+				<a id="lint" href="">Validate JSON</a><br><br> <input id="saveForm" class="button_text" type="button" name="submit" value="Submit API Test" />
+		<div>
+			<br><br>
+			<div id="retval" style="overflow:auto;"></div>
+		</div> 
+		</li>
+			</ul>
+
+		</form>	
+
+	</div>
+	<img id="bottom" src="../images/bottom.png" alt="">
+	</body>
+</html>
+
+<script type="text/javascript">
+
+$(document).ready(function () 
+	{
+
+
+	$('#lint').live('click',function() 
+		{
+
+		$.post('/validate/validate', { "json": $('#element_2').val(), "reformat": "0" },
+			function(jsonResponse) { 
+				try {
+					var response = eval('(' + jsonResponse + ')');
+				}
+				catch(err)
+				{
+					var response = new Object();
+					response.result = "Unable to load. Please contact Arc90.";
+					response.responseCode = "-1";
+				}
+				
+				if(response.responseCode == "0")
+				{
+					$("#errormsg").html("Valid JSON").css("color","green");
+					
+				}
+				else
+				{
+					$("#errormsg").html(response.result).css("color","red");	
+				}
+			}
+		);
+		return false;
+
+	});
+
+	
+	$('#saveForm').live('click',function() 
+		{
+		var testurl = $('#element_1').val();
+		var testmethod = $('#element_3').val();
+		var testjson = $('#element_2').val();
+		$('#retval').empty();
+
+		switch(testmethod)
+			{
+			case("1"): // get
+
+				$.ajax({
+				url: testurl,
+				type:'GET',
+				success: function(data)
+					{
+					$('#retval').html(JSON.stringify(data,'&nbsp;'));
+					},
+				error:function(xhr,err)
+					{
+					$('#retval').html("readyState: "+xhr.readyState+"<br>status: "+xhr.status+"<br>responseText: "+xhr.responseText);
+					}
+				});
+
+
+				break;
+			case("2"): // post
+
+				$.ajax(
+					{
+					url: testurl,
+					type:'POST',
+					contentType:'application/json',
+					processData: false,
+					data: testjson,
+					success: function(data) 
+						{
+						$('#retval').html(JSON.stringify(data,'&nbsp;'));
+						},
+					error:function(xhr,err)
+						{
+						$('#retval').html("readyState: "+xhr.readyState+"<br>status: "+xhr.status+"<br>responseText: "+xhr.responseText);
+						}
+					}
+				);
+		
+				break;
+			case("3"): // delete
+
+				$.ajax({
+					url: testurl,
+					type:'DELETE',
+					success: function(data) 
+						{
+						$('#retval').html(JSON.stringify(data,'&nbsp;'));
+						},
+					error:function(xhr,err)
+						{
+						$('#retval').html("readyState: "+xhr.readyState+"<br>status: "+xhr.status+"<br>responseText: "+xhr.responseText);
+						}
+					});
+
+
+				break;
+			case("4"): // put
+
+				$.ajax(
+					{
+					url: testurl,
+					type:'PUT',
+					contentType:'application/json',
+					processData: false,
+					data: testjson,
+					success: function(data) 
+						{
+						$('#retval').html(JSON.stringify(data,'&nbsp;'));
+						},
+					error:function(xhr,err)
+						{
+						$('#retval').html("readyState: "+xhr.readyState+"<br>status: "+xhr.status+"<br>responseText: "+xhr.responseText);
+						}
+					}
+				);
+
+				break;
+			}
+		}
+	);
+	}
+
+	
+
+);
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+

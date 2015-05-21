@@ -1,0 +1,187 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Edit Title</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body>
+
+<div class="demo">
+
+<div id="tabs">
+	<ul>
+		<li><a href="#titles-1">TITLES</a></li>
+		<li><a href="#titles-2">AGREEMENTS</a></li>
+		<li><a href="#titles-3">SUPPORT</a></li>
+	</ul>
+	<div id="titles-1">
+
+	<form id="form_33865" class="appnitro"  method="post" action="">
+		<div class="titles-details">
+			
+			<div>
+				<div id="retval" style="overflow:auto;"></div>
+			</div> 
+
+		<p><a id="EditTitleMetadata" href="title_metadata_edit.html?">Edit Title Metadata</a></p>
+		<label> TitleName : </label> <span style="padding-left:100px"><a id="element_1" ></a> 
+		<br />
+		
+		<label> Description : </label> <span style="padding-left:90px"><a id="element_3" ></a> 
+		<br />
+		
+		<label> Tags : </label> <span style="padding-left:150px"><a id="element_4" ></a> 
+		<br />
+
+		<label> EULA : </label><span style="padding-left:143px"> <a id="element_5" ></a> 
+		<br />
+		
+		<label> Copyright : </label> <span style="padding-left:100px"><a id="element_11" ></a> 
+		<br />
+
+
+<table border="1"   width="800" >
+	<tr >
+		<td><label> Category : </label> <span style="padding-left:80px"><a id="element_20" ></a></td>
+		<td><label> Company Name : </label> <span style="padding-left:80px"><a id="element_24" ></a></td>
+	</tr>
+	<tr>
+		<td><label> Content Rating : </label> <span style="padding-left:80px"><a id="element_21" ></a></td>
+		<td><label> Support URL : </label> <span style="padding-left:80px"><a id="element_23" ></a> </td>
+	</tr>
+	<tr>
+		<td><label> Countries : </label> <span style="padding-left:80px"><a id="element_22" ></a></td>
+		<td><label> Developer's Email : </label> <span style="padding-left:80px"><a id="element_10" ></a></td>
+	</tr>
+</table>
+
+		
+		</div>
+			    <input type="hidden" name="form_id" value="33865" />
+		</form>	
+
+	</div>
+
+	<div id="titles-2">
+		<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus gravida ante, ut pharetra massa metus id nunc. Duis scelerisque molestie turpis. Sed fringilla, massa eget luctus malesuada, metus eros molestie lectus, ut tempus eros massa ut dolor. Aenean aliquet fringilla sem. Suspendisse sed ligula in ligula suscipit aliquam. Praesent in eros vestibulum mi adipiscing adipiscing. Morbi facilisis. Curabitur ornare consequat nunc. Aenean vel metus. Ut posuere viverra nulla. Aliquam erat volutpat. Pellentesque convallis. Maecenas feugiat, tellus pellentesque pretium posuere, felis lorem euismod felis, eu ornare leo nisi vel felis. Mauris consectetur tortor et purus.</p>
+	</div>
+	<div id="titles-3">
+		<p>Mauris eleifend est et turpis. Duis id erat. Suspendisse potenti. Aliquam vulputate, pede vel vehicula accumsan, mi neque rutrum erat, eu congue orci lorem eget lorem. Vestibulum non ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce sodales. Quisque eu urna vel enim commodo pellentesque. Praesent eu risus hendrerit ligula tempus pretium. Curabitur lorem enim, pretium nec, feugiat nec, luctus a, lacus.</p>
+		<p>Duis cursus. Maecenas ligula eros, blandit nec, pharetra at, semper at, magna. Nullam ac lacus. Nulla facilisi. Praesent viverra justo vitae neque. Praesent blandit adipiscing velit. Suspendisse potenti. Donec mattis, pede vel pharetra blandit, magna ligula faucibus eros, id euismod lacus dolor eget odio. Nam scelerisque. Donec non libero sed nulla mattis commodo. Ut sagittis. Donec nisi lectus, feugiat porttitor, tempor ac, tempor vitae, pede. Aenean vehicula velit eu tellus interdum rutrum. Maecenas commodo. Pellentesque nec elit. Fusce in lacus. Vivamus a libero vitae lectus hendrerit hendrerit.</p>
+	</div>
+</div>
+
+</div><!-- End demo -->
+
+<div class="demo-description">
+
+
+<p class="common"></p>
+
+</div><!-- End demo-description -->
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid2.js"></script> -->
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$("#tabs").tabs();
+	});
+	</script>
+
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+
+		$.urlParam = function(name){
+			var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+			if (!results) { return 0; }
+		
+			return results[1] || 0;
+		}
+
+	//SAVE TITLE
+	$('#editForm').click(function() 
+	{
+		// create title
+		var rating = '{"violence":' + rating_violence + ',"sex":' + rating_sexualcontent + ',"drugs":' + rating_alcohol + ',"profanity":' + rating_profanity +',"adultThemes":'+ rating_mature + ',"level":1}';
+		var jsondata = '{"languages": {"en": {"languageCode": "en","displayName": "Title in en","description": "Title Description in en","keywords": "keyword1,keyword2,keyword3","eula":"' + eula + '"}}, "name":"' + $("#element_1").val() + '","displayName":"' + $("#element_2").val() + '","description":"' + $("#element_3").val()  
+		+ '","category":' + $("#element_17").val() + ',"subCategory":' + 501 + ',"supportUrl":"' + $("#element_9").val() + '","supportEmail":"' + $("#element_10").val()
+		+ '","copyright":"' + $("#element_11").val() + '","countries":"' + $("#element_13").val() + '","rating":' + rating + '}'; 
+		
+		if (confirm(jsondata))
+		{
+			$.ajax(
+				{
+				url: getBaseURL() + getPartnerAppURL() + $.urlParam('d'),
+				type:'PUT',
+				contentType:'application/json',
+				processData: false,
+				data: jsondata,
+				success: function(data) 
+					{
+					$('.result').html(data);
+					//alert('Update successful');
+					//window.location = "devices.html";
+					confirmRedirect("Update successful" , "devices.html");
+					}
+				}
+			);
+
+
+		}
+		else
+		{
+			//alert("Update cancelled");
+			confirmRedirect("Update cancelled" , "noRedirect");
+		}
+	return false;
+	});	
+
+		var url = getBaseURL() + getPartnerAppURL() + $.urlParam('d');
+		$.getJSON(getBaseURL() + getPartnerAppURL() + $.urlParam('d'), function(data){
+		    var html = '';
+	        html = 'Title Display Name: ' + data.result.name + ' Description: ' + data.result.languages.en.description ;
+		    //$('p.common').text(html);
+		    $("a.[href='title_metadata_edit.html?']").attr('href', 'title_metadata_edit.html?d=' + $.urlParam('d'));
+	
+	
+			$('#element_1').text(data.result.name);
+	
+			$('#element_2').text(data.result.name);
+			$('#element_3').text(data.result.languages.en.description );
+			$('#element_4').text(data.result.languages.en.keywords);
+			$('#element_5').text(data.result.languages.en.eula);
+			$('#element_9').text(data.result.supportUrl);
+			$('#element_10').text(data.result.supportEmail);
+			$('#element_11').text(data.result.copyright);
+	
+	//category content rating countries company name developer name developers website support url developers email
+			$('#element_20').text(data.result.category.name);
+			$('#element_21').text(data.result.rating.rating);
+			$('#element_22').text(data.result.countries);
+			$('#element_23').text(data.result.supportUrl);
+			
+			//$('#element_11').text(data.result.countries);
+
+
+		});
+
+	});
+
+
+</script>	
+
+</body>
+</html>

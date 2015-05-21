@@ -1,0 +1,225 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Registration Email Verification</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="my_profile.html">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li class="active"><a href="titles.html">Titles</a></li>
+			<li><a href="agreements.html">AGREEMENTS</a></li>
+			<li class="last"><a href="admin.html">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<div class="expose_target">
+			<!-- Alert Container -->
+			<div class="alert_container corner_alert">
+				<img src="../images/icon_check_green.gif" width="16" height="13" /> <strong>Thank you.</strong> Your email address has been verified. Please complete the registration form.
+			</div>
+			<!-- /Alert Container -->
+			
+			<!-- Main Content -->
+			<div id="form_container" class="create_account_container">
+				<div class="form_block corner_8">
+					<div class="form_header">
+						<h3>REGISTRATION - username@domain.com</h3>
+						<span>*required field</span>
+					</div>
+					
+					<div class="error_messages" style="display: none;"></div>
+					
+					<form class="registration_container"  method="post" action="">																
+						<fieldset>
+							<label class="description" for="element_1">Password<span>*</span>:</label>		
+							<input id="element_1" name="element_1" class="element text medium" type="password" maxlength="255" value=""/> 
+							<span class="field_instructions">Minimum of 8 case-sensitive alphanumeric characters with 1 capital letter and 1 number</span>
+						</fieldset>
+						
+						<fieldset>
+							<label class="description" for="element_2">Confirm Password<span>*</span>:</label>		
+							<input id="element_2" name="element_2" class="element text medium" type="password" maxlength="255" value=""/> 
+						</fieldset>
+						
+						<fieldset>
+							<label class="description" for="element_3">First Name<span>*</span>:</label>	
+							<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value=""/> 
+						</fieldset>
+						
+						<fieldset>
+							<label class="description" for="element_4">Last Name<span>*</span>:</label>		
+							<input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value=""/> 
+						</fieldset>
+						
+						<fieldset>
+							<label class="description" for="element_5">Nickname:</label>		
+							<input id="element_5" name="element_5" class="element text medium" type="text" maxlength="255" value=""/> 
+						</fieldset>		
+						
+						<div class="buttons_container buttons_agreement top_rule">					
+	  						<a href="#">Cancel</a>
+	  						<input type="submit" id="saveForm" value="OK" class="button_form button_gen corner_4" />
+  						</div>
+					</form>
+				</div>	
+			</div>
+			<!-- /Main Content -->	
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid2.js"></script> -->
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+	
+	<script type="text/javascript">
+  	$(document).ready(function(){
+  	  
+  	  //CLEAR FORM DATA
+    	$("#saveForm").attr('disabled', 'disabled');
+    	$("#saveForm").addClass("button_disabled");
+    	$("#element_1").val("");
+    	$("#element_2").val("");
+    	$("#element_3").val("");
+    	$("#element_4").val("");
+    	$("#element_5").val("");
+    	
+    	/* Button disabling/enabling */
+    	var flag_password = false;
+      var flag_confirm = false;
+      var flag_first = false;
+      var flag_last = false;
+
+      function changeButtonStatus() {
+        if (flag_password && flag_confirm && flag_first && flag_last) {
+          $("#saveForm").removeAttr("disabled");
+          $("#saveForm").removeClass("button_disabled");
+        }
+        else {
+          $("#saveForm").attr("disabled", "disabled");
+        	$("#saveForm").addClass("button_disabled");
+        }
+      }
+
+      function changeFlag(object, flag) { //Flag is a string of the variable name
+        if(eval(flag) && (object.val() != "" || object.is(":checked"))) //Flag already set to true and has data
+          return true;
+
+        if(object.val() != "" || object.is(":checked")) //Data in field
+          eval(flag+" = true;");
+        else //Field empty
+          eval(flag+" = false;");
+
+        changeButtonStatus();
+        return flag;   
+      }
+
+      $("#element_1").keyup(function() {
+        changeFlag($(this), "flag_password");
+      });
+      $("#element_2").keyup(function() {
+        changeFlag($(this), "flag_confirm");
+      });
+    	$("#element_3").keyup(function() {
+        changeFlag($(this), "flag_first");
+      });
+    	$("#element_4").keyup(function() {
+        changeFlag($(this), "flag_last");
+      });
+  	  
+  	  /* Validation */
+  	  $(".registration_container").validate({
+  	    onfocusout: false,
+        onkeyup: false,
+        onclick: false,
+        focusInvalid: false,
+        errorLabelContainer: ".error_messages",
+        errorElement: "span",
+  	    submitHandler: function() {
+          $("#saveForm").attr('disabled', 'disabled');
+        	$("#saveForm").addClass("button_disabled");
+  	      location.href='account_create_confirmation.html';
+  	    },
+  	    invalidHandler: function(form, validator) {
+          validator.showErrors(); // Add error class to invalid fields
+          $('label').removeClass("error-label"); // Remove all previous error labels
+
+          $('.error').each(function() { // Add 'error-label' class to labels of invalid fields
+            $('label[for='+$(this).attr('id')+']').addClass("error-label");
+          });
+
+          $('label').each(function() { // Cleanup and remove 'error-label' from labels that are not associated with a field
+            if ($(this).attr('for') == "")
+              $(this).removeClass("error-label");
+          });
+          window.scrollTo(0,0);
+        },
+  	    rules: {
+  	      element_1: { // Password
+  	        required: true,
+  	        password: true
+  	      },
+  	      element_2: { // Confirm Password
+  	        required: true,
+  	        equalTo: "#element_1"
+  	      },
+  	      element_3: { // First Name
+  	        required: true
+  	      },
+  	      element_4: { // Last Name
+  	        required: true
+  	      }
+  	    },
+  	    messages: {
+  	      element_1: {
+  	        required: "Please enter a valid password. ",
+            password: "Password must contain a minimum of 8 characters with 1 capital letter and 1 number. "
+  	      },
+  	      element_2: {
+  	        required: "Please confirm your password. ",
+            equalTo: "Please enter the same password as above. "
+  	      },
+  	      element_3: {
+  	        required: "Please enter a valid first name. "
+  	      },
+  	      element_4: {
+  	        required: "Please enter a valid last name. "
+  	      }
+  	    }
+  	  });
+  	  
+		/* jQuery overlay append */
+		var overlayHeight = $(document).height();
+		var overlayHTML = "<div class='container_fullscreen' style='height:" + overlayHeight + "px;'>&nbsp;</div>";
+		$('body').append(overlayHTML);	
+
+  	});
+
+  </script>
+</body>
+</html>

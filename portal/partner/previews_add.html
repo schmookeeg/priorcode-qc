@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Add Previews</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body>
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="my_profile.html">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li class="active"><a href="titles.html">Titles</a></li>
+			<li><a href="agreements.html">AGREEMENTS</a></li>
+			<li class="last"><a href="admin.html">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->
+		<div id="form_container" class="create_account_container">
+			<div class="form_block expose_target corner_8">
+				
+				<div class="form_header">
+					<h3>ADD PREVIEWS</h3>					
+				</div>
+				<form id="form_33863" class="appnitro add_previews_container" enctype="multipart/form-data" method="post" action="">																	
+					<div class="demo">
+			
+						<h4 id="SelectScreen" class="header_help">1. Select screen size and input type</h4><a href="javascript: void(0);" title="Extra information" class="icon_question">?</a>							
+					
+						<fieldset class="select_screen_container">
+							<div class="select_screen_content">
+								<ul>
+									<li>
+										Resolution
+									</li>
+									<li>
+										Size
+									</li>
+									<li>
+										Input Type
+									</li>
+								</ul>
+								<ol id="selectable" class="select_screen_list"></ol>
+							</div>
+						</fieldset>
+					
+					</div>
+					<!-- End demo -->
+			
+					<div class="demo-description">
+			
+						<h4 id="AddImages" class="header_help">2. Add Images (png file type)</h4><a href="javascript: void(0);" title="Extra information" class="icon_question">?</a>					
+						
+						
+						<fieldset class="add_images_container">
+							<input type="hidden" id="displayid" name="displayId" value="2">
+							<input type="hidden" id="position" name="position" value="1">
+							<input type="hidden" id="touch"  name="touch" value="true">
+							<input type="hidden" id="width"  name="width" value="512">
+							<input type="hidden" id="height"  name="height" value="512">
+							<div class="add_images_content">								
+								<ul>
+									<li>
+										<div id="image1" name="file" class="image_block"><p>Click to choose file</p></div>
+										<input skip="no" id="file1" name="file" class="element file" type="file" size="1" style="display: none;"/>
+									</li>
+									<li>
+										<div id="image2" name="file" class="image_block"><p>Click to choose file</p></div>
+										<input skip="yes" id="file2" name="file" class="element file" type="file" size="1" style="display: none;"/>
+									</li>
+									<li>
+										<div id="image3" name="file" class="image_block"><p>Click to choose file</p></div>
+										<input skip="yes" id="file3" name="file" class="element file" type="file" size="1" style="display: none;"/>
+									</li>
+									<li>
+										<div id="image4" name="file" class="image_block"><p>Click to choose file</p></div>
+										<input skip="yes" id="file4" name="file" class="element file" type="file" size="1" style="display: none;"/>
+									</li>
+									<li>
+										<div id="image5" name="file" class="image_block"><p>Click to choose file</p></div>
+										<input skip="yes" id="file5" name="file" class="element file" type="file" size="1" style="display: none;"/>
+									</li>
+								</ul>
+							</div>
+						</fieldset>
+								
+					</div>
+					<!-- End demo-description -->
+										
+					<div class="buttons_container stroke_top">					
+						<a href="titles.html">Cancel</a>
+						<input id="saveForm" class="button_gen corner_4" type="button" name="submit" value="Save" disabled="disabled" skip="yes" />																		
+					</div>										
+				</form>	
+			</div>
+		</div>		
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid2.js"></script> -->
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+	<script type="text/javascript">
+$(function() {
+	$("#selectable").selectable({
+		stop: function(){
+			var result = $("#select-result").empty();
+			$(".ui-selected", this).each(function(){
+				var index = $("#selectable li").index(this);
+				
+				if(index > -1){
+					result.append(" #" + (index+1));
+					
+					selectedName = name[index];
+					selectedDisplayId = displayId[index];
+					selectedPosition = position[index];
+					selectedHeight = height[index];
+					selectedWidth = width[index];
+					
+					//var touch = (typeof(data.result[i].touch) == "undefined") ? "Non-touch": data.result[i].touch;
+					selectedTouch = touch[index];
+
+//					result.append("<br/> name: " + selectedName );
+//					result.append("<br/> displayId: " + selectedDisplayId );
+//					result.append("<br/> height: " + selectedHeight );
+//					result.append("<br/> width: " + selectedWidth );
+//					result.append("<br/> AspectRatio (Position): " + selectedPosition );
+					flag_device = true;
+					if(	flag_device && flag_file_upload  ){
+						$('#saveForm').removeAttr('disabled');
+					}
+					$('#displayid').val(selectedDisplayId);
+					$('#touch').val(selectedTouch);
+					$('#width').val(selectedWidth);
+					$('#height').val(selectedHeight);
+						
+				}					
+			});
+		}
+	});
+});
+</script>
+ 
+<script type="text/javascript">
+
+	var name = new Array();
+	var displayId = new Array();
+	var position = new Array();
+	var touch = new Array();
+	var height = new Array();
+	var width = new Array();
+	
+	var selectedName = '';
+	var selectedDisplayId = '';
+	var selectedPosition = '';
+	var selectedHeight = '';
+	var selectedWidth = '';
+	var selectedTouch = '';
+	
+	var flag_device = false;
+	var flag_file_upload = false;
+	
+	var titleid = "";
+
+	var numpreviews=0;
+
+
+	$(document).ready(function() {
+
+		$.urlParam = function(name){
+			var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+			if (!results) { return 0; }
+		
+			return results[1] || 0;
+		}
+	
+		var url = getBaseURL() + getPartnerAppURL() + $.urlParam('d');
+		$.getJSON(url, function(data){
+			$('#titleid').text('Add Previews - ' + data.result.name);
+			titleid = data.result.id;
+			
+		});
+		
+		//DISPLAYS
+		$.getJSON( getBaseURL() + getPartnerAppURL() + '/displays', function(data){
+		    var html = '';
+		    var len = data.result.length;
+		    for (var i = 0; i < len; i++) {
+				touch[i] = (typeof(data.result[i].touch) == "undefined") ? "Non-touch": data.result[i].touch;
+		        html += '<li class="ii-widget-content" id=display_' + i + '"> <span style="padding-left:40px">' + data.result[i].name + '</span> <span style="padding-left:40px">  ' + data.result[i].pixelWidth + ' x ' + data.result[i].pixelHeight  + '</span>' + ' <span style="padding-left:40px"> ' + touch[i] + '</span></li>';
+		    	name.push(data.result[i].name);
+		    	displayId.push(data.result[i].id);
+		    	height.push(data.result[i].pixelHeight);
+		    	width.push(data.result[i].pixelWidth);
+		    	position.push(data.result[i].aspectRatio);
+		
+			}
+		    $('#selectable').append(html);			
+			
+		});
+
+
+    function ajaxFileUpload(previewurl)
+    {
+        //starting setting some animation when the ajax starts and completes
+        $("#loading")
+        .ajaxStart(function(){
+            $(this).show();
+        })
+        .ajaxComplete(function(){
+            $(this).hide();
+        });
+       
+        /*
+            prepareing ajax file upload
+            url: the url of script file handling the uploaded files
+                        fileElementId: the file type of input element id and it will be the index of  $_FILES Array()
+            dataType: it support json, xml
+            secureuri:use secure protocol
+            success: call back function when the ajax complete
+            error: callback function when the ajax failed
+        */
+		//post
+		// var previewData = 'file=' + $('#file1').val() + '&displayId=' + selectedDisplayId + '&position=1' +  '&touch=' + selectedTouch +  '&height=' + selectedHeight + '&width=' + selectedWidth ;
+
+		// var previewData = '{"file":' + $('#file1').val() + ',"displayId":' + selectedDisplayId + ',"position":1' +  ',"touch":' + selectedTouch +  ',"height":' + selectedHeight + ',"width":' + selectedWidth + '}' ;
+
+        $.ajaxFileUploadWholeForm
+        (
+ 
+            {
+                url:previewurl,
+		type:'POST',
+                secureuri:false,
+                fileElementId:'file1',
+                // dataType: 'json',
+		//		data: previewData,
+                success: function (data, status)
+                {
+		//	alert("Preview Upload Successful.");
+		//	window.location = "titles.html";
+			//alert("Previews left: " + numpreviews);
+			numpreviews--;
+                },
+                error: function (data, status, e)
+                {
+                    //alert(e);
+					confirmRedirect(e , "noRedirect");
+                }
+            },'form_33863'
+        )
+        
+        return false;
+	
+    }  
+	
+	$('#image1').click(function()
+		{
+			document.getElementById('file1').style.display='';
+
+			flag_file_upload = true;
+			if(	flag_device && flag_file_upload  ){
+				$('#saveForm').removeAttr('disabled');
+			}							
+			
+		}
+	);
+	$('#image2').click(function()
+		{
+			document.getElementById('file2').style.display='';
+
+			flag_file_upload = true;
+			if(	flag_device && flag_file_upload  ){
+				$('#saveForm').removeAttr('disabled');
+			}							
+
+		}
+	);
+	$('#image3').click(function()
+		{
+			document.getElementById('file3').style.display='';
+
+			flag_file_upload = true;
+			if(	flag_device && flag_file_upload  ){
+				$('#saveForm').removeAttr('disabled');
+			}							
+
+		}
+	);
+	$('#image4').click(function()
+		{
+			document.getElementById('file4').style.display='';
+
+			flag_file_upload = true;
+			if(	flag_device && flag_file_upload  ){
+				$('#saveForm').removeAttr('disabled');
+			}							
+
+		}
+	);
+	$('#image5').click(function()
+		{
+			document.getElementById('file5').style.display='';
+
+			flag_file_upload = true;
+			if(	flag_device && flag_file_upload  ){
+				$('#saveForm').removeAttr('disabled');
+			}							
+
+		}
+	);
+
+
+	$('#saveForm').click(function()
+		{
+
+			var i;
+			for(i=1; i < 6; i++)
+				{
+				$('.file').attr("skip","yes")
+				$('#file'+i).attr("skip","no")
+				if($('#file'+i).val().length>0)
+					{
+					numpreviews++;
+					$('#position').val(i);	
+					ajaxFileUpload(getBaseURL() + getPartnerAppURL() + '/publishers/' + getPublisherId() + '/titles/' + titleid + '/previews');
+					}
+				}
+			flag_file_upload = true;
+			if(	flag_device && flag_file_upload  ){
+				$('#saveForm').removeAttr('disabled');
+			}
+
+			setTimeout(function()
+				{ 
+				if(numpreviews==0) 
+					{
+					//alert("File(s) Uploaded Successfully.");
+					//window.location = "title_details.html?d=" + $.urlParam('d');
+					confirmRedirect("File(s) Uploaded Successfully." , "title_details.html?d=" + $.urlParam('d'));
+					}
+
+			 	}, 1000);
+
+							
+
+		});
+		
+		/* jQuery overlay append */
+		var overlayHeight = $(document).height();
+		var overlayHTML = "<div class='container_fullscreen' style='height:" + overlayHeight + "px;'>&nbsp;</div>";
+		$('body').append(overlayHTML);
+	
+	
+		/* Tooltips */
+		$("a[title]").tooltip({
+			delay: 10,
+			offset: [20, 71],
+			onBeforeShow: function(toolTipEvent, toolTipPosition) {
+			  this.getTip().css({'z-index':'9000'});
+			}
+		});
+		
+	
+		/* Alternating row bg color for screen size list */
+		$(".select_screen_content ol li:odd").addClass("alt_row");
+	
+	});
+
+</script>	
+ 
+ 
+</body>
+</html>

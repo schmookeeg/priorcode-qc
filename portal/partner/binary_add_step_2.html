@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Add Binary</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="my_profile.html">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li class="active"><a href="titles.html">Titles</a></li>
+			<li><a href="agreements.html">AGREEMENTS</a></li>
+			<li class="last"><a href="admin.html">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->
+		<div id="form_container" class="create_account_container">
+			<div class="form_block expose_target corner_8">
+												
+				<div class="form_header">
+					<h3>ADD NEW BINARY</h3>
+					<span>*required field</span>
+				</div>
+				
+				<ul class="steps_container">
+					<li class="previous first"><span class="txt">Step 1: Enter Binary Details</span><span class="divider">&nbsp;</span></li>
+					<li class="current"><span class="txt">Step 2: Export Compliance</span><span class="divider">&nbsp;</span></li>
+					<li class="last">&nbsp;</li>
+				</ul>
+				
+				
+				<div class="intro_content">
+					<h4>Encryption Export Compliance</h4>
+					<p>
+						NOTE: Applications that do not perform or contain cryptographic (encryption/decryption) functions themselves, but rather, interface with, call to, use, invoke, enable/disable cryptographic functionalities on other products (such as the underlying platform, browser, or application programming interface) are considered "specially designed" products that must be classified for export purposes as if they contain cryptographic functions.
+					</p>	
+					<p>
+						For example, an application that is written to call to OpenSSL within the operating platform would be classified for export purposes as if it contains OpenSSL.
+					</p>	
+					<p>	
+						If the statement above applies to your application, please choose "Other Encryption".
+					</p>
+				</div>
+				
+				<form name="encrption_type_form" id="encrption_type_form" action="" method="">
+					
+					<select id="select_encryption" class="encryption_menu">
+						<option value="">Select type of encryption</option>
+						<option value="no-encryption">No encryption</option>
+						<option value="limited-encryption">Limited encryption</option>
+						<option value="other-encryption">Other encryption</option>
+					</select>
+					
+					<!-- Limited Encryption Selection -->
+					<fieldset id="encryption_limited">
+						<div class="intro_content">
+							<h4>For Limited Encryption Applications:<br/>
+								Encryption for Authentication/Password Protection Only or Banking
+							</h4>
+							<p>
+								Applications with limited cryptographic functions for access control, password protection, authentication, or those applications specifically limited to banking. (There is no encryption of files or text except as directly related to the protection of passwords, Personal Identification Numbers (PINs) or similar data to prevent unauthorized access.)
+							</p>
+							<p>
+								This software is <strong>not</strong> user-accessible and it <strong>limited</strong> to or specifically designed for any of the following functions:
+							</p>
+						</div>
+						
+						<fieldset class="radio_question_group">	
+							<fieldset>
+								<legend><span class="required">*</span>Execution of copy-protected software</legend>
+								<ul>
+									<li><input type="radio" id="q0101" name="q01" value="yes" /><label for="q0101">Yes</label></li>
+									<li><input type="radio" id="q0102" name="q01" value="no" /><label for="q0102">No</label></li>
+								</ul>
+							</fieldset>
+							
+							<fieldset>
+								<legend><span class="required">*</span>Copy-protected read-only media</legend>
+								<ul>
+									<li><input type="radio" id="q0201" name="q02" value="yes" /><label for="q0201">Yes</label></li>
+									<li><input type="radio" id="q0202" name="q02" value="no" /><label for="q0202">No</label></li>
+								</ul>
+							</fieldset>
+							
+							<fieldset>
+								<legend><span class="required">*</span>One-time encryption of copyright protected audio or video data</legend>
+								<ul>
+									<li><input type="radio" id="q0301" name="q03" value="yes" /><label for="q0301">Yes</label></li>
+									<li><input type="radio" id="q0302" name="q03" value="no" /><label for="q0302">No</label></li>
+								</ul>
+							</fieldset>
+							
+							<fieldset>
+								<legend><span class="required">*</span>Authentication or digital signatures</legend>
+								<ul>
+									<li><input type="radio" id="q0401" name="q04" value="yes" /><label for="q0401">Yes</label></li>
+									<li><input type="radio" id="q0402" name="q04" value="no" /><label for="q0402">No</label></li>
+								</ul>
+							</fieldset>
+							
+							<fieldset>
+								<legend><span class="required">*</span>Fixed data compression or coding techniques</legend>
+								<ul>
+									<li><input type="radio" id="q0501" name="q05" value="yes" /><label for="q0501">Yes</label></li>
+									<li><input type="radio" id="q0502" name="q05" value="no" /><label for="q0502">No</label></li>
+								</ul>
+							</fieldset>
+							
+							<fieldset>
+								<legend><span class="required">*</span>Banking or money transactions</legend>
+								<ul>
+									<li><input type="radio" id="q0601" name="q06" value="yes" /><label for="q0601">Yes</label></li>
+									<li><input type="radio" id="q0602" name="q06" value="no" /><label for="q0602">No</label></li>
+								</ul>
+							</fieldset>
+							
+							<fieldset>
+								<legend><span class="required">*</span>Password protection, PIN or data protection for preventing unauthorized access</legend>
+								<ul>
+									<li><input type="radio" id="q0701" name="q07" value="yes" /><label for="q0701">Yes</label></li>
+									<li><input type="radio" id="q0702" name="q07" value="no" /><label for="q0702">No</label></li>
+								</ul>
+							</fieldset>
+							
+							<fieldset>
+								<legend><span class="required">*</span>Application is designed for installation by the user without substantial support by the supplier</legend>
+								<ul>
+									<li><input type="radio" id="q0801" name="q08" value="yes" /><label for="q0801">Yes</label></li>
+									<li><input type="radio" id="q0802" name="q08" value="no" /><label for="q0802">No</label></li>
+								</ul>
+							</fieldset>
+						</fieldset>																																																																					
+					</fieldset>
+					<!-- /Limited Encryption Selection -->
+					
+					<!-- Other Encryption Selection -->
+					<fieldset id="encryption_other">
+						<div class="intro_content">
+							<h4>For Other Encryption Applications : Cryptographic functions for transforming data in order to hide information, prevent its undetected modification or prevent its unauthorized use.</h4>
+						</div>
+						<fieldset class="radio_question_group">
+							<fieldset>
+								<legend>Do you have the Commodity Classification Automated Tracking System (CCATS) information?</legend>
+								<ul>
+									<li><input type="radio" id="q0901" name="q09" value="yes" /><label for="q0901">Yes</label></li>
+									<li><input type="radio" id="q0902" name="q09" value="no" /><label for="q0902">No</label></li>
+								</ul>
+							</fieldset>
+						</fieldset>
+						<!-- YES -->
+						<fieldset id="encryption_other_yes">
+							<div class="intro_content">
+								<p>
+									If you <u>do</u> have the Commodity Classification Automated Tracking System (CCATS) information; complete the information in the boxes below and forward a copy of the CCATS to Qualcomm Export Compliance at <a href="mailto:email@qualcomm.com">email@qualcomm.com</a> or by fax to Export Compliance (858) 651-1767.
+								</p>
+							</div>
+							<fieldset>
+								<fieldset>		
+									<label class="description" for="eccn">ECCN<span>*</span>:</label>
+									<input id="eccn" name="eccn" class="" type="text" maxlength="255" value=""/> 
+								</fieldset>
+								<fieldset>		
+									<label class="description">License Exception<span>*</span>:</label>
+									<ul class="lexp">
+										<li><input type="radio" id="lexp01" name="lexp" value="yes" /><label for="lexp01">Restricted</label></li>
+										<li><input type="radio" id="lexp02" name="lexp" value="yes" /><label for="lexp02">Unrestricted</label></li>
+									</ul>
+								</fieldset>
+								<fieldset>		
+									<label class="description" for="CCATSorERNnumber">CCATS or ERN Number<span>*</span>:</label>
+									<input id="CCATSorERNnumber" name="CCATSorERNnumber" class="" type="text" maxlength="255" value=""/> 
+								</fieldset>
+								<fieldset>		
+									<label class="description" for="CCATSorERNdate">CCATS or ERN Date<span>*</span>:</label>
+									<input id="CCATSorERNdate" name="CCATSorERNdate" class="" type="text" maxlength="255" value=""/> 
+								</fieldset>
+							</fieldset>
+							<fieldset class="radio_question_group">
+								<fieldset>
+									<legend>Application is designed for installation by the user without substantial support by the supplier</legend>
+									<ul>
+										<li><input type="radio" id="q1001" name="q10" value="yes" /><label for="q1001">Yes</label></li>
+										<li><input type="radio" id="q1002" name="q10" value="no" /><label for="q1002">No</label></li>
+									</ul>
+								</fieldset>
+							</fieldset>
+						</fieldset>
+						<!-- NO -->
+						<fieldset id="encryption_other_no">
+							<div>
+								<p>
+									If you do <u>not</u> have the Commodity Classification Automated Tracking System (CCATS) information for this application, you must download the following file, complete the questionnaire, and return the completed from to Qualcomm Export Compliance at; <a href="mailto:email@qualcomm.com">email@qualcomm.com</a> or by fax (858) 651-1767.
+								</p>
+								<p>
+									<a href="#">Application Encryption Questionnaire</a>
+								</p>
+							</div>
+							
+						</fieldset>
+					</fieldset>
+					<!-- /Other Encryption Selection -->
+					
+					
+					<div class="buttons_container create_title_save stroke_top">
+						<a href="titles.html">Cancel</a>
+						<a href="#" id="saveForm" class="button_gen corner_4">Save</a>
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid2.js"></script> -->
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){ 
+		/* jQuery overlay append */
+		var overlayHeight = $(document).height();
+		var overlayHTML = "<div class='container_fullscreen' style='height:" + overlayHeight + "px;'>&nbsp;</div>";
+		$('body').append(overlayHTML);
+		
+				
+		/* Encryption Select Menu */
+		
+		$('#select_encryption').bind('change', function(e){
+			var encryptionValue = $(this).val();
+			
+			if(encryptionValue == 'limited-encryption') {
+				$('#encryption_other').hide();	
+				$('#encryption_limited').show();
+
+			}
+			else if (encryptionValue == 'other-encryption') {
+				$('#encryption_limited').hide();
+				$('#encryption_other').show();				
+			}
+			else {
+				$('#encryption_limited').hide();
+				$('#encryption_other').hide();	
+			}
+		});
+		
+		$('#q0901').click(function() {
+			if($(this).attr("checked")==true){
+			    $('#encryption_other_no').hide();
+				$('#encryption_other_yes').show();				
+			}			
+		});
+		
+		$('#q0902').click(function() {
+			if($(this).attr("checked")==true){
+			    $('#encryption_other_no').show();
+				$('#encryption_other_yes').hide();
+			}			
+		});
+		
+		$(window).unload(function() {
+			$('#encrption_type_form').get(0).reset()
+		});
+
+	});	
+</script>
+</body>
+</html>	

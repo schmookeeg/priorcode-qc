@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Portal - Edit Content Type</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="#">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li><a href="titles.html">Titles</a></li>
+			<li class="active"><a href="catalog.html">Catalog</a></li>
+			<li><a href="settings.html">Settings</a></li>
+			<li class="last"><a href="#">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+	
+		<!-- Main Content -->
+		<div id="form_container" class="create_account_container content add_content_type">
+			<div class="form_block expose_target corner_8">
+				<div class="form_header">
+					<h3>Edit Content Type</h3>
+					<span>*required field</span>
+				</div>
+				
+				<div class="error_messages" style="display: none;"></div>
+			
+				<form id="form_33540" class="appnitro"  method="post" action="/formbuilder/view.php">					
+					<fieldset>
+						<label class="description" for="element_1">Name<span>*</span>:</label>
+						<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/> 
+					</fieldset>
+					
+					<fieldset>
+						<label class="description" for="element_5">Platform Name<span>*</span>:</label>
+						<input id="element_5" name="element_5" class="element text medium" type="text" maxlength="255" value=""/> 
+					</fieldset>
+
+					<fieldset>
+						<label class="description" for="element_2">MIME Type<span>*</span>:</label>
+						<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/> 
+					</fieldset>
+
+					<fieldset>
+						<label class="description" for="element_3">File Extensions<span>*</span>:</label>
+						<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value=""/> 
+					</fieldset>
+
+					<fieldset>
+						<label class="description" for="element_4">Status<span>*</span>:</label>
+						<input id="element_4_1" name="element_4" class="element radio" type="radio" value="1" />
+						<label class="choice" for="element_4_1">Active</label>
+						<input id="element_4_2" name="element_4" class="element radio" type="radio" value="2" />
+						<label class="choice" for="element_4_2">Inactive</label>
+					</fieldset>
+					
+					<div class="buttons_container">					
+						<a href="contenttypes.html">Cancel</a>
+						<input type="submit" id="saveForm" value="Save & Publish" class="button_gen corner_4" />																		
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid2.js"></script>
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+	<script type="text/javascript">
+
+$.urlParam = function(name)
+	{
+	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	if (!results) { return 0; }
+	return results[1] || 0;
+	}
+
+
+$(document).ready(function () 
+	{
+	    	
+  	/* Button disabling/enabling */
+  	var flag_name = true;
+  	var flag_platform = true;
+    var flag_mime = true;
+    var flag_extensions = true;
+    var flag_status = true;
+
+    function changeButtonStatus() {
+      if (flag_name && flag_platform && flag_mime && flag_extensions && flag_status) {
+        $("#saveForm").removeAttr("disabled");
+        $("#saveForm").removeClass("button_disabled");
+      }
+      else {
+        $("#saveForm").attr("disabled", "disabled");
+      	$("#saveForm").addClass("button_disabled");
+      }
+    }
+
+    function changeFlag(object, flag) { //Flag is a string of the variable name
+      if(eval(flag) && (object.val() != "" || object.is(":checked"))) //Flag already set to true and has data
+        return true;
+
+      if(object.val() != "" || object.is(":checked")) //Data in field
+        eval(flag+" = true;");
+      else //Field empty
+        eval(flag+" = false;");
+
+      changeButtonStatus();
+      return flag;   
+    }
+
+    $("#element_1").keyup(function() {
+      changeFlag($(this), "flag_name");
+    });
+    $("#element_5").keyup(function() {
+      changeFlag($(this), "flag_platform");
+    });
+    $("#element_2").keyup(function() {
+      changeFlag($(this), "flag_mime");
+    });
+  	$("#element_3").keyup(function() {
+      changeFlag($(this), "flag_extensions");
+    });
+  	$("input[name='element_4']").change(function() {
+      changeFlag($(this), "flag_status");
+    });
+    
+	  
+	  /* Validation */
+	  $("#form_33540").validate({
+	    onfocusout: false,
+      onkeyup: false,
+      onclick: false,
+      focusInvalid: false,
+      errorLabelContainer: ".error_messages",
+      errorElement: "span",
+	    submitHandler: function() {
+        $("#saveForm").attr('disabled', 'disabled');
+      	$("#saveForm").addClass("button_disabled");
+	      var testjson;
+    		testjson = '{"id":"' + $.urlParam('d') + '", "fileExtension" : "' + $('#element_3').val() + '",     "mimeType" : "' + $('#element_2').val() + '",    "name" : "' + $('#element_1').val() + '",    "platformName" : "' + $('#element_5').val() + '"}';
+    		$.ajax(
+    			{
+    			url: getBaseURL() + getAdminAppURL() + '/content_types/' + $.urlParam('d') ,
+    			type:'PUT',
+    			contentType:'application/json',
+    			processData: false,
+    			data: testjson,
+    			success: function(data) 
+    				{
+    				//alert($('#element_1').val() + " edited successfully.");
+    				//window.location = "contenttypes.html";
+					confirmRedirect($('#element_1').val() + " edited successfully." , "contenttypes.html");
+    				},
+    			error:function(xhr,err)
+    				{
+    				//alert("Changes Not Successfully Made.");
+					confirmRedirect("Changes Not Successfully Made." , "noRedirect");
+    				}
+    			}
+    			);
+	    },
+	    invalidHandler: function(form, validator) {
+        validator.showErrors(); // Add error class to invalid fields
+        $('label').removeClass("error-label"); // Remove all previous error labels
+
+        $('.error').each(function() { // Add 'error-label' class to labels of invalid fields
+          if ($(this).attr("type") === "radio") // Highlight group label of radio buttons
+            $('label[for='+$(this).attr('name')+']').addClass("error-label");
+          else
+            $('label[for='+$(this).attr('id')+']').addClass("error-label");
+        });
+
+        $('label').each(function() { // Cleanup and remove 'error-label' from labels that are not associated with a field
+          if ($(this).attr('for') == "")
+            $(this).removeClass("error-label");
+        });
+        window.scrollTo(0,0);
+      },
+	    rules: {
+	      element_1: { // Name
+	        required: true
+	      },
+	      element_5: { // Platform Name
+	        required: true
+	      },
+	      element_2: { // MIME Type
+	        required: true
+	      },
+	      element_3: { // File Extensions
+	        required: true
+	      },
+	      element_4: { //Status
+	        required: true
+	      }
+	    },
+	    messages: {
+	      element_1: {
+	        required: "Please enter a valid name. "
+	      },
+	      element_5: {
+	        required: "Please enter a valid platform name. "
+	      },
+	      element_2: {
+	        required: "Please enter a valid MIME type. "
+	      },
+	      element_3: {
+	        required: "Please enter valid file extensions. "
+	      },
+	      element_4: {
+	        required: "Please select a valid status. "
+	      }
+	    }
+	  });
+
+// /rs/v1/content_types/4/runtime
+// {"apiLevel":1,"displayOrder":null,"contentType":null,"version":"1.0","name":"BMP 75.34129984125394","auditInfo":{"dateCreated":null,"dateModified":1288140660825,"createdBy":null,"modifiedBy":null},"id":null}
+
+
+
+
+
+	$.getJSON(getBaseURL() + getAdminAppURL() + '/content_types/' + $.urlParam('d'), function(data)
+		{
+		$('#element_1').val(data.result.name);
+		$('#element_2').val(data.result.mimeType);
+		$('#element_3').val(data.result.fileExtension);
+	}
+	);
+
+
+
+
+
+
+
+
+
+
+
+
+	}
+	);
+
+</script>
+</body>
+</html>

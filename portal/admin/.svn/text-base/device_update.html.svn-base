@@ -1,0 +1,299 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Portal - Update Device</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body class="no_guidelines firefox" id="main_body">
+	
+	<img id="top" src="../images/top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a>Add/Edit Device</a></h1>
+		<form id="form_26631" class="appnitro"  method="post" action="">
+					<div class="form_description">
+			<h2>Add/Edit Device</h2>
+			<p></p>
+		</div>						
+			<ul >
+			
+					<li id="li_13" >
+		<label class="description" for="element_13">Make </label>
+		<div>
+		<select class="element select medium" id="element_13" name="element_13"> 
+			<option value="" selected="selected"></option>
+<option value="1" >Samsung</option>
+<option value="2" >Motorola</option>
+<option value="3" >Apple</option>
+
+		</select>
+		</div> 
+		</li>		<li id="li_1" >
+		<label class="description" for="element_1">Model </label>
+		<div>
+			<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_2" >
+		<label class="description" for="element_2">Model Name </label>
+		<div>
+			<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_3" >
+		<label class="description" for="element_3">Model Version </label>
+		<div>
+			<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_14" >
+		<label class="description" for="element_14">File Extension Support </label>
+		<div>
+		<select class="element select medium" id="element_14" name="element_14"> 
+			<option value="" selected="selected"></option>
+<option value="1" >1</option>
+<option value="2" >2</option>
+<option value="3" >3</option>
+
+		</select>
+		</div> 
+		</li>		<li id="li_4" >
+		<label class="description" for="element_4">UA String </label>
+		<div>
+			<input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_5" >
+		<label class="description" for="element_5">Link to Brew MP Device Database </label>
+		<div>
+			<input id="element_5" name="element_5" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_23" >
+		<label class="description" for="element_23">Device Resolution </label>
+		<div>
+		<select class="element select medium" id="element_23" name="element_23"> 
+			<option value="" selected="selected"></option>
+<option value="1" >320x240</option>
+<option value="2" >400x300</option>
+<option value="3" >480x320</option>
+
+		</select>
+		</div> 
+		</li>		<li id="li_24" >
+		<label class="description" for="element_24">Orientation </label>
+		<div>
+		<select class="element select medium" id="element_24" name="element_24"> 
+			<option value="" selected="selected"></option>
+<option value="1" >Vertical</option>
+<option value="2" >Horizontal</option>
+
+		</select>
+		</div> 
+		</li>		<li id="li_25" >
+		<label class="description" for="element_25">Input Interface </label>
+		<div>
+		<select class="element select medium" id="element_25" name="element_25"> 
+			<option value="" selected="selected"></option>
+<option value="1" >Touch</option>
+<option value="2" >Keyboard</option>
+<option value="3" >Other</option>
+
+		</select>
+		</div> 
+		</li>		<li id="li_6" >
+		<label class="description" for="element_6">Pixels per inch (PPI) </label>
+		<div>
+			<input id="element_6" name="element_6" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_15" >
+		<label class="description" for="element_15">Aspect Ratio </label>
+		<div>
+		<select class="element select medium" id="element_15" name="element_15"> 
+			<option value="" selected="selected"></option>
+<option value="1" >4:3</option>
+<option value="2" >16:9</option>
+<option value="3" >Third option</option>
+
+		</select>
+		</div> 
+		</li>		<li id="li_16" >
+		<label class="description" for="element_16">Device Status </label>
+		<div>
+		<select class="element select medium" id="element_16" name="element_16"> 
+			<option value="" selected="selected"></option>
+<option value="1" >Pre-commercial</option>
+<option value="2" >Commercial</option>
+
+		</select>
+		</div> 
+		</li>		<li class="section_break">
+			<h3>Section Break</h3>
+			<p></p>
+		</li>		<li id="li_8" >
+		<label class="description" for="element_8">MSM </label>
+		<div>
+			<input id="element_8" name="element_8" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_9" >
+		<label class="description" for="element_9">RAM </label>
+		<div>
+			<input id="element_9" name="element_9" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_10" >
+		<label class="description" for="element_10">ROM </label>
+		<div>
+			<input id="element_10" name="element_10" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_11" >
+		<label class="description" for="element_11">Filesystem space available for apps </label>
+		<div>
+			<input id="element_11" name="element_11" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_21" >
+		<label class="description" for="element_21">Physical Display Size </label>
+		<div>
+			<input id="element_21" name="element_21" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_22" >
+		<label class="description" for="element_22">Secondary Display Size </label>
+		<div>
+			<input id="element_22" name="element_22" class="element text medium" type="text" maxlength="255" value=""/> 
+		</div> 
+		</li>		<li id="li_27" >
+		<label class="description" for="element_27">LBS Support </label>
+		<span>
+			<input id="element_27_1" name="element_27" class="element radio" type="radio" value="Yes" />
+<label class="choice" for="element_27_1">Yes</label>
+<input id="element_27_2" name="element_27" class="element radio" type="radio" value="No" />
+<label class="choice" for="element_27_2">No</label>
+
+		</span> 
+		</li>		<li id="li_26" >
+		<label class="description" for="element_26">Graphics Acceleration </label>
+		<div>
+		<select class="element select medium" id="element_26" name="element_26"> 
+			<option value="" selected="selected"></option>
+<option value="1" checked="false">Yes</option>
+<option value="2" checked="false">No</option>
+
+		</select>
+		</div> 
+		</li>		<li id="li_19" >
+		<label class="description" for="element_19">Accelerometer </label>
+		<div>
+		<select class="element select medium" id="element_19" name="element_19"> 
+			<option value="" selected="selected"></option>
+<option value="1" >2-axis</option>
+<option value="2" >3-axis</option>
+
+		</select>
+		</div> 
+		</li>
+			
+					<li class="buttons">
+			    <input type="hidden" name="form_id" value="26631" />
+			    
+				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
+		</li>
+			</ul>
+		</form>	
+
+	</div>
+	<img id="bottom" src="../images/bottom.png" alt="">
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid2.js"></script>
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+	
+<script type="text/javascript">
+
+$(document).ready(function () 
+	{
+
+// IS_ACTIVE, DISPLAY_ID, IS_GRAPHICS_ACCEL, MAKE, MODEL, MODEL_VERSION, NAME, ORIENTATION, PIXELS_PER_INCH, IS_TOUCH, UA_PROFILE, USER_AGENT
+
+// var jsondata = '{        "active": true,      "graphicsAccel": null,        "make": "TestHTC",        "model": "TestAria",        "modelVersion": null,        "name": "HTCAria",        "orientation": null,        "pixelsPerInch": null,        "runtimes": null,        "touch": null,        "uaProfile": null,        "userAgent": null    }';
+
+var jsondata = '{         "make": "MBTestHTC2",        "model": "MBTestAria2"}';
+
+
+$.ajax({
+  url: getBaseURL() + getAdminAppURL() + '/devices/10008/',
+  type:'POST',
+contentType:'application/json',
+  processData: false,
+  data: jsondata,
+
+  success: function(data) {
+    $('.result').html(data);
+    alert('Load was performed.');
+  }
+});
+
+
+	$.getJSON(getBaseURL() + getAdminAppURL() + '/devices/10001', function(data)
+{
+
+
+
+
+		$('#element_1').val(data.content.model);
+		$('#element_2').val(data.content.name);
+		$('#element_3').val(data.content.modelVersion);
+		$('#element_4').val(data.content.userAgent);
+		$('#element_5').val(data.content.bmp_url);
+		$('#element_6').val(data.content.pixelsPerInch);
+
+		$('#element_8').val(data.content.msm);
+		$('#element_9').val(data.content.ram);
+		$('#element_10').val(data.content.rom);
+		$('#element_11').val(data.content.filespace);
+
+		$('#element_21').val(data.content.displaySize);
+		$('#element_22').val(data.content.secondaryDisplaySize);
+
+
+
+		$("select#element_13 option")
+		   .each(function() { this.selected = (this.text == data.content.make); });
+
+		$("select#element_14 option")
+		   .each(function() { this.selected = (this.text == data.content.extensionsupp); });
+
+		$("select#element_15 option")
+		   .each(function() { this.selected = (this.text == data.content.aspectRatio); });
+
+		$("select#element_16 option")
+		   .each(function() { this.selected = (this.text == data.content.deviceStatus); });
+
+		$("select#element_19 option")
+		   .each(function() { this.selected = (this.text == data.content.accelerometer); });
+
+		$("select#element_23 option")
+		   .each(function() { this.selected = (this.text == data.content.resolution); });
+
+		$("select#element_24 option")
+		   .each(function() { this.selected = (this.text == data.content.orientation); });
+
+		$("select#element_25 option")
+		   .each(function() { this.selected = (this.text == data.content.inputInterface); });
+
+		$("select#element_26 option")
+		   .each(function() { this.selected = (this.text == data.content.graphicsAccel); });
+
+		$("input[name='element_27'][value='"+data.content.LBS+"']").attr("checked","checked");
+
+
+	}
+	);
+	
+	});
+</script>
+</body>
+</html>

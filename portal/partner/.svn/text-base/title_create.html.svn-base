@@ -1,0 +1,978 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Create Title</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+	<style type="text/css">
+		.submit { margin-left: 125px; margin-top: 10px;} 
+		.form-row { padding: 5px 0; clear: both; width: 700px; } 
+		label.error { width: 250px; display: block; float: left; color: red; padding-left: 10px; } 
+	</style>
+</head>
+
+<body id="main_body">	
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="my_profile.html">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li class="active"><a href="#">Titles</a></li>
+			<li><a href="agreements.html">Agreements</a></li>
+			<li class="last"><a href="admin.html">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->
+		<div id="form_container" class="create_account_container create_container">
+			<div class="form_block expose_target corner_8">
+				
+				<div class="form_header">
+					<h3>Create New Title</h3>
+					<span>*required field</span>
+				</div>								
+				
+				<div class="error_messages" style="display: none;"></div>
+				
+				<p class="intro_info_container">
+					Enter the following information in <strong>English</strong>. You can localize your title after title creation.
+				</p>
+				
+				<form id="form_33863" class="appnitro"  method="get" action="">				
+					<fieldset>
+						<label class="description" for="element_1">Title Name<span>*</span>:</label>				
+						<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="100" value=""/><a href="javascript: void(0);" title="extra information" class="icon_question">?</a> 
+						<span class="field_instructions max">(Max. 100 Characters)</span>
+					</fieldset>
+					
+					<fieldset>
+						<label class="description" for="element_2">Title Display Name:</label>				
+						<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="100" value=""/><a href="javascript: void(0);" title="extra information" class="icon_question">?</a>
+						<span class="field_instructions max">This will be shown to end users. (Max. 100 Characters)</span>
+					</fieldset>
+	
+					<fieldset>
+						<label class="description" for="element_3">Description<span>*</span>:</label>
+						<textarea id="element_3" name="element_3" class="element textarea medium"></textarea><a href="javascript: void(0);" title="extra information" class="icon_question">?</a>
+						<span class="field_instructions max">This will be shown to end users. (Max. 2000 Characters)</span>
+					</fieldset>
+	
+					<fieldset>
+						<label class="description" for="element_4">Tags<span>*</span>:</label>
+						<input id="element_4" name="element_4" class="element text medium default-text" type="text" value="Tag your title. You can enter max. 10 tags."/><a href="javascript: void(0);" title="extra information" class="icon_question">?</a>
+						<span class="field_instructions">Separate tags with a comma.</span>
+					</fieldset>
+	
+					<fieldset>
+						<label class="description" for="element_5">EULA<span>*</span>:</label>
+						<p class="info_container">
+							If you want to provide your own End User License Agreement (EULA), <a id="EULA" href="#">click here</a>. If you do not provide a EULA, the <a id="standardEULA" href="#">standard EULA</a> will apply to your title
+						</p>
+					</fieldset>
+
+					<fieldset class="double_stroke">
+						<div class="category_container">
+							<label class="description" for="element_17">Category<span>*</span>:</label>
+							<select class="element select medium" id="element_17" name="element_17"> 
+								<option value="" selected="selected" >Select One</option>				
+							</select>
+						</div>
+						<div id="subs" style="display:none;" class="subcategory_container">
+							<label class="description" for="subcats">Subcategory:</label> 
+							<select class="element select medium" id="subcats"></select>
+						</div>
+					</fieldset>															
+					
+					<fieldset>
+						<label class="description" for="element_9">Support URL:</label>
+						<input id="element_9" name="element_9" class="element text medium" type="text" maxlength="100" value=""/>
+						<a href="javascript: void(0);" title="extra information" class="icon_question">?</a>
+						<span class="field_instructions">This will be shown to end users.</span> 
+					</fieldset>
+	
+					<fieldset>
+						<label class="description" for="element_10">Developer's Email<span>*</span>:</label>
+						<input type="text" id="element_10" name="element_10" />
+						<a href="javascript: void(0);" title="extra information" class="icon_question">?</a>
+						<span class="field_instructions">This will be shown to end users.</span>
+					</fieldset>
+					
+					<fieldset>
+						<label class="description" for="element_11">Copyright<span>*</span>:</label>
+						<input id="element_11" name="element_11" class="element text medium" type="text" maxlength="100" value=""/><a href="javascript: void(0);" title="extra information" class="icon_question">?</a> 
+					</fieldset>
+					
+					<fieldset class="double_stroke">
+						<label for="element_13">Countries:</label> 
+						<span>
+							<b>This title will be distributed in all countries.</b> <a id="countries" href="#">Change &gt;</a>
+						</span>
+						<a href="javascript: void(0);" title="extra information" class="icon_question inline" style="float:none;">?</a>
+						<input id="element_13" name="element_13" class="element text medium" type="hidden" value=""/> 
+					</fieldset>
+					
+					<fieldset>
+						<label class="description">Content Rating<span>*</span>:</label>				
+					</fieldset>
+										
+					<fieldset class="rating_sliders_container">
+						<ul>
+							<li>None</li>
+							<li class="column01">Mild</li>
+							<li class="column02">Moderate</li>
+							<li class="column03">Intense/Graphic</li>
+						</ul>
+						
+						<fieldset class="rating_block_container">
+							<div>Age<input type="text" id="ratingTotals" class="rating_totals_container" value="0">+</div>
+							<div><input type="hidden" id="slidernum" value="00"></div>
+						</fieldset>
+						
+						<fieldset>
+							<label>Cartoon/Fantasy Violence:</label>
+							<div id="slider1" class="slider_bar"></div>
+							<input type="hidden" id="rating1"/>
+						</fieldset>
+						
+						<fieldset>
+							<label>Realistic Violence:</label>
+							<div id="slider2" class="slider_bar"></div>
+							<input type="hidden" id="rating2"/>
+						</fieldset>
+						
+						<fieldset>
+							<label>Sexual content or nudity:</label>
+							<div id="slider3" class="slider_bar"></div>
+							<input type="hidden" id="rating3"/>
+						</fieldset>
+						
+						<fieldset>
+							<label>Simulated Gambling:</label>
+							<div id="slider4" class="slider_bar"></div>
+							<input type="hidden" id="rating4"/>
+						</fieldset>
+						
+						<fieldset>
+							<label>Alcohol,Drug, or Tobacco Use of Reference:</label>
+							<div id="slider5" class="slider_bar"></div>
+							<input type="hidden" id="rating5"/>
+						</fieldset>
+						
+						<fieldset>
+							<label>Profanity or Adult Humor:</label>
+							<div id="slider6" class="slider_bar"></div>
+							<input type="hidden" id="rating6"/>
+						</fieldset>
+						
+						<fieldset>
+							<label>Racially Insensitive:</label>
+							<div id="slider7" class="slider_bar"></div>
+							<input type="hidden" id="rating7"/>
+						</fieldset>
+						
+						<fieldset>
+							<label>Religious or Political Commentary:</label>
+							<div id="slider8" class="slider_bar"></div>
+							<input type="hidden" id="rating8"/>
+						</fieldset>
+						
+						<fieldset>
+							<label>Political Humor:</label>
+							<div id="slider9" class="slider_bar"></div>
+							<input type="hidden" id="rating9"/>
+						</fieldset>
+						
+						
+					</fieldset>
+					
+					<div class="buttons_container">					
+						<a href="titles.html">Cancel</a>
+						<input type="submit" id="saveForm" value="Create" class="button_gen corner_4" />
+					</div>
+																						  
+					<!--<div id="retval" style="overflow:auto;"></div>
+					<div id="errormsg" style="overflow:auto;"></div>-->
+				</form>	
+			</div>
+		</div>	
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid2.js"></script> -->
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+
+
+
+<script type="text/javascript">
+
+	/* Button disabling/enabling */
+  var flag_name = false;
+  var flag_description = false;
+  var flag_tags = false;
+  var flag_category = false;
+  var flag_email = false;
+  var flag_copyright = false;
+
+
+	$(document).ready(function() {
+		
+
+	var rating_cartoon_violence = 0;
+	var rating_realistic_violence = 0;
+	var rating_sexualcontent = 0;
+	var rating_simulated_gambling = 0;
+	var rating_alcohol = 0;
+	var rating_profanity = 0;
+	var rating_racial_insensitive = 0;
+	var rating_political_commentary = 0;
+	var rating_political_humor = 0;
+	
+	var eula = "";
+	var selectedCountries = "";
+	var contentrating = 0;
+
+	//CLEAR FORM DATA
+	$("#saveForm").attr("disabled", "disabled");
+	$("#saveForm").addClass("button_disabled");
+	$("#element_1").val("");
+	$("#element_2").val("");
+	$("#element_3").val("");
+	$("#element_4").val("Tag your title. You can enter max. 10 tags.");
+	$("#element_9").val("");
+	$("#element_10").val("");
+	$("#element_11").val("");
+
+		//if empty, set "title display name" when u fill out "title name"
+		$('#element_1').change(function() {
+			var title = $(this).val();
+			if ($('#element_2').val() == "") {
+				$('#element_2').val(title);
+			}
+		});
+		
+	//CLEAR TAGS DEFAULT TEXT ON FOCUS
+	$("#element_4").focus(function() {
+		if (this.value == this.defaultValue) {
+			this.value = "";
+			$(this).removeClass("default-text");
+		}
+	});
+	
+	$("#element_4").blur(function() {
+		if (this.value == "") {
+			this.value = this.defaultValue;
+			$(this).addClass("default-text");
+		}
+	});
+	
+
+
+  function changeButtonStatus() {
+    if (flag_name && flag_description && flag_tags && flag_category && flag_email && flag_copyright) {
+      $("#saveForm").removeAttr("disabled");
+      $("#saveForm").removeClass("button_disabled");
+    }
+    else {
+      $("#saveForm").attr("disabled", "disabled");
+    	$("#saveForm").addClass("button_disabled");
+    }
+  }
+
+  function changeFlag(object, flag) { //Flag is a string of the variable name
+    if(eval(flag) && (object.val() != "" || object.is(":checked"))) //Flag already set to true and has data
+      return true;
+
+    if(object.val() != "" || object.is(":checked")) //Data in field
+      eval(flag+" = true;");
+    else //Field empty
+      eval(flag+" = false;");
+
+    changeButtonStatus();
+    return flag;   
+  }
+  
+  $("#element_1").keyup(function() {
+    changeFlag($(this), "flag_name");
+  });
+	$("#element_3").keyup(function() {
+    changeFlag($(this), "flag_description");
+  });
+	$("#element_4").keyup(function() {
+    changeFlag($(this), "flag_tags");
+  });
+  $("#element_17").change(function() {
+    changeFlag($(this), "flag_category");
+  });
+	$("#element_10").keyup(function() {
+    changeFlag($(this), "flag_email");
+  });
+	$("#element_11").keyup(function() {
+    changeFlag($(this), "flag_copyright");
+  });
+
+
+  //VALIDATION
+  
+  $("#form_33863").validate({
+    onfocusout: false,
+    onkeyup: false,
+    onclick: false,
+    focusInvalid: false,
+    errorLabelContainer: ".error_messages",
+    errorElement: "span",
+	submitHandler: function() {
+          $("#saveForm").attr('disabled', 'disabled');
+        	$("#saveForm").addClass("button_disabled");
+      $('label').removeClass("error-label"); //Clear previous error messages
+
+      //SAVE TITLE
+	  // create title
+		var subcat = ""
+		if($("#subcats").val() != "")
+			subcat = ',"subCategory":' + $("#subcats").val();
+	  
+  		var rating = '{"cartoonViolence":' + rating_cartoon_violence + ',"realisticViolence":' + rating_realistic_violence + ',"sexualContent":' + rating_sexualcontent + ',"gambling":' + rating_simulated_gambling + ',"drugs":' + rating_alcohol + ',"profanity":' + rating_profanity + ',"racial":' + rating_racial_insensitive + ',"religiousCommentary":' + rating_political_commentary + ',"politicalHumor":' + rating_political_humor + ',"level":' + contentrating + '}';
+  		var jsondata = '{"languages": {"en": {"languageCode": "en","displayName":"' + $("#element_2").val() + '","description":"' + $("#element_3").val() + '","keywords": "' + $("#element_4").val() + '","eula":"' + eula + '"}}, "name":"' + $("#element_1").val()  
+  		+ '","category":' + $("#element_17").val() + subcat + ',"supportUrl":"' + $("#element_9").val() + '","developerEmail":"' + $("#element_10").val()
+  		+ '","copyright":"' + $("#element_11").val() + '","countries":"' + $("#element_13").val() + '","rating":' + rating + '}'; 
+
+ 
+  		if (jsondata)
+  		{
+  			$.ajax(
+  				{
+  				url: getBaseURL() + getPartnerAppURL() + '/publishers/' + getPublisherId() + '/titles',
+  				type:'POST',
+  				contentType:'application/json',
+  				processData: false,
+  				data: jsondata,
+  				success: function(data) 
+  					{
+  					//$('#retval').html(JSON.stringify(data,'&nbsp;'));
+  					//alert("Title created successfully")
+  					//window.location = 'title_details.html?d=' + '/publishers/10000/titles/' + data.id;
+					confirmRedirect("Title created successfully" , 'title_details.html?d=' + '/publishers/10000/titles/' + data.id);
+  					}
+  				}
+  			);
+  			
+		    $(".error_messages").ajaxError(function(event, request, settings ){
+		          $('.error_messages').append('<span class="error">' + request.responseText + '</span>');
+		          $('.error_messages').show();
+		    });
+
+
+  		}
+  		else
+  		{
+  			//alert("Update cancelled");
+			confirmRedirect("Update cancelled" , "noRedirect");
+  		}
+  	return false;
+    },
+	  invalidHandler: function(form, validator) {
+      validator.showErrors(); // Add error class to invalid fields
+      $('label').removeClass("error-label"); // Remove all previous error labels
+      
+      $('.error').each(function() { // Add 'error-label' class to labels of invalid fields
+        if ($(this).attr("type") === "radio") // Highlight group label of radio buttons
+          $('label[for='+$(this).attr('name')+']').addClass("error-label");
+        else
+          $('label[for='+$(this).attr('id')+']').addClass("error-label");
+      });
+      
+      $('label').each(function() { // Cleanup and remove 'error-label' from labels that are not associated with a field
+        if ($(this).attr('for') == "")
+          $(this).removeClass("error-label");
+      });
+      window.scrollTo(0,0);
+    },	
+    rules: {
+      element_1: { // Title
+        required: true,
+        maxlength: 100
+      },
+      element_2: { // Display Name
+        maxlength: 100
+      },
+      element_3: { // Description
+        required: true,
+        maxlength: 2000
+      },
+      element_4: { // Tags
+        required: true,
+        defaultInvalid: true,
+        tags: true
+      },
+      element_17: { // Category
+        required: true
+      },
+      element_9: { // URL
+        defaultUrl: true
+      },
+      element_10: { // Developer Email 
+        required: true, 
+        email: true 
+      },
+      element_11: { // Copyright
+        required: true
+      }
+    }, 
+    messages: {
+      element_1: {
+        required: "Please enter a valid title. ",
+        maxlength: "Please enter a valid title. "
+      },
+      element_2: {
+        maxlength: "Please enter a valid display name. "
+      },
+      element_3: {
+        required: "Please enter a valid description. ",
+        maxlength: "Please enter a valid description. "
+      },
+      element_4: {
+        required: "Please enter valid tags. ",
+        defaultInvalid: "Please enter valid tags. ",
+        tags: "Please enter a maximum of 10 tags. "
+      },
+      element_17: {
+        required: "Please select a category. "
+      },
+      element_9: {
+        defaultUrl: "Support URL is incorrect. "
+      },
+      element_10: {
+        required: "Please enter a valid email. ",
+        email: "Please enter a valid email. "
+      },
+      element_11: {
+        required: "Please enter a valid copyright. "
+      }
+    }
+  });
+
+		//EULA		
+		var $dialog = $('<div></div>')
+			.html('This is the EULA agreement')
+			.dialog({
+				autoOpen: false,
+				title: 'EULA',
+				width: 515,
+				height: 120
+			});
+
+		$('#standardEULA').click(function() {
+			$EULAdialog.dialog("close");
+			
+			$.ajax({
+			url: getBaseURL() + getPartnerAppURL() + '/agreements/eula',
+			type:'GET',
+			success: function(data) 
+				{				
+					eula = data.result.legalText;
+					$dialog.html(eula);
+				}
+			});
+			
+			$dialog.dialog('open');
+			return false;
+		});
+		
+
+		var $EULAdialog = $('<div></div>')
+		.html('This is the DEFAULT EULA agreement')
+		.dialog({
+			autoOpen: false,
+			width: 515,
+			height: 220,
+			modal: true,
+			title: 'EULA',
+			close:	function(event, ui) {
+			  eula = $("#element_eula").val();
+			}
+		});
+
+		$('#EULA').click(function() {
+			$dialog.dialog("close");
+			var html = '<div class="EULA_container"><label for="element_eula">Enter End User License Agreement</label> <textarea id="element_eula" name="element_eula" ></textarea><a id="element_std_eula" href="" class="EULA_link_container">Clear my EULA and apply the standard EULA</a></div>';
+			$EULAdialog.html(html);
+			$EULAdialog.dialog('open');
+			$('.EULA_container').parent().css({'position':'static'});
+			return false;
+		});
+
+		$("#element_std_eula").live('click', function()	{
+			$dialog.dialog("close");
+			
+				$.ajax({
+				url: getBaseURL() + getPartnerAppURL() + '/agreements/eula',
+				type:'GET',
+				success: function(data)
+					{
+						eula = '<div class="EULA_container"><label for="element_eula">Enter End User License Agreement</label><textarea id="element_eula" name="element_eula" >' + data.result.legalText + '</textarea></div>';
+						$EULAdialog.html(eula);
+						eula = $("#element_eula").val();
+					}
+				});
+			
+			$EULAdialog.dialog('open');
+			return false;
+		});
+
+		//CATEGORY
+		$.getJSON(getBaseURL() + getPartnerAppURL() + '/taxonomies', function(data){
+	    var html = '';
+	    var len = data.taxonomies[0].root.children.length;
+	    for (var i = 0; i< len; i++) {
+	        html += '<option value="' + data.taxonomies[0].root.children[i].data.id + '">' + data.taxonomies[0].root.children[i].data.name + '</option>';
+	    }
+	    $('select#element_17').append(html);
+	});
+
+		function getSubCategories(data){
+			var a = new Object();
+			var x,x1;
+			a.data = data.taxonomies[0].root.data.name;
+			a.attr = {"id":data.taxonomies[0].root.data.id};
+
+			a.children = new Array();
+			for (x in data.taxonomies[0].root.children)
+			{
+				var src = $("#element_17 option:selected").text();
+
+				a.children[x] = new Object();
+				a.children[x] = {"data":data.taxonomies[0].root.children[x].data.name,"attr":{"id":data.taxonomies[0].root.children[x].data.id}};
+				a.children[x].children = new Array();
+
+				var name = a.children[x].data;
+				if(name == src)
+				{
+					// rank 2
+					var html = '';
+					var showSub = false;
+					for (x1 in data.taxonomies[0].root.children[x].children)
+					{
+				        html += '<option value="' + data.taxonomies[0].root.children[x].children[x1].data.id + '">' + data.taxonomies[0].root.children[x].children[x1].data.name + '</option>';
+						showSub = true;
+					}
+
+					if(showSub) 
+					{
+						$('#subs').show();
+						$('select#subcats').append(html);	
+						$("#subcats").html($("#subcats option").sort(function (a, b) {
+							return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
+						}))
+
+					}						
+				}		
+			}				
+		};
+				
+		$('#element_17').change(function() {
+				$('#subs').hide();
+				$('#subcats >option').remove();
+				
+				$.ajax({
+				url: getBaseURL() + getPartnerAppURL() + '/taxonomies',
+				type:'GET',
+				success: getSubCategories
+
+				});
+			
+			return false;
+		});
+
+		
+		//COUNTRIES
+		var $countryDialog = $('<div id="countriesContainer"></div>')
+			.html('List of Countries')
+			.dialog({
+				autoOpen: false,
+				title: 'Countries : Select countries in which you would like to distribute your title.',
+				open: function(){
+	
+						if(selectedCountries.length > 0){
+							$('input[name=country_list]').attr('checked', false);
+							$('input[name=countries_all]').attr('checked', false);
+
+							var selCountriesArray = new Array();
+							selCountriesArray = selectedCountries.split(',');
+							for(var i = 0; i < selCountriesArray.length-1 ; i++){
+								//var itemval = 
+								$('input[value=' + selCountriesArray[i] + ']').attr('checked', 'checked');
+							}
+						}
+				},
+				close: function(){
+					selectedCountries = '';
+			        $('input[name=country_list]:checked').each(function() {
+			            selectedCountries += (this.value) + ',';
+			        });				
+					$("#element_13").val(selectedCountries);
+				}
+			});
+		
+		$('#countries').click(function() {
+			
+				$.ajax({
+				url: getBaseURL() + getPartnerAppURL() + '/codes/country',
+				type:'GET',
+				success: function(data) 
+					{
+						var countriesHTML = '<div class="countries_buttons"><button type="button" id="countries_all">Select All</button><button type="button" id="countries_unselect_all">Deselect All</button></div>';
+					    var len = data.result.length;
+	    				for (var i = 0; i< len; i++) {
+							var checked = '';
+							if (selectedCountries.length < 1) {
+								checked = 'checked';
+							}
+							countriesHTML += '<input type="checkbox" name="country_list" ' + checked + ' value="' + data.result[i].code + '" />' + data.result[i].meaning + '<br />';
+						}
+						countriesHTML += '<input type="checkbox" checked id="addl_regions">All additional regions added in the future<br>';
+						$countryDialog.html(countriesHTML);
+				
+						if (selectedCountries.length > 0) {
+							var selCountriesArray = new Array();
+							selCountriesArray = selectedCountries.split(',');
+							for (var i = 0; i < selCountriesArray.length - 1; i++) {
+								//var itemval = 
+								$('input[value=' + selCountriesArray[i] + ']').attr('checked', 'checked');
+							}
+						}
+					}
+				});
+			
+			$countryDialog.dialog('open');
+			return false;
+		});
+		
+		
+		$("#countries_all").live('click', function()				
+		{
+			var checked_status = this.checked;
+			$('input[name=country_list]').attr('checked', true);
+			$('input[name=countries_unselect_all]').attr('checked', false);
+
+		});	
+
+		$("#countries_unselect_all").live('click', function()				
+		{
+			var checked_status = this.checked;
+			$('input[name=country_list]').attr('checked', false);
+			$('input[name=countries_all]').attr('checked', false);
+
+		});	
+/*
+Cartoon Violence							4	7	13	17
+Game Violence								4	7	13	17
+Graphic Violence							4	7	13	17
+Sexual Content or Nudity					4	7	13	17
+Alcohol, Drug, or Tobacco Use or Reference	4	7	13	17
+Graphic Sexual Content						4	17	13	17
+Mature Themes								4	17	13	17
+Profanity or Adult Humor					4	17	17	17
+Political Humor								4	7	7	17
+*/
+		function getSliderVal(val, slidernum){
+
+			var selval = 0;
+
+			switch(slidernum){
+				
+				case 1:
+				case 2:
+				case 3:
+				case 4:
+				case 5:
+					if(val == 0)
+						selval = 4;
+					else if(val == 1)
+						selval = 7;
+					else if(val == 2)
+						selval = 13;
+					else if(val == 3)	
+						selval = 17;
+					break;
+				case 6:
+				case 7:
+					if(val == 0)
+						selval = 4;
+					else if(val == 1)
+						selval = 17;
+					else if(val == 2)
+						selval = 13;
+					else if(val == 3)	
+						selval = 17;
+					break;
+				case 8:
+					if(val == 0)
+						selval = 4;
+					else if(val == 1)
+						selval = 17;
+					else if(val == 2)
+						selval = 17;
+					else if(val == 3)	
+						selval = 17;
+					break;
+				case 9:
+					if(val == 0)
+						selval = 4;
+					else if(val == 1)
+						selval = 7;
+					else if(val == 2)
+						selval = 7;
+					else if(val == 3)	
+						selval = 17;
+					break;
+			}
+			
+			return selval;		
+		}
+		
+		$.contentRating = function(val, slidernum){
+
+			var selval = getSliderVal(val, slidernum);
+			var currval = $("#ratingTotals").val();
+
+			if(slidernum == $("#slidernum").val()){
+				var slidnum = 0;
+				if (selval < getSliderVal(rating_cartoon_violence, 1) && (slidernum != slidnum))
+				{
+					selval = getSliderVal(rating_cartoon_violence, 1);
+					slidnum = 1;
+					contentrating = rating_cartoon_violence;
+				}
+				else if (selval < getSliderVal(rating_realistic_violence, 2) && (slidernum != slidnum))
+				{
+					selval = getSliderVal(rating_realistic_violence, 2);
+					slidnum = 2;
+					contentrating = rating_realistic_violence;
+				}
+				else if (selval < getSliderVal(rating_sexualcontent, 3) && (slidernum != slidnum))
+				{
+					selval = getSliderVal(rating_sexualcontent, 3);
+					slidnum = 3;
+					contentrating = rating_sexualcontent;
+				}
+				else if (selval < getSliderVal(rating_simulated_gambling, 4) && (slidernum != slidnum))
+				{
+					selval = getSliderVal(rating_simulated_gambling, 4);
+					slidnum = 4;
+					contentrating = rating_simulated_gambling;
+				}
+				else if (selval < getSliderVal(rating_alcohol, 5) && (slidernum != slidnum))
+				{
+					selval = getSliderVal(rating_alcohol, 5);
+					slidnum = 5;
+					contentrating = rating_alcohol;
+				}
+				else if (selval < getSliderVal(rating_profanity, 6) && (slidernum != slidnum))
+				{
+					selval = getSliderVal(rating_profanity, 6);
+					slidnum = 6;
+					contentrating = rating_profanity;
+				}
+				else if (selval < getSliderVal(rating_racial_insensitive, 7) && (slidernum != slidnum))
+				{
+					selval = getSliderVal(rating_racial_insensitive, 7);
+					slidnum = 7;
+					contentrating = rating_racial_insensitive;
+				}
+				else if (selval < getSliderVal(rating_political_commentary, 8) && (slidernum != slidnum))
+				{
+					selval = getSliderVal(rating_political_commentary, 8);
+					slidnum = 8;
+					contentrating = rating_political_commentary;
+				}
+				else if (selval < getSliderVal(rating_political_humor, 9) && (slidernum != slidnum))
+				{
+					selval = getSliderVal(rating_political_humor, 9);
+					slidnum = 9;
+					contentrating = rating_political_humor;
+				}
+				else
+				{
+					slidnum = slidernum;
+					contentrating = val;
+				}
+
+				$("#ratingTotals").val(selval);
+				$("#slidernum").val(slidnum);
+
+			}	
+			else if (selval > currval) {
+				$("#ratingTotals").val(selval);
+				$("#slidernum").val(slidernum);
+				contentrating = val;
+			}
+				
+		}
+
+
+		//SLIDER
+	$(function() {
+		$("#slider1").slider({
+			value:0,
+			min: 0,
+			max: 3,
+			step: 1,				
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating1").val('Age ' + val + '+');
+				rating_cartoon_violence = val;
+				$.contentRating(val, 1);
+			}
+		});
+		$("#slider2").slider({
+			value:0,
+			min: 0,
+			max: 3,
+			step: 1,			
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating2").val('Age ' + val + '+');
+				rating_realistic_violence = val;
+				$.contentRating(val, 2);
+
+			}
+		});
+		$("#slider3").slider({
+			value:0,
+			min: 0,
+			max: 3,
+			step: 1,		
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating3").val('Age ' + val + '+');
+				rating_sexualcontent = val;
+				$.contentRating(val, 3);
+
+			}
+		});
+		$("#slider4").slider({
+			value:0,
+			min: 0,
+			max: 3,
+			step: 1,			
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating4").val('Age ' + val + '+');
+				rating_simulated_gambling = val;
+				$.contentRating(val, 4);
+			}
+		});
+		$("#slider5").slider({
+			value:0,
+			min: 0,
+			max: 3,
+			step: 1,			
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating5").val('Age ' + val + '+');
+				rating_alcohol = val;
+				$.contentRating(val, 5);
+			}
+		});
+		$("#slider6").slider({
+			value:0,
+			min: 0,
+			max: 3,
+			step: 1,		
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating6").val('Age ' + val + '+');
+				rating_profanity = val;
+				$.contentRating(val, 6);
+			}
+		});
+		$("#slider7").slider({
+			value:0,
+			min: 0,
+			max: 3,
+			step: 1,					
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating7").val('Age ' + val + '+');
+				rating_racial_insensitive = val;
+				$.contentRating(val, 7);
+			}
+		});
+		$("#slider8").slider({
+			value:0,
+			min: 0,
+			max: 3,
+			step: 1,			
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating8").val('Age ' + val + '+');
+				rating_political_commentary = val;
+				$.contentRating(val, 8);
+			}
+		});
+		$("#slider9").slider({
+			value:0,
+			min: 0,
+			max: 3,
+			step: 1,					
+			slide: function(event, ui) {
+				var val = ui.value ;//+ 4;
+				$("#rating9").val('Age ' + val + '+');
+				rating_political_humor = val;
+				$.contentRating(val, 9);
+			}
+		});
+
+
+	});
+		
+	
+	
+		
+		
+		/* Tooltips */
+		$("a[title]").tooltip({
+			delay: 10,
+			offset: [20, 71],
+			onBeforeShow: function(toolTipEvent, toolTipPosition) {
+			  this.getTip().css({'z-index':'9000'});
+			}
+		});
+		
+		
+		
+		
+		
+		/* jQuery overlay append */
+		var overlayHeight = $(document).height();
+		var overlayHTML = "<div class='container_fullscreen' style='height:" + overlayHeight + "px;'>&nbsp;</div>";
+		$('body').append(overlayHTML);
+			
+	});
+
+	
+</script>
+</body>
+</html>
+

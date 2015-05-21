@@ -1,0 +1,384 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Portal - Add Category</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="#">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li><a href="titles.html">Titles</a></li>
+			<li class="active"><a href="catalog.html">Catalog</a></li>
+			<li><a href="settings.html">Settings</a></li>
+			<li class="last"><a href="#">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+	
+		<!-- Main Content -->
+		<div id="form_container" class="create_account_container content add_cat">
+			<div class="form_block expose_target corner_8">
+				<div class="form_header">
+					<h3>Add New Category</h3>
+					<span>*required field</span>
+				</div>
+			
+				<div class="error_messages" style="display: none;"></div>
+			
+				<form id="form_33540" class="appnitro"  method="post" action="/formbuilder/view.php">					
+					<fieldset>
+						<label class="description" for="categoryLevel">Category Level<span>*</span>:</label>
+						<input id="element_3_1" name="categoryLevel" class="element radio" type="radio" value="1" />
+						<label class="choice" for="element_3_1">Top-level Category</label>
+						<input id="element_3_2" name="categoryLevel" class="element radio" type="radio" value="2" />
+						<label class="choice" for="element_3_2">Sub-category</label>
+					</fieldset>
+							
+					<fieldset id="subs" style="display:none;">
+						Select a Parent Top Level Category<br />
+						<select class="element select medium" id="subcats">
+							<option selected="selected">Select</option>
+						</select>
+					</fieldset>
+					
+					<fieldset class="cat_name">
+						<label class="description" for="element_1">Category Name<span>*</span>:</label>
+						<a href="" id="addlanguage" class="button_gen_small corner_4 right">+</a>
+						<input id="element_1" name="element_1" class="element text medium right" type="text" maxlength="100" value=""/>
+						<label class="description lang">English</label>
+						<span class="field_instructions">(Max. 100 Characters)</span>
+					</fieldset>		
+
+					<!-- one per? -->
+					<div id="language-template" style="display:none;">
+						<div class="language-selection">
+							<fieldset class="cat_name">
+								<a href="" class="remove-selection remove">Remove</a>
+								<input class="element text medium right" type="text" maxlength="100" value=""/> 
+								<select class="element select medium lang" >
+									<option selected="selected">Select</option>
+								</select>
+								<span class="field_instructions">(Max. 100 Characters)</span>
+							</fieldset>
+						</div>		
+					</div>
+					<div id="language-anchor"></div>
+
+					<fieldset>
+						<label class="description" for="test_1">Icon<span>*</span>:</label>	
+						<span id="file">512 x 512 pixels</span> 
+						<a class="icon_question" href="javascript: void(0);" style="float:none;">?</a>
+
+						<div id="file_img" class="file_input">
+						  <a class="file_link">Click to choose file</a>
+						  <input type="file" id="test_1" name="test_1" class="required" size="5" />
+						</div>
+					</fieldset>		
+					
+					<div class="buttons_container">					
+						<a href="catalog.html">Cancel</a>
+						<input type="submit" id="saveForm" value="Save" class="button_gen corner_4" />
+					</div>
+				</form>	
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid2.js"></script>
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+<script type="text/javascript">
+
+    function ajaxFileUpload(iconurl)
+    {
+        //starting setting some animation when the ajax starts and completes
+        $("#loading")
+        .ajaxStart(function(){
+            $(this).show();
+        })
+        .ajaxComplete(function(){
+            $(this).hide();
+        });
+       
+        /*
+            prepareing ajax file upload
+            url: the url of script file handling the uploaded files
+                        fileElementId: the file type of input element id and it will be the index of  $_FILES Array()
+            dataType: it support json, xml
+            secureuri:use secure protocol
+            success: call back function when the ajax complete
+            error: callback function when the ajax failed
+        */
+
+        $.ajaxFileUpload
+        (
+            {
+                url:iconurl,
+                secureuri:false,
+                fileElementId:'test_1',
+                dataType: 'json',
+                success: function (data, status)
+                {
+                    if(typeof(data.error) != 'undefined')
+                    {
+                        if(data.error != '')
+                        {
+                            //alert(data.error);
+                        }else
+                        {
+                            //alert(data.msg);
+                        }
+                    }
+                },
+                error: function (data, status, e)
+                {
+                    //alert(e);
+                }
+            }
+        )
+        
+        return false;
+	
+    }  
+
+
+
+
+
+$(document).ready(function () 
+	{
+	  
+	/* Clear Form Data */
+	$("#saveForm").attr('disabled', 'disabled');
+	$("#saveForm").addClass("button_disabled");
+	$("#element_3_1").attr("checked", false);
+	$("#element_3_2").attr("checked", false);
+	$("#element_1").val("");
+	$("#test_1").val("");
+
+    /* Button disabling/enabling */
+    var flag_level = false;
+    var flag_name = false;
+    var flag_icon = false;
+
+    function changeButtonStatus() {
+      if (flag_level && flag_name && flag_icon) {
+        $("#saveForm").removeAttr("disabled");
+        $("#saveForm").removeClass("button_disabled");
+      }
+      else {
+        $("#saveForm").attr("disabled", "disabled");
+      	$("#saveForm").addClass("button_disabled");
+      }
+    }
+
+    function changeFlag(object, flag) { //Flag is a string of the variable name
+      if(eval(flag) && (object.val() != "" || object.is(":checked"))) //Flag already set to true and has data
+        return true;
+
+      if(object.val() != "" || object.is(":checked")) //Data in field
+        eval(flag+" = true;");
+      else //Field empty
+        eval(flag+" = false;");
+
+      changeButtonStatus();
+      return flag;   
+    }
+    
+    $("input[name='categoryLevel']").change(function() {
+      changeFlag($(this), "flag_level");
+    });
+		$("#element_1").keyup(function() {
+      changeFlag($(this), "flag_name");
+    });
+		$("#test_1").change(function() {
+      changeFlag($(this), "flag_icon");
+    });
+    
+    /* Validation */
+    $("#form_33540").validate({
+      onfocusout: false,
+      onkeyup: false,
+      onclick: false,
+      focusInvalid: false,
+      errorLabelContainer: ".error_messages",
+      errorElement: "span",
+      submitHandler: function() {
+          $("#saveForm").attr('disabled', 'disabled');
+        	$("#saveForm").addClass("button_disabled");
+        var top;
+    		top = $('input[name="categoryLevel"]:checked', '#form_33540').val();
+    		var url;
+    		var testjson;
+
+
+    		switch(top)
+    			{
+    			case("1"):
+    				url= getBaseURL() + getAdminAppURL() +'/taxonomies/1/facets/';
+    				testjson='{"name":"' + $('#element_1').val() + '","level":2,"sort":1}';
+    			break;
+    			case("2"):
+    				url=getBaseURL() + getAdminAppURL() + '/taxonomies/1/facets/' + $('#subcats').val() + '/children/';
+    				testjson='{"name":"' + $('#element_1').val() + '","sort":1}';
+    			break;
+    			}
+
+
+    			$.ajax(
+    				{
+    				url: url,
+    				type:'POST',
+    				contentType:'application/json',
+    				processData: false,
+    				data: testjson,
+				async:false,
+    				success: function(data) 
+    					{
+    					//alert("Submission Successful");
+						confirmRedirect("Submission successful" , "noRedirect");
+
+    					ajaxFileUpload(getBaseURL() + getAdminAppURL() + '/taxonomies/1/facets/' + data.id + '/icons');
+    					window.location = "catalog.html";
+    					},
+    				error:function(xhr,err)
+    					{
+    					//alert("Submission not successful.");
+						confirmRedirect("Submission not successful" , "noRedirect");
+    					}
+    				}
+    			);
+      },
+      invalidHandler: function(form, validator) {
+        validator.showErrors(); // Add error class to invalid fields
+        $('label').removeClass("error-label"); // Remove all previous error labels
+
+        $('.error').each(function() { // Add 'error-label' class to labels of invalid fields
+            if ($(this).attr("type") === "radio") // Highlight group label of radio buttons
+              $('label[for='+$(this).attr('name')+']').addClass("error-label");
+            else
+              $('label[for='+$(this).attr('id')+']').addClass("error-label");
+          });
+
+        $('label').each(function() { // Cleanup and remove 'error-label' from labels that are not associated with a field
+          if ($(this).attr('for') == "")
+            $(this).removeClass("error-label");
+        });
+        window.scrollTo(0,0);
+      },
+      rules: {
+        categoryLevel: {
+          required: true
+        },
+        element_1 : {
+          required: true
+        },
+        test_1: {
+          required: true,
+          accept: "png|jpe?g|gif"
+        }
+      },
+      messages: {
+        categoryLevel: {
+          required: "Please select a valid category level. "
+        },
+        element_1: {
+          required: "Please enter a valid category name. "
+        },
+        test_1: {
+          required: "Please upload a valid icon. ",
+          accept: "Please upload a valid icon. "
+        }
+      }
+    });
+    
+	$.getJSON(getBaseURL() + getAdminAppURL() + '/taxonomies', function(data)
+		{
+		var html = '';
+		var len = data.taxonomies[0].root.children.length;
+
+		for (var i = 0; i< len; i++) 	
+			{
+			html += '<option value="' + data.taxonomies[0].root.children[i].data.id + '">' + data.taxonomies[0].root.children[i].data.name + '</option>'; 
+			}
+		$('#subcats').append(html);
+		$("#subcats").html($("#subcats option").sort(function (a, b) {
+			return a.text == b.text ? 0 : a.text < b.text ? -1 : 1
+		}))
+	
+
+		}
+		);
+
+	$.getJSON(getBaseURL() + getAdminAppURL() +'/codes/language', function(data)
+		{
+		var html = '';
+		var len = data.result.length;
+		for (var i = 0; i< len; i++) 	
+			{
+				if (data.result[i].code != 'en') {
+					html += '<option value="' + data.result[i].code + '">' + data.result[i].meaning + '</option>';
+				}
+			}
+		$('#language-template select').each(function(index) 
+			{
+	    		$(this).append(html);
+			}
+			);
+		}
+		);
+
+	$('#addlanguage').click(function() {
+		$('#language-template .language-selection').clone(1).appendTo('#language-anchor');
+		return false;
+	});
+
+	$('#element_3_1').click(function() {
+		$('#subs').hide();
+	});
+
+	$('#element_3_2').click(function() {
+		$('#subs').show();
+
+	});
+
+
+	$('.remove-selection').live('click',function() {
+		$(this).parents('.language-selection').remove();	
+		return false;
+	});
+
+	/* jQuery overlay append */
+	var overlayHeight = $(document).height();
+	var overlayWidth = $(document).width();		
+	var overlayHTML = "<div class='container_fullscreen' style='height:" + overlayHeight + "px;'>&nbsp;</div>";
+	$('body').append(overlayHTML);		
+});
+</script>
+	</body>
+</html>

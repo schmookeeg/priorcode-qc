@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Portal</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li>&nbsp;</li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->
+		<div id="form_container" class="login_container">
+			<h2>Welcome</h2>
+			
+			<!-- Sign In Content -->
+			<fieldset class="form_login_container Qlogin">
+				<fieldset class="form_block corner_6">
+					<form id="loginForm" class="appnitro"  method="post" action="/formbuilder/view.php">
+						<div class="form_description">
+							<h3>Login</h3>
+						</div>
+						
+						<div class="error_messages" style="display: none;"></div>
+						
+						<fieldset class="form_block_content">
+							<fieldset>
+								<label class="description" for="element_1">Email:</label>							
+								<input id="element_1" name="loginEmail" class="txt_field" type="text" maxlength="255" value=""/> 
+							</fieldset>
+							<fieldset>
+								<label class="description" for="element_2">Password:</label>							
+								<input id="element_2" name="loginPassword" class="txt_field" type="text" maxlength="255" value=""/> 
+							</fieldset>
+							
+							<fieldset class="login_button_container">
+								<input id="saveForm" class="button_gen corner_4" type="submit" value="Submit" />
+							</fieldset>						
+						</fieldset>
+					</form>
+				</fieldset>	
+			</fieldset>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid2.js"></script>
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+<script>
+	
+$(document).ready(function () 
+	{
+	  /* Clear form data */
+    $("#saveForm").attr('disabled', 'disabled');
+  	$("#saveForm").addClass("button_disabled");
+	  $("#element_1").val("");
+	  $("#element_2").val("");
+	  
+	  /* Button disabling/enabling */
+	  var flag_email = false;
+	  var flag_password = false;
+	  
+	  function changeButtonStatus() {
+      if (flag_email && flag_password) {
+        $("#saveForm").removeAttr("disabled");
+        $("#saveForm").removeClass("button_disabled");
+      }
+      else {
+        $("#saveForm").attr("disabled", "disabled");
+      	$("#saveForm").addClass("button_disabled");
+      }
+    }
+
+    function changeFlag(object, flag) { //Flag is a string of the variable name
+      if(eval(flag) && (object.val() != "" || object.is(":checked"))) //Flag already set to true and has data
+        return true;
+
+      if(object.val() != "" || object.is(":checked")) //Data in field
+        eval(flag+" = true;");
+      else //Field empty
+        eval(flag+" = false;");
+
+      changeButtonStatus();
+      return flag;   
+    }
+
+    $("#element_1").keyup(function() {
+      changeFlag($(this), "flag_email");
+    });
+    $("#element_2").keyup(function() {
+      changeFlag($(this), "flag_password");
+    });
+    
+	  /* Validation */
+	  $("#loginForm").validate({
+	    onfocusout: false,
+      onkeyup: false,
+      onclick: false,
+      focusInvalid: false,
+      errorLabelContainer: ".error_messages",
+      errorElement: "span",
+      submitHandler: function() {
+          $("#saveForm").attr('disabled', 'disabled');
+        	$("#saveForm").addClass("button_disabled");
+
+
+
+
+
+
+		$.post(base + '/security/login', { "j_username": $('#element_1').val(), "j_password": $('#element_2').val()  }, function() 
+			{
+
+
+			}
+			);
+
+			jQuery.ajaxSetup({'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "")}    });
+
+			jQuery.ajaxSetup({'beforeSend': function(xhr) {xhr.setRequestHeader("Content-Type", "application/json")}    });
+
+			$.get(base + getAdminAppURL() + '/users/me/profile', function(data) 
+				{
+				if(data.company.id) // publisherID
+					{
+					// GET ROLE DATA HERE
+					$.cookie("authorities",data.authorities);
+					$.cookie("publisher_id",data.company.id);
+					$.cookie("base_url",base);
+					$.cookie("userid",data.id);
+					//alert("publisherid: " + data.company.id);
+					location.href='titles.html';
+					}
+				});
+		
+		}
+		);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        		location.href='titles.html';
+      },
+      invalidHandler: function(form, validator) {
+        validator.showErrors(); // Add error class to invalid fields
+        $('label').removeClass("error-label"); // Remove all previous error labels
+
+        $('.error').each(function() { // Add 'error-label' class to labels of invalid fields
+            if ($(this).attr("type") === "radio") // Highlight group label of radio buttons
+              $('label[for='+$(this).attr('name')+']').addClass("error-label");
+            else
+              $('label[for='+$(this).attr('id')+']').addClass("error-label");
+          });
+
+        $('label').each(function() { // Cleanup and remove 'error-label' from labels that are not associated with a field
+          if ($(this).attr('for') == "")
+            $(this).removeClass("error-label");
+        });
+        window.scrollTo(0,0);
+      },
+      rules: {
+        element_1: {
+          required: true,
+          email: true
+          // TODO: Remote Validation
+        },
+        element_2: {
+          required: true,
+          password: true
+        }
+      },
+      messages: {
+        element_1: {
+          required: "Please enter a valid email. ",
+          email: "Please enter a valid email. "
+          // TODO: Remote Validation
+        },
+        element_2: {
+          required: "Please enter a valid password. ",
+          password: "Password must contain a minimum of 8 characters with 1 capital letter and 1 number. "
+        }
+      }
+	  });
+	});
+</script>
+</body>
+</html>

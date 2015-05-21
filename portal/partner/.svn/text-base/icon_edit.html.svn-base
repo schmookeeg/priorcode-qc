@@ -1,0 +1,297 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Add/Edit Icon</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="my_profile.html">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li class="active"><a href="titles.html">Titles</a></li>
+			<li><a href="agreements.html">AGREEMENTS</a></li>
+			<li class="last"><a href="admin.html">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->
+		<div id="form_container" class="create_account_container">
+			<div class="form_block expose_target corner_8">				
+				
+				<div class="form_header">
+					<h3 id="titleid">ADD ICON</h3>
+				</div>
+				
+				<form id="form_33863" class="appnitro" enctype="multipart/form-data" method="post" action="">
+					
+					<fieldset class="add_icon_header">
+						<label class="description" for="element_10">Icon : 512 x 512 pixels</label><a href="javascript: void(0);" title="extra information" class="icon_question">?</a>					
+					</fieldset>
+					
+					<p class="add_icon_info">
+						icon guide line text comes here.
+					</p>
+					
+					<fieldset class="add_icon_upload_container">
+						<div class="icon_content">
+							<a id="deleteiconlink" class="icon_delete">DELETE</a>
+							<a href="javascript: void(0);" id="image1" name="file" class="icon_btn_file"><span>Click to choose file</span></a>
+						</div>
+						<input id="file" name="file" class="element file" type="file" size="60" style="display: none;"/>
+					</fieldset>
+					
+					<fieldset class="add_icon_container">
+						<div class="add_icon_content corner_6">
+							<p>
+								Note: The icon image will be re-sized to serve different device screen sizes. The followings are samples of various sizes. Please make sure your icon image looks good in different sizes.
+							</p>
+							<ul>
+								<li>
+									<div class="title_icon_image_container resizeme40 icon40">
+										<img class="resizeme40" src="">									
+									</div>
+									<p class="icon_info_txt">40 x 40</p>
+								</li>
+								<li>
+									<div class="title_icon_image_container resizeme60 icon60">
+										<img class="resizeme60" src="">										
+									</div>
+									<p class="icon_info_txt">60 x 60</p>
+								</li>
+								<li>
+									<div class="title_icon_image_container resizeme80">
+										<img class="resizeme80" src="">										
+									</div>
+									<p class="icon_info_txt">80 x 80</p>
+								</li>
+							</ul>
+						</div>
+					</fieldset>
+					
+					<div class="buttons_container stroke_top">					
+						<input type="hidden" name="form_id" value="38297" />
+						<a href="titles.html">Cancel</a>
+						<a href="javascript: void(0);" id="saveForm" class="button_gen corner_4">Save</a>
+					</div>
+					
+				</form>
+			</div>	
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid2.js"></script> -->
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){ 
+		/* jQuery overlay append */
+		var overlayHeight = $(document).height();
+		var overlayHTML = "<div class='container_fullscreen' style='height:" + overlayHeight + "px;'>&nbsp;</div>";
+		$('body').append(overlayHTML);
+		
+		/* Tooltips */
+		$("a[title]").tooltip({
+			delay: 10,
+			offset: [20, 71],
+			onBeforeShow: function(toolTipEvent, toolTipPosition) {
+			  this.getTip().css({'z-index':'9000'});
+			}
+		});
+		
+		
+	});	
+</script>
+	
+<script type="text/javascript">	
+
+	var titleurl = "";
+	var iconid = ""; 	
+	
+	$.urlParam = function(name)
+		{
+		var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+		if (!results) { return 0; }
+		return results[1] || 0;
+		}
+
+	  /* Clear Form Data */
+    $("#saveForm").attr('disabled', 'disabled');
+	  $("#saveForm").addClass("button_disabled");
+    $("#file").val("");
+
+	$('#image1').click(function()
+		{
+			document.getElementById('file').style.display='';
+
+			$('#saveForm').removeAttr('disabled');
+	        $("#saveForm").removeClass("button_disabled");
+			
+		}
+	);
+
+    function ajaxFileUpload(iconurl)
+    {
+        //starting setting some animation when the ajax starts and completes
+        $("#loading")
+        .ajaxStart(function(){
+            $(this).show();
+        })
+        .ajaxComplete(function(){
+            $(this).hide();
+        });
+       
+        /*
+            prepareing ajax file upload
+            url: the url of script file handling the uploaded files
+                        fileElementId: the file type of input element id and it will be the index of  $_FILES Array()
+            dataType: it support json, xml
+            secureuri:use secure protocol
+            success: call back function when the ajax complete
+            error: callback function when the ajax failed
+        */
+
+        $.ajaxFileUpload
+        (
+            {
+                url:iconurl,
+                secureuri:false,
+                fileElementId:'file',
+                dataType: 'json',
+                success: function (data, status)
+                {
+					//alert("Icon Upload Successful.");
+					//getTitleIconDetails(data);
+					//location.href = 'title_details.html?d=' + $.urlParam('d');
+					confirmRedirect("Icon Upload Successful." , 'title_details.html?d=' + $.urlParam('d'));
+                },
+                error: function (data, status, e)
+                {
+                    //alert(e);
+					confirmRedirect(e , "noRedirect");
+                }
+            }
+        )
+        
+        return false;
+	
+    }  
+
+	function getTitleIconDetails(data){
+
+		if(data.result.iconCollateralUrls)												 // ICON
+			{
+
+				$('#titleid').text('Edit Icon - ' + data.result.name);
+
+				var iconurl = getBaseURL() + urlAfterInclusive(String(data.result.iconCollateralUrls[0].url.href),'/partner');
+				var startpos = iconurl.indexOf('/icons/');
+				var endpos = iconurl.indexOf('/images/');
+				iconid = iconurl.slice(startpos+7,endpos);
+
+				$('#image1').html("<img width=80 src='" + iconurl + ">");
+
+				//80	
+				iconurl = getBaseURL() + urlAfterInclusive(String(data.result.iconCollateralUrls[1].url.href),'/partner');
+				$('.resizeme80').html("<img width=80 src='" + iconurl + ">");
+
+				//40	
+				iconurl = getBaseURL() + urlAfterInclusive(String(data.result.iconCollateralUrls[2].url.href),'/partner');
+				$('.resizeme40').html("<img width=40 src='" + iconurl + ">");
+				
+				//60	
+				iconurl = getBaseURL() + urlAfterInclusive(String(data.result.iconCollateralUrls[3].url.href),'/partner');
+				$('.resizeme60').html("<img width=60 src='" + iconurl + ">");
+
+				$('#deleteiconlink').show();
+			}
+			else
+			{
+				$('#titleid').text('Add Icon - ' + data.result.name);
+				$('#deleteiconlink').hide();
+			}
+		
+	}
+
+	$(document).ready(function() {
+
+		var titleid = "";
+		titleurl = getBaseURL() + getPartnerAppURL() + $.urlParam('d');
+
+		$.getJSON(titleurl, function(data){
+			$('#titleid').text('Add Icon - ' + data.result.name);
+			titleid = data.result.id;
+			
+			getTitleIconDetails(data);
+			
+		});
+
+
+		$(function() {
+			$(".resizeme40").aeImageResize({height: 40, width: 40});
+		});
+
+
+		$(function() {
+			$(".resizeme60").aeImageResize({height: 60, width: 60});
+		});
+
+		$(function() {
+			$(".resizeme80").aeImageResize({height: 80, width: 80});
+		});
+
+		$(function() {
+			$(".resizeme480").aeImageResize({height: 512, width: 512});
+		});
+
+		$('#saveForm').click(function()
+		{
+
+			if($.urlParam('del')) // DELETE icons first
+				{
+				$.ajax({url: getBaseURL() + getPartnerAppURL() + '/publishers/' + getPublisherId() + '/titles/'+ titleid +'/icons/' + $.urlParam('del') ,type:'DELETE'}); // retval discarded
+				}
+			ajaxFileUpload(getBaseURL() + getPartnerAppURL() + '/publishers/' + getPublisherId() + '/titles/' + titleid + '/icons'); 
+		});
+
+		$('#deleteiconlink').click(function()
+		{
+			//'&del=' + iconid
+			$.ajax({url: getBaseURL() + getPartnerAppURL() + '/publishers/' + getPublisherId() + '/titles/'+ titleid +'/icons/' + iconid ,type:'DELETE'}); // 
+			//alert("Icon Deleted");
+			//location.href = 'title_details.html?d=' + $.urlParam('d');
+			confirmRedirect("Icon Deleted" , 'title_details.html?d=' + $.urlParam('d'));
+		});
+		
+		
+						
+	});
+</script>	
+	
+</body>
+</html>
+

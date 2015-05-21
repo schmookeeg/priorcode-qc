@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Titles (Tester)</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="#">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li class="active"><a href="titles.html">Titles</a></li>
+			<li><a href="catalog.html">Catalog</a></li>
+			<li><a href="settings.html">Settings</a></li>
+			<li class="last"><a href="#">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+
+		<!-- Sub Navigation -->
+		<ul class="sub_nav">
+			<li class="active"><a href="#">Assigned to me</a></li>
+			<li><a href="#">In test queue</a></li>
+			<li class="last"><a href="#">In test</a></li>
+		</ul>
+		<!-- /Sub Navigation -->
+
+		<!-- Main Content -->			
+		<div class="content">
+			<table id="table_titles_tester" style="display:none"></table>
+
+			<div class="pagination">
+				<span class="left">Showing <span>1-50</span> out of <span>234</span></span>
+
+				<ul class="right">
+					<li class="first">1</li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">Next &gt;</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid2.js"></script> -->
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+	
+	<script type="text/javascript">
+		$("#table_titles_tester").flexigrid({
+			// url: 'post2.php',
+			dataType: 'json',
+			colModel : [
+				{display: 'Title', name : 'id', width : 390, sortable : true, align: 'left'},
+				{display: 'Device', name : 'make', width : 90, sortable : true, align: 'left'},
+				{display: 'Review', name : 'model', width : 90, sortable : true, align: 'left'},
+				{display: 'Test', name : 'name', width : 90, sortable : true, align: 'left'},
+				{display: 'Received', name : 'active', width : 90, sortable : true, align: 'left'},
+				{display: 'Updated', name : 'editdelete', width : 90, sortable : true, align: 'left'}
+			],
+			//buttons : [
+			//	{name: 'Add', bclass: 'add', onpress : test},
+			//	{name: 'Delete', bclass: 'delete', onpress : test},
+			//	{separator: true}
+			//	],
+			//searchitems : [
+			//	{display: 'ISO', name : 'iso'},
+			//	{display: 'Name', name : 'name', isdefault: true}
+			//	],
+			sortname: "iso",
+			sortorder: "asc",
+			//usepager: true,
+			title: 'Titles',
+			//useRp: true,
+			//rp: 15,
+			//showTableToggleBtn: true,
+			width: 900,
+			height: 800
+		});
+	</script>
+</body>
+</html>

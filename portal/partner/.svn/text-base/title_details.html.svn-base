@@ -1,0 +1,909 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Partner Portal - Title Details</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>	
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<div class="global_status_content">
+				username@email.com
+			</div>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="my_profile.html">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li class="active"><a href="titles.html">Titles</a></li>
+			<li><a href="agreements.html">Agreements</a></li>
+			<li class="last"><a href="admin.html">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->
+		<div id="form_container" class="create_account_container create_titles_container">	
+			<div class="">
+				
+				<form id="form_33863" class="appnitro"  method="post" action="">
+					<fieldset class="title_header_container">
+						<ul class="title_header_content">
+							<li class="col_01">
+								<div class="title_icon_container">
+									<div class="title_icon_tag">&nbsp;</div>
+									<div id="titleicon">
+										&nbsp;
+									</div>
+									<a href="#" id="editiconlink">&nbsp;</a>
+								</div>
+							</li>
+							<li class="col_02">
+								<div class="title_info_container">
+									<h1 id="titlename">Crystal Quest</h1>
+									
+									<p id="titledownloads"><strong>512</strong> downloads <span id="titlestatus">(released on mm/dd/yyyy)</span></p>
+										
+									<p id="titlelastupdated">Last updated by username on mm/dd/yyyy hh:mm AM</p>	
+								</div>
+							</li>
+							<li class="col_03">
+								<div class="binary_container">
+									<a href="binary_add.html" id="editbinarylink" class="button_gen corner_4">+ Add Binary</a>
+									<br/>
+									<br/>
+									<!--<a class="button_gen_large corner_4" href="#">Delete Title</a>-->
+								</div>
+							</li>
+						</ul>												
+					</fieldset>
+					
+					<div class="title_tabs_container">			
+						<ul class="title_tabs">
+							<li>
+								<a class="tablink corner_44 current" divid="detailstab" id="detailstablink" href="javascript: void(0);">Details</a>
+							</li>
+							<li>
+								<a class="tablink corner_44" divid="bmptab" id="bmptablink" href="javascript: void(0);">BrewMP Binaries (0)</a>
+							</li>
+							<li>
+								<a class="tablink corner_44" divid="javatab" id="javatablink" href="javascript: void(0);">Java Binaries (0)</a>
+							</li>
+						</ul>
+					</div>		
+					 
+					
+					<!-- DETAILS TAB --> 
+					<div id="detailstab" class="tab" style="display:block;">
+						<div class="form_header">
+							<h3>Metadata</h3>
+							<a href="title_metadata_edit.html" id="editmetadatalink" class="button_gen_small corner_4">Edit</a>
+						</div>
+						<fieldset class="head_fieldset">
+							<ul class="language_container buttons" id="languagelink"></ul>
+							<div id="add_language_box">
+								<label class="description" for="element_101">Language:</label>
+								<select class="element select medium" id="element_101" name="element_101"> 
+									<option value="" selected="selected"></option>
+								</select>
+								<ul class="buttons_container">
+									<li class="col_left"><a id="Cancel_Add_Language" href="javascript: void(0);" class="button_gen_small corner_6">Cancel</a></li>
+									<li class="col_right"><a id="Add_Language" href="javascript: void(0);" class="button_gen_small corner_6">Add</a></li>
+								</ul>								 															
+							</div>
+						</fieldset>					
+						<fieldset class="title_details_container">
+							<fieldset>
+								<label>Title display Name:</label><p id="titledisplayname">Crystal Quest</p>
+							</fieldset>
+							<fieldset>
+								<label>Description:</label><p id="titledescription" class="descriptive_block">Crystal Quest Description</p>
+							</fieldset>
+							<fieldset>
+								<label>Tags:</label><p id="titletags" class="descriptive_block">tags</p>
+							</fieldset>
+							<fieldset>
+								<label>EULA:</label><p id="titleeula" class="descriptive_block">EULA</p>
+							</fieldset>
+							<fieldset>
+								<label>Copyright:</label><p id="titlecopyright" class="descriptive_block">copyright</p>
+							</fieldset>
+						</fieldset>
+						
+						<fieldset class="title_details_container continued">
+							<ul>
+								<li class="col_left">
+									<fieldset class="capitalize">
+										<label>Category:</label><p id="titlecategory" class="title_details_content wrapword">games > puzzle</p>
+									</fieldset>
+									<fieldset>
+										<label>Content Rating:</label>
+											<ul class="rating_container">
+												<li class="col_left"><div class="content_rating_block"><p id="titlerating">4+</p></div></li>
+												<li class="col_right"><a href="#" class="">What makes this rating?</a></li>
+											</ul>
+									</fieldset>
+									<fieldset>
+										<label>Countries:</label><p id="titlecountries" class="title_details_content wrapword"></p> 
+									</fieldset>
+								</li>
+								<li class="col_right">
+									<fieldset>
+										<label>Company Name:</label><p id="titlecompany" class="title_details_content wrapword">Creative Inc</p> 
+									</fieldset>
+									<fieldset>
+										<label>Developer Name:</label><p id="titledeveloper" class="title_details_content wrapword">Creative</p> 
+									</fieldset>
+									<fieldset>
+										<label>Developers Website:</label><p id="titlewebsite" class="title_details_content wrapword"><a href="#">http://domain.com/</a></p> 
+									</fieldset>
+									<fieldset>
+										<label>Support URL:</label><p id="titlesupport" class="title_details_content wrapword"><a href="#">http://domain.com</a></p> 
+									</fieldset>
+									<fieldset>
+										<label>Developers Email:</label><p id="titleemail" class="title_details_content wrapword">contact@test.com</p> 
+									</fieldset>
+								</li>
+							</ul>														
+						</fieldset>									
+						
+						<div class="form_header">
+							<h3>PREVIEWS</h3>
+							<a href="javascript: void(0);" title="PREVIEWS information" class="icon_question">?</a>
+							<a href="previews_add.html" id="addpreviewslink" class="button_gen_small corner_4">+ Add Previews</a>
+						</div>																								
+						
+						<div class="previews_container">
+							<div id="titlepreviews" style="display:inherit;"></div>			
+						</div>
+					</div>
+					<!-- /DETAILS TAB -->
+					
+								
+					
+					<!-- BREW TAB -->
+					<div id="bmptab" class="tab" style="display:none;">						
+						<fieldset class="tabbed_button_group_container">
+							<legend class="logo_brew">brewmp</legend>
+							<div class="tabbed_button_group_content corner_4">
+								<a href="javascript: void(0);" id="bmpviewbinary" divid="bmpviewbinarytab" class="binarytablink first_button current_button">View By Binaries</a>
+								<a href="javascript: void(0);" divid="bmpviewdevicestab" id="bmpviewdevice" class="binarytablink second_button">View By Devices</a>
+							</div>
+						</fieldset>
+						
+						 						 
+						<div id="bmpviewbinarytab" style="display:inherit;" class="binarytab">
+							
+						</div>
+						
+						<div id="bmpviewdevicestab" style="display:none;" class="binarytab">
+							<div class="content">
+								<table id="flexmasterdevices" style="display:none"></table>
+							</div>
+						</div>
+					</div>
+					<!-- /BREW TAB -->
+					
+					
+					
+					<!-- JAVA TAB -->
+					<div id="javatab" class="tab" style="display:none;">
+						<fieldset class="tabbed_button_group_container">
+							<div class="tabbed_button_group_content corner_4">
+								<a href="javascript: void(0);" id="javaviewbinary" divid="javaviewbinarytab" class="binarytablink first_button current_button">View By Binaries</a> 
+								<a href="javascript: void(0);" divid="javaviewdevicestab" id="javaviewdevice" class="binarytablink second_button">View By Devices</a> 
+							</div>
+						</fieldset>
+						
+						
+						<div id="javaviewbinarytab" style="display:inherit;" class="binarytab">
+							
+						</div>
+						
+						<div id="javaviewdevicestab" style="display:none;" class="binarytab">
+							<div class="content">
+								<table id='flexmasterdevices2' style='display:none'></table>
+							</div>
+						</div>										
+					</div>		
+					<!-- /JAVA TAB -->																		
+				</form>	
+			</div>
+		</div>
+	
+	
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid.js"></script> -->
+	<script type="text/javascript" src="../../public/js/flexigrid2.js"></script>
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+<script type="text/javascript">
+	function compareOptionText(a,b) {
+		/*
+		* return >0 if a>b
+		* 0 if a=b
+		* <0 if a<b
+		*/
+		// textual comparison
+		return a.text!=b.text ? a.text<b.text ? -1 : 1 : 0;
+		// numerical comparison
+		// return a.text - b.text;
+	}
+	
+	function sortOptions(list) {
+		var items = list.options.length;
+		// create array and make copies of options in list
+		var tmpArray = new Array(items);
+		for ( i=0; i<items; i++ )
+		tmpArray[i] = new
+		Option(list.options[i].text,list.options[i].value);
+		// sort options using given function
+		tmpArray.sort(compareOptionText);
+		// make copies of sorted options back to list
+		for ( i=0; i<items; i++ )
+		list.options[i] = new Option(tmpArray[i].text,tmpArray[i].value);
+	}
+
+
+
+$.urlParam = function(name)
+	{
+	var results = new RegExp('[\\?&]' + name + '=([^&#]*)').exec(window.location.href);
+	if (!results) { return 0; }
+
+	return results[1] || 0;
+	}
+
+	var languageList = [];	
+	$.langName = function(code){
+		var langName = "";
+		$.each(languageList, function(key, value) { 
+			wtf=key + ': ' + value; 
+			if(value.code == code){
+				langName = value.meaning;
+			}
+		});
+		
+		return langName;
+	}
+
+
+$(document).ready(
+	function (){
+	
+	$('#add_language_box').hide();
+	
+		
+	var languages = [];
+	
+	
+
+	//LANGUAGE
+	$.getJSON(getBaseURL() + getPartnerAppURL() + '/codes/language', function(data){
+		languageList = data.result;		
+		var x = 0;
+	});	
+
+	
+	
+	$("#addlang").live('click', function()	{
+		//$('#add_language_box').show();		
+		$('#element_101 >option').remove();
+		
+	    var html = '';
+	    var len = languageList.length;
+	    for (var i = 0; i< len; i++) {
+			var selected = '';
+	        html += '<option ' + selected + 'value="' + languageList[i].code + '">' + languageList[i].meaning + '</option>';
+	    }
+	    $('select#element_101').append(html);
+	
+	})
+
+	
+	$("#Add_Language").live('click', function()	{
+		
+		var langdiv = '';
+		//Add the language button
+		$.each(languages, function(key, value) { 
+			//wtf=key + ': ' + value; 
+			langdiv +=	"<a href='javascript: void(0);' id='lang_" + i + ">" + $.langName(value.languageCode) + "</a></li>";
+		});
+		langdiv +=	"<li><a href='javascript: void(0);' id='lang_" + i + ">" + $.langName($("#element_101").val()) + "</a></li>";	
+		//langdiv +=  "<a id='addlang' href='javascript: void(0);'>+</a>";
+
+		$('#languagelink').html(langdiv);
+		
+		selectedLanguage = $("#element_101").val();
+		
+		if (selectedLanguage != "en") {
+			//Show the form with blank fields
+			$('#element_2').val("");
+			$('#element_3').text("");
+			$('#element_4').val("");
+			eula = "";
+		}
+		
+	})
+
+	
+	$("#Cancel_Add_Language").live('click', function()	{
+		$('#add_language_box').hide();		
+	})	
+	
+		
+	$('[id^="lang_"]').live('click', function(){
+		
+		var currId = this.id.split("_"); 
+		currLang = this.text;
+
+		$.each(languages, function(key, value) { 
+			if($.langName(key) == currLang){
+				$('#titledisplayname').html(value.displayName);
+				$('#titledescription').html(value.description);
+				$('#titletags').html(value.keywords);
+				$('#titleeula').html(value.eula);
+				return false;
+			}
+		});
+	})	
+	
+	
+	
+	
+	
+	
+	
+	
+	//DEVICES
+	var devices = [];
+
+	// devices[].details
+	// devices[].binarydetails
+	$('#editiconlink').attr('href','icon_edit.html?d=' + $.urlParam('d'));
+	$('#editbinarylink').attr('href','binary_add.html?d=' + $.urlParam('d'));
+	$('#editmetadatalink').attr('href','title_metadata_edit.html?d=' + $.urlParam('d'));
+	$('#addpreviewslink').attr('href','previews_add.html?d=' + $.urlParam('d'));
+
+	$('.binarysubmit').live('click',function()
+		{
+		var cid = $(this).attr("cid");
+		jQuery.ajaxSetup({'beforeSend': function(xhr) {xhr.setRequestHeader("Content-Type", "application/json")}    });
+			$.ajax({
+			    type: 'PUT',
+			    url: getBaseURL() + getPartnerAppURL() + $.urlParam('d') + '/content/' + cid + '/state/ready',
+			    dataType: 'json',
+			    data: '{"notes":"test","reason":"something"}',
+			    success: function(data) 
+				{
+				//alert("Binary submitted");
+				//location.href="titles.html";
+				confirmRedirect("Binary submitted" , "titles.html");
+			 	},
+			    async: false
+			});
+
+
+		// 		PUT http://p2-sint/plaza/partner/rs/v1/publishers/{pub-id}/titles/{titleid}/content/{contentID}/state/ready
+		// 		BODY: {"notes":"test","reason":"something"}
+		return false;
+		});
+
+
+	$('.tablink').live('click',function()
+		{
+		$('.tab').hide();
+		$('#' + $(this).attr('divid')).show();
+		return false;
+		});
+
+	$('.binarytablink').live('click',function()
+		{
+		$('.binarytab').hide();
+		$('#' + $(this).attr('divid')).show();
+		return false;
+		});
+
+	var u = getBaseURL() + getPartnerAppURL() + '/displays'; // GET DISPLAYS
+	var disps;
+	$.getJSON(u, function(data)
+		{
+		var divs='';
+		disps = data.result;
+		for(var i in disps)
+			{
+			divs += "<div id='previewdisplay" + disps[i].id + "' class='preview_display_container'>";
+			divs += "<h3>" + disps[i].name + "<span class='preview_links_container'><a id='editpreviewslink' href='previews_edit.html?displayid="+ disps[i].id + "&d="+  $.urlParam('d') + "'>Edit</a> | <a class='" + disps[i].name + "' id='deletepreviewslink" + disps[i].id + "' href='#'>Delete</a></span></h3>";
+			divs += "<fieldset>";
+			divs += "<img border=1 width=50 height=50 src='../images/blank.gif' id='previewdisplay" + disps[i].id + "pos1'>";
+			divs += "<img border=1 width=50 height=50 src='../images/blank.gif' id='previewdisplay" + disps[i].id + "pos2'>";
+			divs += "<img border=1 width=50 height=50 src='../images/blank.gif' id='previewdisplay" + disps[i].id + "pos3'>";
+			divs += "<img border=1 width=50 height=50 src='../images/blank.gif' id='previewdisplay" + disps[i].id + "pos4'>";
+			divs += "<img border=1 width=50 height=50 src='../images/blank.gif' id='previewdisplay" + disps[i].id + "pos5'>";
+			divs += "</fieldset>";
+			divs += "</div>";
+
+			// populate "view by devices" array while we're here -- add all of the devices we know about.
+
+
+			}
+		$('#titlepreviews').html(divs);
+			
+		});
+
+
+	var u = getBaseURL() + getPartnerAppURL() + '/devices'; // GET DISPLAYS
+	var disps;
+	$.getJSON(u, function(data)
+		{
+		for(var i in data.result)
+			{
+			devices[i] = new Object();
+			devices[i].details = data.result[i];
+			}
+		});
+
+
+	//CATEGORY
+
+
+	var u = getBaseURL() + getPartnerAppURL() + $.urlParam('d');
+
+	$.getJSON(u, function(data) // TITLE DATA
+		{
+		
+		if(data.result.iconCollateralUrls)												 // ICON
+			{
+			
+
+			var iconurl = getBaseURL() + urlAfterInclusive(String(data.result.iconCollateralUrls[0].url.href),'/partner');
+			var startpos = iconurl.indexOf('/icons/');
+			var endpos = iconurl.indexOf('/images/');
+			var iconid = iconurl.slice(startpos+7,endpos);
+
+			$('#titleicon').html("<img width=80 src='" + iconurl + ">");
+
+			$('#editiconlink').text('Edit Icon').hide();
+			
+			$('.title_icon_container').mouseenter(function(){
+				$('#editiconlink').show();
+			}).mouseleave(function(){
+				$('#editiconlink').hide();
+			}).click(function(){
+				location.href = 'icon_edit.html?d=' + $.urlParam('d') + '&del=' + iconid;
+			});
+			
+			$('#editiconlink').attr('href','icon_edit.html?d=' + $.urlParam('d') + '&del=' + iconid);
+			}	
+		else
+			{
+				$('#editiconlink').text('Click to add icon');
+				$('#titleicon').click(function(){
+					location.href = 'icon_edit.html?d=' + $.urlParam('d') + '&del=' + iconid;
+				});
+			}
+
+		if(data.result.previewCollateralUrl)												 // PREVIEWS
+			{
+			var imgs = '<br><br>';	
+			var i;
+			var j;
+			$.getJSON(getBaseURL() + urlAfterInclusive(String(data.result.previewCollateralUrl.url.href),'/partner'), function(data2)
+				{
+				if(data2) // there can be multiple previews here
+					{
+					for(i in data2.result)
+						{
+						// synchronous -- too many calls were aborting.
+
+						$.ajax({
+						    type: 'GET',
+						    url: getBaseURL() + urlAfterInclusive(String(data2.result[i].url.href),'/partner'),
+						    dataType: 'json',
+						    success: function(data3) 
+							{
+							if(data3) // can there be multiple previews here??
+								{
+								for(j in data3.result)
+									$('#previewdisplay' + data2.result[i].displayId + 'pos' + data3.result[j].position).attr('src',getBaseURL() + urlAfterInclusive(String(data3.result[j].url.href),'/partner'));
+								}		
+				
+						 	},
+						    async: false
+						});
+				
+						$('#deletepreviewslink' + data2.result[i].displayId ).attr('href',getBaseURL() + urlAfterInclusive(String(data2.result[i].url.href),'/partner'));
+
+						}
+					}
+				
+				});
+			
+			}
+		
+		
+		var langdiv = "";
+		var i = 0;
+		languages = data.result.languages;
+		$.each(data.result.languages, function(key, value) { 
+			wtf=key + ': ' + value; 
+			langdiv +=	"<li>";
+			langdiv +=	"<a href='javascript: void(0);' id='lang_" + i + "' value='" + value.languageCode+ "'>" + $.langName(value.languageCode) + "</a>";
+			langdiv +=	"</li> ";
+			i++;
+		});
+		//langdiv += "<li><a id='addlang' href='javascript: void(0);'>+</a></li>";
+		$('#languagelink').html(langdiv);			
+
+		var wtf;
+		$.each(data.result.languages, function(key, value) { 
+			wtf=key + ': ' + value; 
+		});
+
+		$('#titlename').html(data.result.name);
+		$('#titledisplayname').html(data.result.languages.en.displayName);
+		$('#titledescription').html(data.result.languages.en.description);
+		$('#titletags').html(data.result.languages.en.keywords);
+		$('#titleeula').html(data.result.languages.en.eula);
+
+//		$('#titlecategory').html(data.result.category.name);
+//		$('#titlerating').html(data.result.rating.level);
+		$('#titlecountries').html(data.result.countries);
+
+
+		$('#titlecopyright').html(data.result.copyright);
+		$('#titledeveloper').html(data.result.company.name);
+		$('#titlewebsite').html(data.result.company.website);
+		$('#titlesupport').html(data.result.supportUrl);
+		$('#titleemail').html(data.result.developerEmail);
+
+
+
+	});
+
+
+	var u = getBaseURL() + getPartnerAppURL() + $.urlParam('d') + '/content'; // find will be removed in next build - BINARIES DATA
+
+	$.getJSON(u, function(data)
+		{
+
+
+		// let's load the view-by-device data object first.
+
+		
+
+
+		// BUILD binary tabs	
+		var i;
+		var b = '';
+		var j = '';
+		var a = '';
+
+		var numb=0,numj=0,numa=0; // number of binaries
+		
+
+		for (i in data.result)
+			{
+			switch(data.result[i].contentType)
+				{
+				case "Brew":
+					numb++;
+					b = '';
+					
+					b += "<fieldset class='bin_app_container'>";					
+						b += "<h3><span>" + data.result[i].contentName + " (SKU 00002345)</span>";					
+						b += " &nbsp;&nbsp;&nbsp;&nbsp;<a href='' class='binarysubmit' cid=" + data.result[i].id + ">Submit</a><br>";
+						//b += "<select id='binaryselect" + data.result[i].id + "'>";					
+						//b += "<option value=''>Download</option>";
+						//b += "<option value=''>Hold</option>";
+						//b += "<option value=''>Delete</option>";
+						//b += "<option value=''>Restore</option>";
+						//b += "<option value=''>Assign to me</option>";
+						//b += "<option value=''>Pass</option>";
+						//b += "<option value=''>Fail</option>";
+						//b += "<option value=''>Move to Test Queue</option>";
+						//b += "<option value=''>Withdraw</option>";
+						//b += "<option value=''>Recall</option>";
+						//b += "<option value=''>Reject Binary</option>";
+						//b += "</select>"
+						b += "</h3>";
+						
+						b += "<div class='bin_status_content'><span class='icon_status_ready'>ready</span><span class='icon_status_draft'>draft</span><span class='icon_status_blank'>status</span><span class='icon_status_blank'>status</span><span class='icon_status_blank'>status</span><strong>" + data.result[i].status + "</strong> (updated by Qualcomm on mm/dd/yyyy)</div>";					
+						b += "<div class='bin_status_sub_content'><ul><li>Version: " + data.result[i].displayVersion + "</li><li>Minimum OS version: " + data.result[i].minOs + "</li><li><a href='#'>Test Guideline</a></li></ul></div>";																						
+					b += "</fieldset>";
+					
+										
+					b += "<div class='content'><div class='header'><table id='flex" + data.result[i].id + "' style='display:none'></table></div></div>";
+					$('#bmpviewbinarytab').html($('#bmpviewbinarytab').html() + b);
+
+
+
+
+
+					if(data.result[i].devices.length > 0) // we have devices associated with this binary (for this title)
+						{
+
+
+						for(var j in data.result[i].devices) // this binary is data.result[i]; its binaries are data.result[i].devices[j]
+							{
+							// for each device ... verify where in our array to stick the device data
+							for(var k in devices) // let's loop our private array of all devices; each is devices[k]
+								{
+								if(devices[k].details.name == data.result[i].devices[j].name) // we have a match
+//								if(devices[k].details.id == data.result[i].devices[j].id) // we have a match
+									{
+									if(!devices[k].binary)
+										{
+										devices[k].binary = [];
+										}
+									
+									devices[k].binary[devices[k].binary.length] = data.result[i]; // let's locally cache this binary's details associated with display.
+										
+									}
+								}
+							}
+						
+
+						$("#flex" + data.result[i].id).flexigrid(
+							{
+							dataType: 'json',
+							colModel : [
+								{display: 'Device', name : 'id', width : 200, sortable : true, align: 'left'},
+								{display: 'Make', name : 'make', width : 200, sortable : true, align: 'left'},
+								{display: 'Resolution', name : 'name', width : 200, sortable : true, align: 'left'},
+								{display: 'Input', name : 'touch', width : 200, sortable : true, align: 'left'}
+								],
+							sortname: "iso",
+							sortorder: "asc",
+							title: "Target Devices (" + data.result[i].devices.length + ")",
+							width: "895",
+							height: "200"
+							}
+							);
+
+
+						$("#flex" + data.result[i].id).flexAddData(formatDeviceResults(data.result[i].devices));
+
+						}
+					$('#bmptablink').html("BrewMP Binaries (" + numb + ")");
+				break;
+
+				case "Java":
+					numj++;
+					b = '';
+										
+					b += "<fieldset class='bin_app_container'>";					
+						b += "<h3><span>" + data.result[i].contentName + " (SKU 00002345)</span>";	
+						b += " &nbsp;&nbsp;&nbsp;<a href='' class='binarysubmit' cid=" + data.result[i].id + ">Submit</a><br>";				
+						//b += "<select id='binaryselect" + data.result[i].id + "'>";					
+						//b += "<option value=''>Download</option>";
+						//b += "<option value=''>Hold</option>";
+						//b += "<option value=''>Delete</option>";
+						//b += "<option value=''>Restore</option>";
+						//b += "<option value=''>Assign to me</option>";
+						//b += "<option value=''>Pass</option>";
+						//b += "<option value=''>Fail</option>";
+						//b += "<option value=''>Move to Test Queue</option>";
+						//b += "<option value=''>Withdraw</option>";
+						//b += "<option value=''>Recall</option>";
+						//b += "<option value=''>Reject Binary</option>";
+						//b += "</select>"
+						b += "</h3>";
+						
+						b += "<div class='bin_status_content'><span class='icon_status_ready'>ready</span><span class='icon_status_draft'>draft</span><span class='icon_status_blank'>status</span><span class='icon_status_blank'>status</span><span class='icon_status_blank'>status</span><strong>" + data.result[i].status + "</strong> (updated by Qualcomm on mm/dd/yyyy)</div>";					
+						b += "<div class='bin_status_sub_content'><ul><li>Version: " + data.result[i].displayVersion + "</li><li>Minimum OS version: " + data.result[i].minOs + "</li><li><a href='#'>Test Guideline</a></li></ul></div>";																						
+					b += "</fieldset>";
+					
+								 		
+					b += "<div class='content'><div class='header'><table id='flex" + data.result[i].id + "' style='display:none'></table></div></div>";
+					$('#javaviewbinarytab').html($('#javaviewbinarytab').html() + b);
+
+
+
+					if(data.result[i].devices.length > 0) // we have devices associated with this binary (for this title)
+						{
+
+
+						for(var j in data.result[i].devices) // this binary is data.result[i]; its binaries are data.result[i].devices[j]
+							{
+							// for each device ... verify where in our array to stick the device data
+							for(var k in devices) // let's loop our private array of all devices; each is devices[k]
+								{
+								if(devices[k].details.name == data.result[i].devices[j].name) // we have a match
+//								if(devices[k].details.id == data.result[i].devices[j].id) // we have a match
+									{
+									if(!devices[k].binary)
+										{
+										devices[k].binary = [];
+										}
+									
+									devices[k].binary[devices[k].binary.length] = data.result[i]; // let's locally cache this binary's details associated with display.
+										
+									}
+								}
+							}
+						
+
+						$("#flex" + data.result[i].id).flexigrid(
+							{
+							dataType: 'json',
+							colModel : [
+								{display: 'Device', name : 'id', width : 120, sortable : true, align: 'left'},
+								{display: 'Make', name : 'make', width : 120, sortable : true, align: 'left'},
+								{display: 'Resolution', name : 'name', width : 120, sortable : true, align: 'left'},
+								{display: 'Input', name : 'touch', width : 120, sortable : true, align: 'left'}
+								],
+							sortname: "iso",
+							sortorder: "asc",
+							title: "Target Devices (" + data.result[i].devices.length + ")",
+							width: "540",
+							height: "200"
+							}
+							);
+
+
+						$("#flex" + data.result[i].id).flexAddData(formatDeviceResults(data.result[i].devices));
+						
+						}
+					$('#javatablink').html("Java Binaries (" + numj + ")");
+				break;
+
+	
+				}
+			}
+
+
+		$("#flexmasterdevices").flexigrid2(
+							{
+							dataType: 'json',
+							colModel : [
+								{display: 'Device', name : 'id', width : 120, sortable : true, align: 'left'},
+								{display: 'Make', name : 'make', width : 120, sortable : true, align: 'left'},
+								{display: 'Resolution', name : 'name', width : 120, sortable : true, align: 'left'},
+								{display: 'Input', name : 'touch', width : 120, sortable : true, align: 'left'},
+								{display: 'Asset', name : 'asset', width : 40, sortable : true, align: 'left'},
+								{display: 'Binary', name : 'binary', width : 120, sortable : true, align: 'left'},
+								{display: 'Min OS', name : 'minos', width : 40, sortable : true, align: 'left'},
+								{display: 'Binary Status', name : 'status', width : 60, sortable : true, align: 'left'},
+								{display: 'Updated', name : 'updated', width : 120, sortable : true, align: 'left'}
+								],
+							sortname: "iso",
+							sortorder: "asc",
+							title: "Devices",
+							width: "895",
+							height: "200"
+							}
+							);
+
+
+						$("#flexmasterdevices").flexAddData(formatBinariesByDevice(devices));
+
+		});
+	
+		/* Tabs */
+		$(".tablink").click(function (){
+			$(this).addClass("current");
+			$(this).parents("li").siblings().find(".current").removeClass("current");
+		});
+		
+		/* Tooltips */
+		$("a[title]").tooltip({
+			delay: 10,
+			offset: [20, 71],
+			onBeforeShow: function(toolTipEvent, toolTipPosition) {
+			  this.getTip().css({'z-index':'9000'});
+			}
+		});
+		
+		/* Tabs Buttons  */
+		$(".tabbed_button_group_content a").click(function (){			
+			$(this).addClass("current_button");			
+			$(this).siblings().removeClass("current_button");				
+		});
+
+		$("[id^=deletepreviewslink]").live('click',function()
+		{
+		   if (confirm("Are you sure you want to delete previews for " + this.className + "?")) {
+		   		var u = this.href;
+		   		$.ajax({url: u ,type:'DELETE'}); // 
+			}	
+		});
+	});
+
+
+function formatDeviceResults(o)
+
+	{
+	
+	var rows = Array();
+	var jsonretval;
+	
+	for (i = 0; i < o.length; i++) 
+		{
+		var item = o[i];
+	
+		rows.push
+			(
+				{ cell: 
+					[
+					item.name,
+					item.make,
+					((typeof(item.display) == "undefined") ? "0x0" : (item.display.name + " (" + ((typeof(item.display.pixelHeight) == "undefined") ? "0" : item.display.pixelHeight) + "x" + ((typeof(item.display.pixelWidth) == "undefined") ? "0" : item.display.pixelWidth) + ")")),
+					(typeof(item.touch) == "undefined") ? "false":item.touch,
+					]
+				}
+			);
+		}
+
+        return {
+            total: o.length,
+            page: 1,
+            rows: rows
+        };
+
+
+	}
+
+
+function formatBinariesByDevice(o)
+
+	{	
+	var rows = Array();
+	var jsonretval;
+	
+	for (i = 0; i < o.length; i++) // one lap per device
+		{
+		var item = o[i];
+
+		for(var j in item.binary) // one lap per binary for this device
+			{
+			rows.push
+				(
+					{ cell: 
+						[
+						item.details.name,
+						item.details.make,
+						((typeof(item.display) == "undefined") ? "0x0" : (item.display.name + " (" + ((typeof(item.display.pixelHeight) == "undefined") ? "0" : item.display.pixelHeight) + "x" + ((typeof(item.display.pixelWidth) == "undefined") ? "0" : item.display.pixelWidth) + ")")),
+						(typeof(item.touch) == "undefined") ? "false":item.touch,
+						"asset",
+						item.binary[j].contentName + " " + item.binary[j].contentVersion,
+						item.binary[j].minOs,
+						item.binary[j].status,
+						item.binary[j].datePublished,
+						item.binary[j].id,
+						j
+						]
+					}
+				);
+			}
+		}
+
+        return {
+            total: o.length,
+            page: 1,
+            rows: rows
+        };
+
+
+	}
+</script>
+
+</body>
+</html>

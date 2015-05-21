@@ -1,0 +1,686 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Portal - Add New Device</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body">
+	<div id="wrapper">		
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="#">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li><a href="titles.html">Titles</a></li>
+			<li><a href="#">Agreements</a></li>
+			<li><a href="#">Support</a></li>
+			<li class="last"><a href="#">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<!-- Main Content -->
+		<div id="form_container" class="create_account_container content">
+			<div class="form_block expose_target corner_8">
+				<form id="form_26631" class="appnitro"  method="post" action="">
+					<div class="form_header">
+						<h2>Add New Device</h2>
+						<span>*required field</span>
+					</div>
+
+					<fieldset class="account_block">
+						<fieldset>
+							<label class="description" for="element_13">Make<span>*</span>:</label>
+							<input id="element_13" name="element_13" class="element text medium" type="text" maxlength="255" value=""/>
+							<a class="icon_question" href="javascript: void(0);">?</a>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_1">Model<span>*</span>:</label>
+							<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value=""/>
+							<a class="icon_question" href="javascript: void(0);">?</a>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_2">Model Name<span>*</span>:</label>
+							<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value=""/>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_3">Model Version<span>*</span>:</label>
+							<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value=""/>
+						</fieldset>
+						
+						<fieldset class="runtime" id="runtime_1">
+							<label class="description" for="element_29_1">Runtime Support<span>*</span>:</label>
+							<select class="element select small runtimesupport" id="element_29_1" name="element_29"> 
+								<option value="" selected="selected">Select</option>
+							</select>
+
+							<label class="description" for="element_29_1_1">Factory Version<span>*</span>:</label>
+							<select class="element select small factoryversions" id="element_29_1_1" name="element_29"> 
+								<option value="" selected="selected">Select</option>
+							</select>
+
+							<label class="description" for="element_29_1_2">API Level<span>*</span>:</label>
+							<select class="element select small apilevel" id="element_29_1_2" name="element_29"> 
+								<option value="" selected="selected">Select</option>
+							</select>
+							<a href="#" id="element_29_1_remove">Remove</a>
+							<a class="icon_question" href="javascript: void(0);">?</a>
+						</fieldset>
+
+						<fieldset id="ua_fieldset">
+							<label class="description" for="element_4">UA String<span>*</span>:</label>
+							<input id="element_4" name="element_4" class="element text medium" type="text" maxlength="255" value=""/> 
+							<a class="icon_question" href="javascript: void(0);">?</a>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_5">Link to Brew MP Device Database<span>*</span>:</label>
+							<input id="element_5" name="element_5" class="element text medium" type="text" maxlength="255" value=""/> 
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_23">Device Resolution<span>*</span>:</label>
+							<select class="element select medium" id="element_23" name="element_23"> 
+								<option value="" selected="selected">Select</option>
+								<option value='{"aspectRatio":"4:3","pixelHeight":"320","pixelWidth":"480","name":"QVGA","id":"1"}'>QVGA 480x320</option>
+							</select>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_24">Orientation<span>*</span>:</label>
+							<select class="element select medium" id="element_24" name="element_24"> 
+								<option value="" selected="selected">Select</option>
+								<option value="vertical" >Vertical</option>
+								<option value="horizontal" >Horizontal</option>
+							</select>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_25">Input Interface<span>*</span>:</label>
+							<select class="element select medium" id="element_25" name="element_25"> 
+								<option value="" selected="selected">Select</option>
+								<option value="true" >Touch</option>
+								<option value="false" >Non-touch</option>
+							</select>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_6">Pixels per inch (PPI)<span>*</span>:</label>
+							<input id="element_6" name="element_6" class="element text medium" type="text" maxlength="255" value=""/> 
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_15">Aspect Ratio<span>*</span>:</label>
+							<select class="element select medium" id="element_15" name="element_16"> 
+								<option value="" selected="selected">Select</option>
+								<option value="1" >4:3</option>
+								<option value="2" >16:9</option>
+							</select>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_16">Device Status<span>*</span>:</label>
+							<select class="element select medium" id="element_16" name="element_16"> 
+								<option value="" selected="selected">Select</option>
+								<option value="false" >Pre-commercial</option>
+								<option value="true" >Commercial</option>
+							</select>
+						</fieldset>
+					</fieldset>
+
+					<fieldset class="account_block_last">
+						<h3>Optional Info</h3>
+
+						<fieldset>
+							<label class="description" for="element_8">MSM:</label>
+							<select class="element select medium" id="element_8" name="element_8"> 
+								<option value="" selected="selected">Select</option>
+								<option value="true" checked="false">Yes</option>
+								<option value="false" checked="false">No</option>
+							</select>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_9">RAM:</label>
+							<input id="element_9" name="element_9" class="element text medium" type="text" maxlength="255" value=""/> 
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_10">ROM:</label>
+							<input id="element_10" name="element_10" class="element text medium" type="text" maxlength="255" value=""/> 
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_11">Filesystem space available for apps:</label>
+							<input id="element_11" name="element_11" class="element text medium" type="text" maxlength="255" value=""/>  
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_21">Physical Display Size:</label>
+							<input id="element_21" name="element_21" class="element text medium" type="text" maxlength="255" value=""/>
+							<span>Inches</span>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_22">Secondary Display Size:</label>
+							<input id="element_22" name="element_22" class="element text medium" type="text" maxlength="255" value=""/> 
+							<span>Pixels</span>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_27">LBS Support:</label>
+							<input id="element_27_1" name="element_27" class="element radio" type="radio" value="true" class="radio" />
+							<label class="choice" for="element_27_1">Yes</label>
+							<input id="element_27_2" name="element_27" class="element radio" type="radio" value="false" class="radio" checked />
+							<label class="choice" for="element_27_2">No</label>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_26">Graphics Acceleration:</label>
+							<select class="element select medium" id="element_26" name="element_26"> 
+								<option value="" selected="selected">Select</option>
+								<option value="true" checked="false">Yes</option>
+								<option value="false" checked="false">No</option>
+							</select>
+						</fieldset>
+
+						<fieldset>
+							<label class="description" for="element_19">Accelerometer:</label>
+							<input id="element_19_1" name="element_19" class="element radio" type="radio" value="true" class="radio" />
+							<label class="choice" for="element_19_1">Yes</label>
+							<input id="element_19_2" name="element_19" class="element radio" type="radio" value="false" class="radio" checked />
+							<label class="choice" for="element_19_2">No</label>
+						</fieldset>
+					</fieldset>
+			
+					<div class="buttons_container">					
+						<a href="devices.html">Cancel</a>
+						<input type="submit" id="saveForm" value="Save & Publish" class="button_gen corner_4" /></li>																	
+					</div>
+				</form>	
+			</div>
+		</div>
+		<!-- /Main Content -->
+	</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid.js"></script>
+	<script type="text/javascript" src="../../public/js/flexigrid2.js"></script>
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+
+	<script type="text/javascript">
+  	$(document).ready(function(){
+  	  /* Clear Form Data */  	  
+  		$("#saveForm").attr('disabled', 'disabled');
+    	$("#saveForm").addClass("button_disabled");
+  		$("#element_13").val("");
+  		$("#element_1").val("");
+  		$("#element_2").val("");
+  		$("#element_3").val("");
+  		$("#element_29_1").val("");
+  		$("#element_4").val("");
+  		$("#element_5").val("");
+  		$("#element_23").val("");
+  		$("#element_24").val("");
+  		$("#element_25").val("");
+  		$("#element_6").val("");
+  		$("#element_15").val("");
+  		$("#element_16").val("");
+
+  		$("#element_8").val("");
+  		$("#element_9").val("");
+  		$("#element_10").val("");
+  		$("#element_11").val("");
+  		$("#element_21").val("");
+  		$("#element_22").val("");
+  		$("#element_27_1").attr("checked", false);
+  		$("#element_27_2").attr("checked", false);
+  		$("#element_26").val("");
+  		$("#element_19_1").attr("checked", false);
+  		$("#element_19_2").attr("checked", false);
+
+      /* Button disabling/enabling */
+      var flag_make = false;
+      var flag_model = false;
+      var flag_name = false;
+      var flag_version = false;
+      var flag_support = false;
+      var flag_ua = false;
+      var flag_mp = false;
+      var flag_resolution = false;
+      var flag_orientation = false;
+      var flag_input = false;
+      var flag_ppi = false;
+      var flag_aspect = false;
+      var flag_status = false;
+	  var numruntimes = 0;
+
+      function changeButtonStatus() {
+        if (flag_make && flag_model && flag_name && flag_version && flag_support && flag_ua && flag_mp && flag_resolution && flag_orientation && flag_input && flag_ppi && flag_aspect && flag_status) {
+          $("#saveForm").removeAttr("disabled");
+          $("#saveForm").removeClass("button_disabled");
+        }
+        else {
+          $("#saveForm").attr("disabled", "disabled");
+        	$("#saveForm").addClass("button_disabled");
+        }
+      }
+
+      function changeFlag(object, flag) { //Flag is a string of the variable name
+        if(eval(flag) && (object.val() != "" || object.is(":checked"))) //Flag already set to true and has data
+          return true;
+
+        if(object.val() != "" || object.is(":checked")) //Data in field
+          eval(flag+" = true;");
+        else //Field empty
+          eval(flag+" = false;");
+
+        changeButtonStatus();
+        return flag;   
+      }
+
+      function postRuntimeInfo(runtimeUrl, jsondata) { 
+	  
+		$.ajax(
+		{
+			url: runtimeUrl,
+			type:'PUT', 
+			contentType:'application/json',
+			processData: false,
+			data: jsondata,
+			success: function(data){
+				numruntimes--;
+			}
+		}
+		);
+      }
+
+      $("#element_13").keyup(function() {
+        changeFlag($(this), "flag_make");
+      });
+      $("#element_1").keyup(function() {
+        changeFlag($(this), "flag_model");
+      });
+      $("#element_2").keyup(function() {
+        changeFlag($(this), "flag_name");
+      });
+      $("#element_3").keyup(function() {
+        changeFlag($(this), "flag_version");
+      });
+      $("#element_29_1").change(function() {
+        changeFlag($(this), "flag_support");
+      });
+      $("#element_4").keyup(function() {
+        changeFlag($(this), "flag_ua");
+      });
+      $("#element_5").keyup(function() {
+        changeFlag($(this), "flag_mp");
+      });
+      $("#element_23").change(function() {
+        changeFlag($(this), "flag_resolution");
+      });
+      $("#element_24").change(function() {
+        changeFlag($(this), "flag_orientation");
+      });
+      $("#element_25").change(function() {
+        changeFlag($(this), "flag_input");
+      });
+      $("#element_6").keyup(function() {
+        changeFlag($(this), "flag_ppi");
+      });
+      $("#element_15").change(function() {
+        changeFlag($(this), "flag_aspect");
+      });
+      $("#element_16").change(function() {
+        changeFlag($(this), "flag_status");
+      });
+
+      /* Validation */        
+      $("#form_26631").validate({
+        onfocusout: false,
+        onkeyup: false,
+        onclick: false,
+        focusInvalid: false,
+        errorLabelContainer: ".error_messages",
+        errorElement: "span",
+        submitHandler: function() {
+          $("#saveForm").attr('disabled', 'disabled');
+        	$("#saveForm").addClass("button_disabled");
+        // update!
+
+
+    		var jsondata = "";
+    		jsondata += '{';
+    		jsondata += '"make":"' + $("#element_13").val() + '"';
+    		jsondata += ',"model":"' + $("#element_1").val() + '"';
+    		jsondata += ',"name":"' + $("#element_1").val() + '"';
+    		jsondata += ',"modelVersion":"' + $("#element_3").val() + '"';
+
+
+    		jsondata += ',"userAgent":"' + $("#element_4").val() + '"';
+    		jsondata += ',"qctUrl":"' + $("#element_5").val() + '"';
+    		// jsondata += ',"display":"' + $("#").val() + '"';
+    		jsondata += ',"pixelsPerInch":"' + $("#element_6").val() + '"';
+    		jsondata += ',"active":"' + $("#element_16").val() + '"';
+			if($("#element_26").val() != "")
+	    		jsondata += ',"graphicsAccel":"' + $("#element_26").val() + '"';
+    		jsondata += ',"orientation":"' + $("#element_24").val() + '"';
+    		jsondata += ',"touch":"' + $("#element_25").val() + '"';
+    		jsondata += ',"msm":"' + $("#element_8").val() + '"';
+    		jsondata += ',"ram":"' + $("#element_9").val() + '"';
+    		jsondata += ',"rom":"' + $("#element_10").val() + '"';
+    		jsondata += ',"filespace":"' + $("#element_11").val() + '"';
+			if(typeof($("input[@name='element_19']:checked").val()) != "undefined")
+    			jsondata += ',"accelerometer":"' + $("input[@name='element_19']:checked").val() + '"';
+			if(typeof($("input[@name='element_27']:checked").val()) != "undefined")
+	    		jsondata += ',"lbs":"' + $("input[@name='element_27']:checked").val() + '"';
+    		jsondata += ',"physicalSize":"' + $("#element_21").val() + '"';
+    		jsondata += ',"secondaryDisplay":"' + $("#element_22").val() + '"';
+
+    		jsondata += ',"display":' + $("#element_23").val();
+
+
+    		jsondata += '}';
+
+    			$.ajax(
+    				{
+    				url: getBaseURL() + getAdminAppURL() + '/devices/',
+    				type:'POST', 
+    				contentType:'application/json',
+    				processData: false,
+    				data: jsondata,
+    				success: function(data) 
+    					{
+    					//alert('Device Addition Successful.'); //  + data.id
+						confirmRedirect('Device Addition Successful.' , "noRedirect");
+						
+						  //Call Runtime POST
+						  	var idArray=new Array();
+							idArray = $(".factoryversions option:selected");
+							for (i = 0; i < idArray.length - 1; i++) {
+								numruntimes++;
+								var jsondata1 = "";
+								jsondata1 += '{';
+								jsondata1 += '"device":{"id":' + data.id + '}';
+								jsondata1 += ',"runtime":{"id":' + idArray[i].value + '}';
+								jsondata1 += '}';
+
+								postRuntimeInfo(getBaseURL() + getAdminAppURL() + '/devices/' + data.id + '/runtimes/' + idArray[i].value, jsondata1);
+							}
+
+							setTimeout(function()
+							{ 
+								if(numruntimes==0) 
+								{
+									window.location = "devices.html";
+								}
+				
+						 	}, 1000);
+
+    					}
+					}
+    			);
+
+    		return false;
+        },
+        invalidHandler: function(form, validator) {
+          validator.showErrors(); // Add error class to invalid fields
+          $('label').removeClass("error-label"); // Remove all previous error labels
+
+          $('.error').each(function() { // Add 'error-label' class to labels of invalid fields
+            if ($(this).attr("type") === "radio") // Highlight group label of radio buttons
+              $('label[for='+$(this).attr('name')+']').addClass("error-label");
+            else
+              $('label[for='+$(this).attr('id')+']').addClass("error-label");
+          });
+
+          $('label').each(function() { // Cleanup and remove 'error-label' from labels that are not associated with a field
+            if ($(this).attr('for') == "")
+              $(this).removeClass("error-label");
+          });
+          window.scrollTo(0,0);
+        },
+        rules: {
+          element_13: {
+            required: true
+          },
+          element_1: {
+            required: true
+          },
+          element_2: {
+            required: true
+          },
+          element_3: {
+            required: true
+          },
+          element_29_1: {
+            required: true
+          },
+          element_4: {
+            required: true
+          },
+          element_5: {
+            required: true
+          },
+          element_23: {
+            required: true
+          },
+          element_24: {
+            required: true
+          },
+          element_25: {
+            required: true
+          },
+          element_6: {
+            required: true
+          },
+          element_15: {
+            required: true
+          },
+          element_16: {
+            required: true
+          }
+        },
+        messages: {
+          element_13: {
+            required: "Please enter a valid make. "
+          },
+          element_1: {
+            required: "Please enter a valid model. "
+          },
+          element_2: {
+            required: "Please enter a valid model name. "
+          },
+          element_3: {
+            required: "Please enter a valid model version. "
+          },
+          element_29_1: {
+            required: "Please select a valid runtime support. "
+          },
+          element_4: {
+            required: "Please enter a valid UA string. "
+          },
+          element_5: {
+            required: "Please enter a valid link to brew MP device database. "
+          },
+          element_23: {
+            required: "Please select a valid device resolution. "
+          },
+          element_24: {
+            required: "Please select a valid orientation. "
+          },
+          element_25: {
+            required: "Please select a valid input interface. "
+          },
+          element_6: {
+            required: "Please enter a valid PPI. "
+          },
+          element_15: {
+            required: "Please select a valid aspect ratio. "
+          },
+          element_16: {
+            required: "Please select a valid device status. "
+          }
+        }
+      });
+      
+	  var runtimes = new Array();
+	  var content_types;
+      $.getJSON(getBaseURL() + getAdminAppURL() + '/content_types', function(data){
+        content_types = data;
+  			for(i in data.result) {	  
+  			  $("#element_29_1").append("<option value='" + data.result[i].id + "'>" + data.result[i].name + "</option>");
+					runtimes[i] = data.result[i].runtimes;
+  			}
+  		});
+  		
+  		/* Initial setup */
+      $("#element_29_1_1").hide();
+  	  $('label[for="element_29_1_1"]').hide();
+  	  $("#element_29_1_2").hide();
+  	  $('label[for="element_29_1_2"]').hide();
+  	  $("#element_29_1_remove").hide();
+  	  
+  	  
+  	  $("#element_29_1").change(function() {
+  	    runtimeSupport($(this));
+  	    
+  	    /* Remove already selected options */
+  	    var selected_values = new Array();
+		    var indx = 0;
+		    $(".runtime >:nth-child(2)").each(function() {
+		      selected_values[indx] = parseInt($(this).val());
+		      indx++;
+		    });
+		    
+		    $('.runtime >:nth-child(2)').each(function() {
+		      $(this).find('>option').each(function() {
+		        if($(this).val() != "" && $.inArray(parseInt($(this).val()), selected_values) != -1 && !$(this).attr('selected'))
+  		        $(this).remove();
+		      });
+		    });
+		    
+  	    //Repopulate out the sub drop downs
+    		$('#element_29_1_1 >option').remove();
+    		$('#element_29_1_2 >option').remove();
+			
+    		for(i in runtimes[this.value-1])
+    		{
+    			$("#element_29_1_1").append("<option value='" + runtimes[this.value-1][i].id + "'>" + runtimes[this.value-1][i].version + "</option>");
+    			$("#element_29_1_2").append("<option value='" + runtimes[this.value-1][i].apiLevel + "'>" + runtimes[this.value-1][i].apiLevel + "</option>");
+    		}
+  	  });
+  	  
+  	  $("#element_29_1_remove").click(function() {
+	      removeRuntimeSupport($(this));
+	    });
+  	  
+  	  function runtimeSupport(element) {
+  	    /* Show/Hide additional fields */
+  	    $('#'+element.attr('id')+'_1').show();
+    	  $('label[for="'+element.attr('id')+'_1"]').show();
+    	  $('#'+element.attr('id')+"_2").show();
+    	  $('label[for="'+element.attr('id')+'_2"]').show();
+    	  $('#'+element.attr('id')+"_remove").show();
+    	  
+    	  if ($('#'+element.attr('id')).val() == "") {
+    	    $('#'+element.attr('id')+'_1').hide();
+      	  $('label[for="'+element.attr('id')+'_1"]').hide();
+      	  $('#'+element.attr('id')+"_2").hide();
+      	  $('label[for="'+element.attr('id')+'_2"]').hide();
+      	  $('#'+element.attr('id')+"_remove").hide();
+    	  }
+    	  else if (element.parent().attr('id') === $(".runtime").last().attr('id') && $(".runtime").length < runtimes.length) {
+      	    /* If clone doesn't exist, create one */
+      	    //var count = $(".runtime").length + 1;
+      	    var index = parseInt(element.attr('id').split('_')[2]) + 1;
+            
+      	    var clone = element.parent().clone();
+      	    clone.attr('id', 'runtime_' + index);
+      	    clone.find('#'+element.attr('id')).attr('id', 'element_29_' + index);
+      	    clone.find('#'+element.attr('id')+'_1').attr('id', 'element_29_' + index + '_1');
+      	    clone.find('#element_29_' + index + '_1').hide();
+      	    clone.find('label[for="'+element.attr('id')+'_1"]').attr('for', 'element_29_' + index + '_1');
+      	    clone.find('label[for="element_29_' + index + '_1"]').hide();
+      	    clone.find('#'+element.attr('id')+'_2').attr('id', 'element_29_' + index + '_2');
+      	    clone.find('#element_29_' + index + '_2').hide();
+      	    clone.find('label[for="'+element.attr('id')+'_2"]').attr('for', 'element_29_' + index + '_2');
+      	    clone.find('label[for="element_29_' + index + '_2"]').hide();
+      	    clone.change(function() {
+      	      runtimeSupport($('#element_29_' + index));
+      	      
+      	      /* Remove already selected options */
+        	    var selected_values = new Array();
+      		    var indx = 0;
+      		    $(".runtime >:nth-child(2)").each(function() {
+      		      selected_values[indx] = parseInt($(this).val());
+      		      indx++;
+      		    });
+
+      		    $('.runtime >:nth-child(2)').each(function() {
+      		      $(this).find('>option').each(function() {
+      		        if($(this).val() != "" && $.inArray(parseInt($(this).val()), selected_values) != -1 && !$(this).attr('selected'))
+        		        $(this).remove();
+      		      });
+      		    });
+      		    
+      	      //Repopulate the sub drop downs
+      	      var value = parseInt($('#element_29_'+index).val());
+          		$('#element_29_'+index+'_1 >option').remove();
+          		$('#element_29_'+index+'_2 >option').remove();
+          		for(i in runtimes[value-1])
+          		{
+          			$('#element_29_'+index+'_1').append("<option value='" + runtimes[value-1][i].id + "'>" + runtimes[value-1][i].version + "</option>");
+          			$('#element_29_'+index+'_2').append("<option value='" + runtimes[value-1][i].apiLevel + "'>" + runtimes[value-1][i].apiLevel + "</option>");
+          		}
+      	    });
+      	    
+      	    clone.find('#'+element.attr('id')+"_remove").attr('id', 'element_29_' + index + "_remove");
+      	    clone.find('#element_29_'+index+'_remove').hide();
+      	    clone.find('#element_29_'+index+'_remove').click(function() {
+      	      removeRuntimeSupport($(this));
+      	    });
+      	    
+      	    clone.insertBefore("#ua_fieldset"); 
+  	    }
+  	  }
+  	  
+  	  function removeRuntimeSupport(element) {
+  	    if ($(".runtime").length > 1) //If not last field
+  	      element.parent().remove();
+  	    //else
+  	      //Revert to Select and hide additional fields
+  	    return false;
+  	  }
+  	 	
+	  	/* jQuery overlay append */
+		var overlayHeight = $(document).height();
+		var overlayWidth = $(document).width();		
+		var overlayHTML = "<div class='container_fullscreen' style='height:" + overlayHeight + "px;'>&nbsp;</div>";
+		$('body').append(overlayHTML);		
+  	});
+	</script>	
+</body>
+</html>

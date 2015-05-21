@@ -1,0 +1,678 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Admin Portal - Edit Category</title>
+	<link rel="stylesheet" type="text/css" href="../../public/css/global.css" media="all">
+</head>
+
+<body id="main_body" >
+	<div id="wrapper">
+		<!-- Logo and Logged-In User Links -->
+		<fieldset class="global_logo_container">
+			<h1>Qualcomm</h1>
+			<p class="global_status_content">
+				username@email.com
+			</p>
+			<ul class="user_links_container">
+				<li><a href="#">Sign Out</a></li>
+				<li class="div">|</li>
+				<li><a href="#">My Profile</a></li>
+			</ul>
+		</fieldset>		
+		<!-- /Logo and Logged-In User Links -->
+		
+		<!-- Top Navigation -->
+		<ul class="global_nav">
+			<li><a href="titles.html">Titles</a></li>
+			<li class="active"><a href="catalog.html">Catalog</a></li>
+			<li><a href="settings.html">Settings</a></li>
+			<li class="last"><a href="admin.html">Admin</a></li>
+		</ul>
+		<!-- /Top Navigation -->
+		
+		<div id="form_container" class="create_account_container content cat_filters" style="display: none;">
+			<div class="form_block expose_target corner_8 filter">
+				<h4>Narrow by:</h4>
+
+				<form id="form_cat_filters" method="post" action="/formbuilder/view.php">					
+					<div class="languages">
+						<h5>Languages:</h5>
+
+						<ul>
+						</ul>
+					</div>
+
+					<div class="titles_binaries">
+						<h5>New Titles/Binaries:</h5>
+
+						<select>
+							<option selected="selected" value="">Select</option>
+						</select>
+					</div>
+
+					<div class="devices">
+						<h5>Devices:</h5>
+
+						<table id="table_devices" style="display:none"></table>
+					</div>
+
+					<div class="buttons_container">					
+						<a href="#" id="cancel">Cancel</a>
+						<a href="javascript: void(0);" onClick="$('#form_cat_filters').submit(); return false;" class="button_gen corner_4">OK</a>															
+					</div>
+				</form>	
+			</div>
+		</div>
+		
+		<!-- Main Content -->
+		<div class="content cat_view">
+			<ul class="subnav">
+				<li id="promotions-subnav"><a href="#" onclick="showPromotions($(this))">Promotions</a></li>
+				<li id="catalog-subnav" class="active last">Catalog</li>
+			</ul>
+
+			<div class="form_header">
+				<h2>Catalog</h2>
+			</div>
+
+			<div class="sidebar">
+				<p><a href="#" id="filter" onclick="filter();">Narrow by &gt;</a> English, All devices</p>
+
+				<div class="actions">
+					<a href="category_add.html" id="new" class="button_gen_small corner_4 left">+ New</a>
+					<a href="#" id="reorder" class="button_gen_small corner_4 right">Reorder</a>
+					<a href="#" id="publish" class="button_gen_small corner_4 right" style="display: none;">Publish</a>
+					<a href="#" id="close" style="display: none;">Close</a>
+				</div>
+				
+				<div id="catalog" class="tree">
+      		<ul class="sortable">
+      		  <!-- Categories inserted here -->
+      		</ul>
+    		</div>
+    		<div id="promotions" class="tree" style="display: none;">
+    		  <ul class="sortable">
+    		  </ul>
+    		</div>
+			</div>
+
+			<div class="results">
+				<span class="icon"></span>
+				<h3><b>Entertainment</b> (234 Titles)</h3>
+
+				<input type="text" class="search" value="Search Entertainment" />
+
+				<table id="table_catalog_view" style="display:none"></table>
+
+				<div class="pagination">
+					<span class="left">Showing <span>1-100</span> out of <span>234</span></span>
+
+					<ul class="right">
+						<li class="first">1</li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">Next &gt;</a></li>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="promos" style="display: none;">
+				<span class="icon"></span>
+				<h3><b>Entertainment</b> (Promoted since mm/dd/yyyy)</h3>
+				<span>Category</span>
+
+				<div class="promo s">
+					<span class="img">Promo Banner</span>
+					<h5>Small (100x50)</h5>
+					<span>Updated by username on mm/dd/yyyy</span>
+				</div>
+
+				<div class="promo m">
+					<span class="img">Promo Banner</span>
+					<h5>Medium (150x75)</h5>
+					<span>Updated by username on mm/dd/yyyy</span>
+				</div>
+
+				<div class="promo l">
+					<span class="img">Promo Banner</span>
+					<h5>Large (200x100)</h5>
+					<span>Updated by username on mm/dd/yyyy</span>
+				</div>
+
+				<div class="promo xl">
+					<span class="img">Promo Banner</span>
+					<h5>X-Large (300x150)</h5>
+					<span>Updated by username on mm/dd/yyyy</span>
+				</div>
+
+				<h5>What's inside this category?</h5>
+
+				<table id="table_catalog_view" style="display:none"></table>
+
+				<div class="pagination">
+					<span class="left">Showing <span>1-100</span> out of <span>234</span></span>
+
+					<ul class="right">
+						<li class="first">1</li>
+						<li><a href="#">2</a></li>
+						<li><a href="#">3</a></li>
+						<li><a href="#">4</a></li>
+						<li><a href="#">Next &gt;</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="overlay edit_cat">
+				<div class="form_header">
+					<h3>Edit Category <strong>- Entertainment</strong></h3>
+				</div>
+
+				<p><i class="info_icon">Info Icon</i>Currently this preview set has been associated with one or more submitted binaries. At least one preview image is required.</p>
+
+				<div class="clear">
+					<label>Category Level:</label>
+					<span class="info">Top level category</span>
+				</div>
+				
+				<div class="clear">
+					<label>Category Name:</label>
+					<span class="lang">English</span>
+					<input type="text" class="text" />
+					<a href="#" class="button_gen_small corner_4">Add</a>
+					<span class="field_instructions max">(Max. 100 Characters)</span>
+				</div>
+
+				<div class="clear">
+					<select class="lang">
+						<option>Spanish</option>
+					</select>
+					<input type="text" class="text" />
+					<a href="#" class="small">Remove</a>
+					<span class="field_instructions max">(Max. 100 Characters)</span>
+				</div>
+
+				<div class="clear">
+					<label>Icon:</label>
+					<span class="info">512 x 512 pixels</span>
+					<a class="icon_question">?</a>
+
+					<div class="icon">
+						<a href="#" class="delete">Delete</a>
+						Icon
+					</div>
+				</div>
+
+				<div class="buttons">
+					<a href="catalog.html" class="delete corner_4">Delete</a>
+					<a href="catalog.html">Cancel</a>
+					<a href="catalog.html" class="button_gen corner_4">Save</a>
+				</div>
+			</div>
+		</div>
+
+	<script type="text/javascript" src="../../public/js/jquery.1.4.4.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery-ui-1.8.7.custom.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.validate.1.0.min.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.cookie.js"></script>
+	<script type="text/javascript" src="../../public/js/jquery.ae.image.resize.min.js"></script>
+	<script type="text/javascript" src="../../public/js/ajaxfileupload.js"></script>
+	<!-- <script type="text/javascript" src="../../public/js/flexigrid.js"></script> -->
+	<script type="text/javascript" src="../../public/js/flexigrid2.js"></script>
+	<script type="text/javascript" src="../../public/js/json.js"></script>
+	<script type="text/javascript" src="../../public/js/global.js"></script>
+	
+<script type="text/javascript">
+
+function showPromotions(element) {
+  element.parent().addClass("active");
+  element.parent().siblings().removeClass("active");
+  var sibling_content = element.parent().siblings().html();
+  element.parent().siblings().html('<a href="#" onclick="showCatalog($(this))">' + sibling_content + '</a>');
+  var content = element.html();
+  element.parent().append(content);
+  element.remove();
+  $(".form_header h2").html('Promotions');
+  $(".form_header").append('<a href="#" class="button_gen_small corner_4">Edit Promotion</a>');
+  
+  getPromotionsTree(); //TODO: Test if first time, then call get Promotions
+  $("#promotions").show();
+  $("#catalog").hide();
+  
+  $("#new").attr("href", "promo_add.html");
+  $(".sidebar >p").hide();
+  $(".results").hide();
+  $(".promos").show();
+  
+  return false;
+};
+
+function showCatalog(element) {
+  element.parent().addClass("active");
+  element.parent().siblings().removeClass("active");
+  var sibling_content = element.parent().siblings().html();
+  element.parent().siblings().html('<a href="#" onclick="showPromotions($(this))">' + sibling_content + '</a>');
+  var content = element.html();
+  element.parent().append(content);
+  element.remove();
+  $(".form_header h2").html('Catalog');
+  $(".form_header a").remove();
+  
+  //getCatalogTree();
+  $("#catalog").show();
+  $("#promotions").hide();
+  
+  $("#new").attr("href", "category_add.html");
+  $(".promos").hide();
+  $(".sidebar >p").show();
+  $(".results").show();
+  
+  return false;
+};
+
+function getCatalogTree() {
+  var counts = new Array();
+
+	$.getJSON(getBaseURL() + getAdminAppURL() + '/taxonomies/1/facets/filters/0/count', function(data) {
+	  for (x in data) {
+	    counts[String(data[x].facetName)] = data[x].count;
+	  }
+	  
+	  $.getJSON(getBaseURL() + getAdminAppURL() + '/taxonomies/', function(data)
+  		{
+  			var x,x1;
+  			var tree = "";
+
+  			// todo: this might be begging for a recursive rewrite
+
+  			for (x in data.taxonomies[0].root.children) {
+  				/* TODO: Have edit button point somewhere */
+  				var count = (counts[data.taxonomies[0].root.children[x].data.id] != null) ? counts[data.taxonomies[0].root.children[x].data.id] : 0;
+  				tree += '<li id="' + data.taxonomies[0].root.children[x].data.id + '"><p class="selectable">'
+
+  				if(data.taxonomies[0].root.children[x].children.length != 0) {
+  				  tree += '<span class="parent expandable facet_name">' + data.taxonomies[0].root.children[x].data.name + ' (' + count + ')</span><a href="#" class="button_gen_small corner_4">Edit</a></p><ul class="sortable">';
+  				  for (x1 in data.taxonomies[0].root.children[x].children) {
+  				    var subcount = (counts[data.taxonomies[0].root.children[x].children[x1].data.id] != null) ? counts[data.taxonomies[0].root.children[x].data.id] : 0;
+  				    //TODO: Might have to make a seperate JSON call to /taxonomies/data.id/facets/filters/0/count
+    					tree += '<li id="' + data.taxonomies[0].root.children[x].children[x1].data.id + '"><p class="selectable"><span class="facet_name">' + data.taxonomies[0].root.children[x].children[x1].data.name + ' (' + subcount + ')</span><a href="#" class="button_gen_small corner_4">Edit</a></p>';
+    				}
+    				tree += '</ul>';
+  				}
+  				else {
+  				  tree += '<span class="facet_name">' + data.taxonomies[0].root.children[x].data.name + ' (' + count + ')</span><a href="#" class="button_gen_small corner_4">Edit</a></p></li>';
+  				}
+  				tree += '</li>';
+
+  			}
+
+  			$("#catalog >ul").empty().append(tree);
+
+  	    /* Initialization */
+    	  $("#catalog .sortable li a").hide();
+    	  $("#catalog ul li ul").hide();
+
+    	  $("#catalog .sortable").sortable({
+          placeholder: "ui-state-highlight",
+          distance: 15
+        });
+        $("#catalog .sortable").sortable('disable');
+
+
+        $("#catalog .selectable").mousedown(function() {
+          /*if ($("#catalog .sortable").hasClass("reorder"))
+            return false;*/
+            
+          $("#catalog .selectable").removeClass("reorder-selected selected");
+          if($("#catalog ul").hasClass("reorder"))
+            $(this).addClass("reorder-selected");
+          else
+            $(this).addClass("selected");
+          $("#catalog .selectable a").hide();
+          $(this).find(">a").show();
+
+          $.getJSON(getBaseURL() + getAdminAppURL() + '/catalog/facets/' + $(this).parent().attr('id') + '/titles', function(data) {
+            $("#table_catalog_view").flexAddData(formatCatalogResults(data.result));
+        	});
+        });
+
+        $("#catalog >ul >li:first-child p").mousedown();
+
+        $("#catalog .parent").click(function() {
+          if($(this).hasClass("expandable")) {
+            $(this).removeClass("expandable").addClass("expanded");
+            $(this).parent().parent().find("ul").show();
+          }
+          else {
+            $(this).removeClass("expanded").addClass("expandable");
+            $(this).parent().parent().find("ul").hide();
+          }
+        });
+  		});
+	});
+	
+};
+
+function getPromotionsTree() {
+  $.getJSON(getBaseURL() + getAdminAppURL() + '/promos/', function(data)
+		{
+			var tree = "";
+
+			for (x in data.result) {
+			  var item = data.result[x];
+				tree += '<li id="' + item.id + '"><p class="selectable">';
+				
+				$.getJSON(getBaseURL() + getAdminAppURL() + urlAfterInclusive(String(item.targetUrl.href),'/catalog'), function(data) {
+				  //tree += data.result.languages.en.displayName;
+				  tree += data.result.name;
+				});
+				
+				tree += '</p></li>';
+			}
+			    
+			$("#promotions >ul").empty().append(tree);
+	    
+	    /* Initialization */
+  	  $("#promotions .sortable li a").hide();
+  	  $("#promotions ul li ul").hide();
+
+  	  $("#promotions .sortable").sortable({
+        placeholder: "ui-state-highlight",
+        distance: 15
+      });
+      $("#promotions .sortable").sortable('disable');
+
+
+      $("#promotions .selectable").mousedown(function() {
+        $("#promotions .selectable").removeClass("reorder-selected selected");
+        if($("#promotions ul").hasClass("reorder"))
+          $(this).addClass("reorder-selected");
+        else
+          $(this).addClass("selected");
+        $("#promotions .selectable a").hide();
+        $(this).find(">a").show();
+        
+        /*$.getJSON(getBaseURL() + getAdminAppURL() + '/catalog/facets/' + $(this).parent().attr('id') + '/titles', function(data) {
+          $("#table_catalog_view").flexAddData(formatCatalogResults(data.result));
+      	});*/
+      });
+
+      $("#promotions >ul >li:first-child p").mousedown();
+
+      $("#promotions .parent").click(function() {
+        if($(this).hasClass("expandable")) {
+          $(this).removeClass("expandable").addClass("expanded");
+          $(this).parent().parent().find("ul").show();
+        }
+        else {
+          $(this).removeClass("expanded").addClass("expandable");
+          $(this).parent().parent().find("ul").hide();
+        }
+      });
+		});
+};
+
+function filter() {
+  /* jQuery overlay append */
+	var overlayHeight = $(document).height();
+	var overlayWidth = $(document).width();		
+	var overlayHTML = "<div class='container_fullscreen' style='height:" + overlayHeight + "px;'>&nbsp;</div>";
+	$('body').append(overlayHTML);
+
+	$("#form_container").show();
+	
+	return false;
+}
+
+function formatCatalogResults(result) {
+  var x;
+  var rows = new Array();
+  
+  for(x in result) {
+    var item = result[x];
+    
+    rows.push({
+      cell: [
+        '<a href="' + item.url.href + '">' + item.name + ' (' + item.numDevices + ') </a><span class="publisher">By ' + item.publisher + '</span></span>', // TODO: Icon here as well
+        item.totalDl,
+        formatDate(item.release),
+        formatDate(item.lastUpdate),
+        '<span>Flag</span>'
+      ]
+    });
+  }
+  
+  return {
+    total: result.length,
+    page: 1,
+    rows: rows
+  };
+};
+
+$(document).ready(function () 
+	{  
+    
+    $("#reorder").click(function() {
+      $(".sidebar").addClass("overlay");
+      var form_header_clone = $(".form_header").clone();
+      form_header_clone.find("a").remove(); // Remove edit promotion button if exists
+      $(".sidebar").prepend(form_header_clone);
+    	var overlayHeight = $(document).height();
+    	var overlayHTML = "<div class='container_fullscreen' style='height:" + overlayHeight + "px;'></div>";
+    	$('body').append(overlayHTML);
+      $("#catalog ul").each(function() {
+        $(this).addClass("reorder");
+      });
+      $("#catalog .sortable").sortable('enable');
+      
+      $(".selectable").each(function() {
+        if($(this).hasClass("selected"))
+          $(this).removeClass("selected").addClass("reorder-selected");
+      });
+      
+      var filter = $("#filter").html();
+      $("#filter").remove();
+      $(".sidebar >p").prepend('<span id="filter">' + filter + '</span>');
+      
+      $(this).hide();
+      $("#publish").show();
+      $("#close").show();
+      
+      return false;
+    });
+    
+    $("#publish").click(function() {
+      var url;
+      var testjson = "";
+      var index = 1;
+      var subIndex;
+      
+      url = getBaseURL() + getAdminAppURL() +'/taxonomies/1/facets/reorder/';
+      testjson += '{';
+      $("#catalog >ul >li").each(function() {
+        testjson += '"' + $(this).attr('id') + '":"' + index + '",';
+        if ($(this).find("ul")) {
+          subIndex = 1;
+          $(this).find("ul li").each(function () {
+            testjson += '"' + $(this).attr('id') + '":"' + subIndex + '",';
+            subIndex++;
+          });
+        }
+        index++;
+      });
+      testjson = testjson.substring(0, testjson.length - 1) + '}'; //Remove trailing comma
+      
+      $.ajax(
+				{
+				url: url,
+				type:'PUT',
+				contentType:'application/json',
+				processData: false,
+				data: testjson,
+				success: function(data) 
+					{
+					//alert("Submission Successful");
+					confirmRedirect("Submission successful" , "noRedirect");
+					},
+				error:function(xhr,err)
+					{
+					//alert("Submission not successful.");
+					confirmRedirect("Submission not successful" , "noRedirect");
+					}
+				}
+			);
+			
+      $(".sidebar").removeClass("overlay");
+      $(".sidebar .form_header").remove();
+      $(".container_fullscreen").remove();
+      $("#catalog ul").each(function() {
+        $(this).removeClass("reorder");
+      });
+      $("#catalog .sortable").sortable('disable');
+      
+      $(".selectable").each(function() {
+        if($(this).hasClass("reorder-selected"))
+          $(this).removeClass("reorder-selected").addClass("selected");
+      });
+      
+      var filter = $("#filter").html();
+      $("#filter").remove();
+      $(".sidebar >p").prepend('<a id="filter" href="#" onclick="filter();">' + filter + '</a>');
+      
+      $(this).hide();
+      $("#close").hide();
+      $("#reorder").show();
+      
+      return false;
+    });
+    
+    $("#close").click(function() {
+      getCatalogTree();
+      
+      $(".sidebar").removeClass("overlay");
+      $(".sidebar .form_header").remove();
+      $(".container_fullscreen").remove();
+      $("#catalog ul").each(function() {
+        $(this).removeClass("reorder");
+      });
+      $("#catalog .sortable").sortable('disable');
+      
+      $(".selectable").each(function() {
+        if($(this).hasClass("reorder-selected"))
+          $(this).removeClass("reorder-selected").addClass("selected");
+      });
+      
+      var filter = $("#filter").html();
+      $("#filter").remove();
+      $(".sidebar >p").prepend('<a id="filter" href="#" onclick="filter();">' + filter + '</a>');
+      
+      $(this).hide();
+      $("#publish").hide();
+      $("#reorder").show();
+      
+      return false;
+    });
+    
+    $("#cancel").click(function() {
+      $(".container_fullscreen").remove();
+    	$("#form_container").hide();
+    	
+    	return false;
+    });
+    
+    getCatalogTree();
+    //getPromotionsTree();
+    
+    /* Filter Data */
+    $.getJSON(getBaseURL() + getAdminAppURL() + '/codes/language/', function(data) {
+  	  var x;
+  	  var languages = "";
+
+  	  for (x in data.result) {
+  	    languages += '<li><input type="radio" name="languages" value="' + data.result[x].code + '" /><label for="' + data.result[x].code + '">' + data.result[x].meaning + '</label></li>';
+  	  }
+
+  	  $(".languages ul").append(languages);
+  	  
+  	  $(".languages >ul li input[value='en']").attr("checked", true); // Check English as being selected already
+  	});
+
+  	//TODO: Devices
+  	
+  	$.getJSON(getBaseURL() + getAdminAppURL() + '/catalog/collections/FILTER/', function(data) {
+  	  var x;
+  	  var filter = "";
+  	  
+  	  for (x in data) {
+  	    var item = data[x];
+  	    filter += '<option value="' + item.createdDate + '">' + item.name + '</option>';
+  	  }
+  	  
+  	  $(".titles_binaries select").append(filter);
+    });
+    
+    $("#table_catalog_view").flexigrid2({
+			// url: 'post2.php',
+			dataType: 'json',
+			colModel: [
+				{display: 'Title', name : 'title', width : 182, sortable : true, align: 'left'},
+				{display: 'Downloads', name : 'downloads', width : 100, sortable : true, align: 'left'},
+				{display: 'Released', name : 'released', width : 100, sortable : true, align: 'left'},
+				{display: 'Updated', name : 'updated', width : 100, sortable : true, align: 'left'},
+				{display: 'Flagged', name : 'flagged', width : 100, sortable : true, align: 'left'}
+			],
+			//buttons : [
+			//	{name: 'Add', bclass: 'add', onpress : test},
+			//	{name: 'Delete', bclass: 'delete', onpress : test},
+			//	{separator: true}
+			//	],
+			//searchitems : [
+			//	{display: 'ISO', name : 'iso'},
+			//	{display: 'Name', name : 'name', isdefault: true}
+			//	],
+			sortname: "iso",
+			sortorder: "asc",
+			//usepager: true,
+			title: 'Titles',
+			//useRp: true,
+			//rp: 15,
+			//showTableToggleBtn: true,
+			width: 582,
+			height: 208
+		});
+		
+		$("#table_devices").flexigrid2({
+			// url: 'post2.php',
+			dataType: 'json',
+			colModel: [
+				{display: 'Device', name : 'device', width : 186, sortable : true, align: 'left'},
+				{display: 'Make', name : 'make', width : 120, sortable : true, align: 'left'},
+				{display: 'Resolution', name : 'resolution', width : 120, sortable : true, align: 'left'},
+				{display: 'Input', name : 'input', width : 120, sortable : true, align: 'left'},
+				{display: 'Status', name : 'status', width : 120, sortable : true, align: 'left'},
+			],
+			//buttons : [
+			//	{name: 'Add', bclass: 'add', onpress : test},
+			//	{name: 'Delete', bclass: 'delete', onpress : test},
+			//	{separator: true}
+			//	],
+			//searchitems : [
+			//	{display: 'ISO', name : 'iso'},
+			//	{display: 'Name', name : 'name', isdefault: true}
+			//	],
+			sortname: "iso",
+			sortorder: "asc",
+			//usepager: true,
+			title: 'Titles',
+			//useRp: true,
+			//rp: 15,
+			//showTableToggleBtn: true,
+			width: 662,
+			height: 208
+		});
+	});
+</script>				
+</body>
+</html>
